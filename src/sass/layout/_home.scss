@@ -1,0 +1,16 @@
+body {
+    padding: 0 2rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/suke-22.jpg') fixed center no-repeat;
+    background-size: cover;
+    background-position-y: 30%;
+}
+
+.blur-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+}
