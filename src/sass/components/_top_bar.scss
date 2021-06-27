@@ -1,7 +1,7 @@
 @use '../abstracts/variables'as c;
 
 .top-bar {
-    height: 8rem;
+    min-height: 9rem;
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -13,7 +13,7 @@
     &__select-label {
         color: c.$main-color;
         font-size: .75rem;
-        margin-right: .5rem;
+        margin-right: .3rem;
         display: inline-block;
         letter-spacing: 0;
     }
@@ -32,7 +32,7 @@
         background-color: c.$secondary-color;
         color: c.$gold-1;
         outline: none;
-        padding: .5rem 7rem .5rem .7rem;
+        padding: .5rem 6rem .5rem .7rem;
         cursor: pointer;
 
         &:hover,
