@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="League of Legends to drużynowa gra z ponad 140 bohaterami, którzy umożliwiają epickie zagrywki. Graj już teraz, za darmo.">
     <title>Rejestracja League of Legends |</title>
     <link rel="stylesheet" href="./src/sass/style.scss">
     <script defer src="./src/client/app.js"></script>
@@ -47,26 +49,33 @@
                 </div>
             </form>
 
-            <p class="main-container__download">POSIADASZ JUŻ KONTO? <a class="main-container__link" href="#">KLIKNIJ, ABY POBRAĆ</a></p>
+            <p class="main-container__download">POSIADASZ JUŻ KONTO? <a class="main-container__link" href="#">KLIKNIJ,
+                    ABY POBRAĆ</a></p>
+
+            <div class="progress-bar">
+                <div class="progress-bar__circle progress-bar__circle--active" id="first-step">
+                    <label class="progress-bar__label progress-bar__label--active" for="first-step">1. KROK</label>
+                </div>
+                <div class="progress-bar__line"></div>
+                <div class="progress-bar__circle" id="second-step">
+                    <label class="progress-bar__label" for="second-step">2. KROK</label>
+                </div>
+                <div class="progress-bar__line"></div>
+                <div class="progress-bar__circle" id="third-step">
+                    <label class="progress-bar__label" for="third-step">3. KROK</label>
+                </div>
+            </div>
         </div>
 
         <label for="select-fixed">Choose aditional options</label>
         <select class="select-fixed" id="select-fixed">
-            <option class="select-fixed__opt" value="">PRAWNE</option>
-            <option class="select-fixed__opt" value="">WSPARCIE</option>
-            <option class="select-fixed__opt" value="">POLITYKA PRYWATNOŚCI</option>
-            <option class="select-fixed__opt" value="">POLITYKA CIASTECZEK</option>
-            <option class="select-fixed__opt" value="">PREFERENCJA CIASTECZEK</option>
-            <option class="select-fixed__opt" value="">WARUNKI UŻYTKOWANIA</option>
+            <option class="select-fixed__opt" value="PRAWNE">PRAWNE</option>
+            <option class="select-fixed__opt" value="WSPARCIE">WSPARCIE</option>
+            <option class="select-fixed__opt" value="POLITYKA PRYWATNOŚCI">POLITYKA PRYWATNOŚCI</option>
+            <option class="select-fixed__opt" value="POLITYKA CIASTECZEK">POLITYKA CIASTECZEK</option>
+            <option class="select-fixed__opt" value="PREFERENCJA CIASTECZEK">PREFERENCJA CIASTECZEK</option>
+            <option class="select-fixed__opt" value="WARUNKI UŻYTKOWANIA">WARUNKI UŻYTKOWANIA</option>
         </select>
-
-        <div class="progress-bar">
-            <div class="progress-bar__circle"></div>
-            <div class="progress-bar__line"></div>
-            <div class="progress-bar__circle"></div>
-            <div class="progress-bar__line"></div>
-            <div class="progress-bar__circle"></div>
-        </div>
     </main>
 
     <footer class="footer">
@@ -75,7 +84,11 @@
                     src="./src/img/riotgames-logo-white-s.png" alt="Riot logo"></a>
             <a href="https://pegi.info/" target="_blank"><img src="./src/img/pegi.jpg" alt="Pegi 12"></a>
         </div>
-        <p class="footer__credits">Nie jest to prawdziwa strona. Powstała ona w celu poszerzenia mojej wiedzy oraz wzbogacenia mojego portfolio dostępnego <a class="footer__link" href="https://github.com/Borub-ar" target="_blank">tutaj</a>. Link do prawdziwej strony League of Legends - <a class="footer__link" href="https://na.leagueoflegends.com/pl-pl/" target="_blank">https://na.leagueoflegends.com/pl-pl/</a>. Dziękuję za uwagę i życzę miłego zwiedzania!</p>
+        <p class="footer__credits">Nie jest to prawdziwa strona. Powstała ona w celu poszerzenia mojej wiedzy oraz
+            wzbogacenia mojego portfolio dostępnego <a class="footer__link" href="https://github.com/Borub-ar"
+                target="_blank">tutaj</a>. Link do prawdziwej strony League of Legends - <a class="footer__link"
+                href="https://na.leagueoflegends.com/pl-pl/" target="_blank">https://na.leagueoflegends.com/pl-pl/</a>.
+            Dziękuję za uwagę i życzę miłego zwiedzania!</p>
     </footer>
 </body>
 
