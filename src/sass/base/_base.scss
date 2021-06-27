@@ -1,3 +1,5 @@
+@use '../abstracts/variables' as c;
+
 *,
 *::after,
 *::before {
@@ -5,7 +7,11 @@
 }
 
 body {
-    font-family: Beaufort-for-LOL; 
+    font-family: Friz-Quadrata-Regular; 
+    letter-spacing: 2px;
+    color: c.$main-color;
 }
 
-
+label {
+    display: none;
+}

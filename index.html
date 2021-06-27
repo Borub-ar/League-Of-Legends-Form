@@ -15,9 +15,40 @@
 
     <header>
         <div class="top-bar">
+            <img class="top-bar__logo" src="./src/img/lol-logo.png" alt="logo of League of Legends">
 
+            <div class="top-bar__inner-con">
+                <label class="top-bar__select-label" for="region-list">REGION:</label>
+                <select class="top-bar__select" id="region-list">
+                    <option value="">EU PÓŁNOC I WSCHÓD (POLSKI)</option>
+                </select>
+            </div>
         </div>
     </header>
+
+    <main>
+        <div class="main-container">
+            <h1 class="main-container__title">TWOJA LEGENDA WŁAŚNIE SIĘ ZACZYNA</h1>
+            <h2 class="main-container__subtitle">NA POCZĄTEK PODAJ SWÓJ ADRES E-MAIL.</h2>
+
+            <img class="main-container__divider" src="./src/img/divider.png" alt="divider">
+
+            <form action="" class="main-container__form">
+                <label class="main-container__email-label" for="email-input">Enter your e-mail</label>
+                <input class="main-container__email" type="email" id="email-input">
+
+                <div class="main-container__btn-border">
+                    <button class="main-container__form-btn">ROZPOCZNIJ</button>
+                </div>
+            </form>
+
+            <p class="main-container__download">POSIADASZ JUŻ KONTO? <a href="">KLIKNIJ, ABY POBRAĆ</a></p>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
 </body>
 
 </html

@@ -1,6 +1,9 @@
+@use '../abstracts/variables'as c;
+@use '../abstracts/mixins'as m;
+
 body {
     padding: 0 2rem;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/suke-22.jpg') fixed center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../img/home-background.jpg') fixed center no-repeat;
     background-size: cover;
     background-position-y: 30%;
 }
@@ -13,4 +16,60 @@ body {
     width: 100vw;
     height: 100vh;
     backdrop-filter: blur(10px);
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__title {
+        font-family: Beaufort-for-LOL;
+        font-weight: 200;
+        color: c.$white-elemets;
+        font-size: 5.4rem;
+        text-align: center;
+        letter-spacing: 4px;
+    }
+
+    &__subtitle {
+        color: c.$main-color;
+        font-weight: 200;
+    }
+
+    &__form {
+        @include m.flexCenter(column);
+    }
+
+    &__email {
+        outline: none;
+        background: transparent;
+        margin: 3rem 0;
+        border: none;
+        border-bottom: 1px solid c.$gold-3;
+        color: c.$gold-1;
+        font-family: Friz-Quadrata-Regular;
+        font-size: 1.8rem;
+    }
+
+    &__btn-border {
+        position: relative;
+    }
+
+    &__form-btn {
+        background-color: c.$secondary-color;
+        color: c.$main-color;
+        font-family: Friz-Quadrata-Regular;
+        border: none;
+        padding: 1.5rem 3rem;
+        font-size: 1rem;
+        letter-spacing: 3px;
+        transition: color .2s;
+        cursor: pointer;
+
+        &:hover {
+            color: c.$gold-1;
+        }
+    }
 }
