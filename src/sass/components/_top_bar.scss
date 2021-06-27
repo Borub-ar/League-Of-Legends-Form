@@ -1,0 +1,43 @@
+@use '../abstracts/variables'as c;
+
+.top-bar {
+    height: 8rem;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    &__inner-con {
+        align-self: center;
+    }
+
+    &__select-label {
+        color: c.$main-color;
+        font-size: .75rem;
+        margin-right: .5rem;
+        display: inline-block;
+        letter-spacing: 0;
+    }
+
+    &__logo {
+        height: 3.5rem;
+        align-self: center;
+        cursor: pointer;
+    }
+
+    &__select {
+        font-family: Friz-Quadrata-Regular;
+        font-weight: 200;
+        align-self: center;
+        border: 2px solid c.$main-color;
+        background-color: c.$secondary-color;
+        color: c.$gold-1;
+        outline: none;
+        padding: .5rem 7rem .5rem .7rem;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            border-color: c.$gold-2;
+        }
+    }
+}
