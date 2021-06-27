@@ -1,0 +1,32 @@
+@use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as c;
+
+.footer {
+    &__img-con {
+        display: flex;
+        align-items: center;
+    }
+
+    &__img {
+        margin-right: 1.5rem;
+    }
+
+    &__credits {
+        margin: 0 auto;
+        font-family: Spiegel,sans-serif;
+        letter-spacing: 1px;
+        padding: .2rem 0;
+        width: 65%;
+        text-align: center;
+        line-height: 2;
+        font-size: .9rem;
+    }
+
+    &__link {
+        color: c.$main-color;
+    }
+}
+
+// .footer__credits {
+//     color: blue;
+// }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rejestracja League of Legends |</title>
     <link rel="stylesheet" href="./src/sass/style.scss">
     <script defer src="./src/client/app.js"></script>
 </head>
@@ -34,8 +34,13 @@
             <img class="main-container__divider" src="./src/img/divider.png" alt="divider">
 
             <form action="" class="main-container__form">
-                <label class="main-container__email-label" for="email-input">Enter your e-mail</label>
-                <input class="main-container__email" type="email" id="email-input">
+
+
+                <div class="main-container__email-con">
+                    <p class="main-container__placeholder">Tutaj wpisz swój adres e-mail</p>
+                    <label class="main-container__email-label" for="email-input">Enter your e-mail</label>
+                    <input class="main-container__email" type="email" id="email-input">
+                </div>
 
                 <div class="main-container__btn-border">
                     <button class="main-container__form-btn">ROZPOCZNIJ</button>
@@ -45,27 +50,32 @@
             <p class="main-container__download">POSIADASZ JUŻ KONTO? <a class="main-container__link" href="#">KLIKNIJ, ABY POBRAĆ</a></p>
         </div>
 
-            <label for="select-fixed">Choose aditional options</label>
-            <select class="select-fixed" id="select-fixed">
-                <option class="select-fixed__opt" value="">PRAWNE</option>
-                <option class="select-fixed__opt" value="">WSPARCIE</option>
-                <option class="select-fixed__opt" value="">POLITYKA PRYWATNOŚCI</option>
-                <option class="select-fixed__opt" value="">POLITYKA CIASTECZEK</option>
-                <option class="select-fixed__opt" value="">PREFERENCJA CIASTECZEK</option>
-                <option class="select-fixed__opt" value="">WARUNKI UŻYTKOWANIA</option>
-            </select>
+        <label for="select-fixed">Choose aditional options</label>
+        <select class="select-fixed" id="select-fixed">
+            <option class="select-fixed__opt" value="">PRAWNE</option>
+            <option class="select-fixed__opt" value="">WSPARCIE</option>
+            <option class="select-fixed__opt" value="">POLITYKA PRYWATNOŚCI</option>
+            <option class="select-fixed__opt" value="">POLITYKA CIASTECZEK</option>
+            <option class="select-fixed__opt" value="">PREFERENCJA CIASTECZEK</option>
+            <option class="select-fixed__opt" value="">WARUNKI UŻYTKOWANIA</option>
+        </select>
 
-            <div class="progress-bar">
-                <div class="progress-bar__circle"></div>
-                <div class="progress-bar__line"></div>
-                <div class="progress-bar__circle"></div>
-                <div class="progress-bar__line"></div>
-                <div class="progress-bar__circle"></div>
-            </div>
+        <div class="progress-bar">
+            <div class="progress-bar__circle"></div>
+            <div class="progress-bar__line"></div>
+            <div class="progress-bar__circle"></div>
+            <div class="progress-bar__line"></div>
+            <div class="progress-bar__circle"></div>
+        </div>
     </main>
 
-    <footer>
-
+    <footer class="footer">
+        <div class="footer__img-con">
+            <a class="footer__img" href="https://www.riotgames.com/en" target="_blank"><img
+                    src="./src/img/riotgames-logo-white-s.png" alt="Riot logo"></a>
+            <a href="https://pegi.info/" target="_blank"><img src="./src/img/pegi.jpg" alt="Pegi 12"></a>
+        </div>
+        <p class="footer__credits">Nie jest to prawdziwa strona. Powstała ona w celu poszerzenia mojej wiedzy oraz wzbogacenia mojego portfolio dostępnego <a class="footer__link" href="https://github.com/Borub-ar" target="_blank">tutaj</a>. Link do prawdziwej strony League of Legends - <a class="footer__link" href="https://na.leagueoflegends.com/pl-pl/" target="_blank">https://na.leagueoflegends.com/pl-pl/</a>. Dziękuję za uwagę i życzę miłego zwiedzania!</p>
     </footer>
 </body>
 

@@ -47,10 +47,25 @@ body {
         @include m.flexCenter(column);
     }
 
+    &__email-con {
+        position: relative;
+    }
+
+    &__placeholder {
+        position: absolute;
+        top: 35%;
+        left: 55%;
+        width: 100%;
+        z-index: -1;
+        color: c.$gold-1;
+        font-size: 1.7rem;
+        transform: translate(-50%, -50%);
+    }
+
     &__email {
+        margin: 3.5rem 0 2rem;
         outline: none;
         background: transparent;
-        margin: 3.5rem 0 2rem;
         border: none;
         border-bottom: 1px solid c.$gold-3;
         color: c.$gold-1;
