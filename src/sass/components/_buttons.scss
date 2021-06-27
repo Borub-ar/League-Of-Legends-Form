@@ -1,0 +1,25 @@
+@use '../abstracts/variables' as c;
+
+.select-fixed {
+    position: fixed;
+    bottom: 5rem;
+    right: 40px;
+    font-size: .7rem;
+    font-family: Friz-Quadrata-Regular;
+    font-weight: 200;
+    align-self: center;
+    border: 2px solid c.$main-color;
+    background-color: c.$black-elements;
+    color: c.$gold-1;
+    outline: none;
+    padding: .5rem 0;
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-align-last: center;
+
+    &__opt {
+       padding: 1rem 0;
+       background-color: c.$secondary-color;
+       line-height: 2;
+    }
+}
