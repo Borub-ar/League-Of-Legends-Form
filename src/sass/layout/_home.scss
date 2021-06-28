@@ -1,11 +1,10 @@
 @use '../abstracts/variables'as c;
 @use '../abstracts/mixins'as m;
 
-body {
-    padding: 0 2rem;
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../img/home-background.jpg') fixed center no-repeat;
+#welcome-page {
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../img/welcome-bg.jpg') fixed center no-repeat;
     background-size: cover;
-    background-position-y: 30%;
+    background-position-y: 15%;
 }
 
 .blur-layer {
@@ -54,12 +53,20 @@ body {
     &__placeholder {
         position: absolute;
         top: 35%;
-        left: 55%;
+        left: 50%;
         width: 100%;
         z-index: -1;
         color: c.$gold-1;
         font-size: 1.7rem;
         transform: translate(-50%, -50%);
+        text-align: center;
+        transition: transform, .3s;
+
+        &--focus {
+            transform: translate(-73%, -130%);
+            font-size: .9rem;
+            color: c.$white-elemets;
+        }
     }
 
     &__email {
@@ -73,29 +80,6 @@ body {
         font-size: 1.7rem;
         min-width: 30rem;
         line-height: 1.7;
-    }
-
-    &__btn-border {
-        @include m.flexCenter;
-        height: 62px;
-        width: 242px;
-        background: linear-gradient(180deg, c.$gold-2, c.$gold-4);
-    }
-
-    &__form-btn {
-        background-color: c.$secondary-color;
-        color: c.$main-color;
-        font-family: Friz-Quadrata-Regular;
-        border: none;
-        padding: 1.2rem 3.4rem;
-        font-size: 1rem;
-        letter-spacing: 3px;
-        transition: color .2s;
-        cursor: pointer;
-
-        &:hover {
-            color: c.$gold-1;
-        }
     }
 
     &__download {
