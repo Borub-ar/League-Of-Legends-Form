@@ -80,6 +80,36 @@
         font-size: 1.7rem;
         min-width: 30rem;
         line-height: 1.7;
+
+        &--error {
+            border-bottom: 2px solid c.$error-red;
+        }
+    }
+
+    &__error-icon {
+        position: absolute;
+        bottom: 2.6rem;
+        right: 1rem;
+        display: none;
+        height: 1.1rem;
+
+        &--show {
+            display: block;
+        }
+    }
+
+    &__error-msg {
+        display: none;
+        color: c.$error-red;
+        font-family: Spiegel,sans-serif;
+        letter-spacing: 1px;
+        font-size: .7rem;
+        margin: -1.4rem 0 3rem;
+        margin-left: -18.5rem;
+
+        &--show {
+            display: block;
+        }
     }
 
     &__download {
