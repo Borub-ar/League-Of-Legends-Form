@@ -1,6 +1,7 @@
 @use '../abstracts/variables' as c;
+@use '../abstracts/mixins' as m;
 
-body {
+#birth-date-page {
     min-height: 100vh;
     background: url(../img/bg-date-of-birth.jpg);
 }
@@ -8,6 +9,14 @@ body {
 .main-container {
     
     &__birth-title {
-        color: white;
+        color: c.$white-elemets;
+        font-size: 2.5rem;
+        letter-spacing: 7px;
+        margin: 0;
+    }
+
+    &__selects-con {
+        margin: 6rem 0;
+        @include m.flexCenter;
     }
 }
