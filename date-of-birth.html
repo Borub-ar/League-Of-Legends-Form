@@ -5,15 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="League of Legends to drużynowa gra z ponad 140 bohaterami, którzy umożliwiają epickie zagrywki. Graj już teraz, za darmo.">
     <title>Rejestracja League of Legends |</title>
+    <meta name="description" content="League of Legends to drużynowa gra z ponad 140 bohaterami, którzy umożliwiają epickie zagrywki. Graj już teraz, za darmo.">
     <link rel="stylesheet" href="./src/sass/style.scss">
-    <script defer src="./src/client/app.js"></script>
+    <!-- <script defer src="./src/client/app.js"></script> -->
 </head>
 
-<body id="welcome-page">
-    <div class="blur-layer"></div>
-
+<body id="birh-date-page">
     <header>
         <div class="top-bar">
             <img class="top-bar__logo" src="./src/img/lol-logo.png" alt="logo of League of Legends">
@@ -29,32 +27,26 @@
 
     <main>
         <div class="main-container">
-            <h1 class="main-container__title">TWOJA LEGENDA WŁAŚNIE SIĘ ZACZYNA</h1>
-            <h2 class="main-container__subtitle">NA POCZĄTEK PODAJ SWÓJ ADRES E-MAIL.</h2>
 
-            <img class="main-container__divider" src="./src/img/divider.png" alt="divider">
+            <h1 class="main-container__birth-title">JAKA JEST TWOJA DATA URODZIN?</h1>
 
-            <form action="" class="main-container__form" autocomplete="off">
-                <div class="main-container__email-con">
-                    <p class="main-container__placeholder">Tutaj wpisz swój adres e-mail</p>
-                    <label class="main-container__email-label" for="email-input">Enter your e-mail</label>
-                    <input class="main-container__email" type="email" id="email-input">
+            <form action="">
+                <div class="main-container__selects-con">
+
                 </div>
 
                 <div class="progress-btn">
-                    <button class="progress-btn__inner">ROZPOCZNIJ</button>
+                    <button class="progress-btn__inner">DALEJ</button>
                 </div>
             </form>
 
-            <p class="main-container__download">POSIADASZ JUŻ KONTO? <a class="main-container__link" href="#">KLIKNIJ, ABY POBRAĆ</a></p>
-
             <div class="progress-bar">
-                <div class="progress-bar__circle progress-bar__circle--active">
-                    <p class="progress-bar__label progress-bar__label--active">1. KROK</p>
+                <div class="progress-bar__circle">
+                    <p class="progress-bar__label">1. KROK</p>
                 </div>
                 <div class="progress-bar__line"></div>
-                <div class="progress-bar__circle">
-                    <p class="progress-bar__label">2. KROK</p>
+                <div class="progress-bar__circle progress-bar__circle--active">
+                    <p class="progress-bar__label progress-bar__label--active">2. KROK</p>
                 </div>
                 <div class="progress-bar__line"></div>
                 <div class="progress-bar__circle">
@@ -62,6 +54,7 @@
                 </div>
             </div>
         </div>
+
 
         <label for="select-fixed">Choose aditional options</label>
         <select class="select-fixed" id="select-fixed">
@@ -84,4 +77,4 @@
     </footer>
 </body>
 
-</html
+</html>

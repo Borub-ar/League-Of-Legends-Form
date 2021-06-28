@@ -1,0 +1,12 @@
+@use '../abstracts/variables' as c;
+
+body {
+    min-height: 100vh;
+    background: url(../img/bg-date-of-birth.jpg);
+}
+
+.main-container {
+    &__birth-title {
+        color: white;
+    }
+}
