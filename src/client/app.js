@@ -1,6 +1,8 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import Swup from 'swup';
+import SwupFormsPlugin from '@swup/forms-plugin';
+
 
 const emailForm = document.querySelector('.main-container__form');
 const emailInput = document.querySelector('.main-container__email');
@@ -9,7 +11,9 @@ const errorIcon = document.querySelector('.main-container__error-icon');
 const errorMsg = document.querySelector('.main-container__error-msg');
 
 // adding swup library for smooth page transition
-const swup = new Swup();
+const swup = new Swup({
+    plugins: [new SwupFormsPlugin()]
+});
 
 class App {
     constructor() {
@@ -23,12 +27,12 @@ class App {
     }
 
     _minimizeEmailPlaceholder() {
-            placeholder.classList.add('main-container__placeholder--focus');
+        placeholder.classList.add('main-container__placeholder--focus');
     }
 
     _normalizeEmailPlaceholder() {
-            if (emailInput.value) return;
-            placeholder.classList.remove('main-container__placeholder--focus');
+        if (emailInput.value) return;
+        placeholder.classList.remove('main-container__placeholder--focus');
     }
 
     _emailValidation(e) {
@@ -36,10 +40,20 @@ class App {
 
         if (!emailInput.value || !regex.test(emailInput.value)) {
             e.preventDefault();
+
+            //removing required swup attribute
+            emailForm.removeAttribute('data-swup-form');
+
             this._showEmailError();
         }
 
-        if (emailInput.value && regex.test(emailInput.value)) this._hideEmailError();
+        if (emailInput.value && regex.test(emailInput.value)) {
+            //setting required swup attribute
+            emailForm.setAttribute('data-swup-form', '');
+            
+            this._hideEmailError();
+        }
+        
     }
 
     _showEmailError() {
@@ -51,7 +65,7 @@ class App {
     _hideEmailError() {
         emailInput.classList.remove('main-container__email--error');
         errorIcon.classList.remove('main-container__error-icon--show');
-        errorMsg.classList.remove('main-container__error-msg--show'); 
+        errorMsg.classList.remove('main-container__error-msg--show');
     }
 }
 
