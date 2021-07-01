@@ -10,7 +10,7 @@ const placeholder = document.querySelector('.main-container__placeholder');
 const errorIcon = document.querySelector('.main-container__error-icon');
 const errorMsg = document.querySelector('.main-container__error-msg');
 
-// adding swup library for smooth page transition
+// Library
 const swup = new Swup({
     plugins: [new SwupFormsPlugin()]
 });
@@ -22,7 +22,6 @@ class App {
         emailInput.addEventListener('focus', this._minimizeEmailPlaceholder.bind(this));
         emailInput.addEventListener('focusout', this._normalizeEmailPlaceholder.bind(this));
         emailInput.addEventListener('focusout', this._emailValidation.bind(this));
-
         emailForm.addEventListener('submit', this._emailValidation.bind(this));
     }
 
@@ -40,20 +39,16 @@ class App {
 
         if (!emailInput.value || !regex.test(emailInput.value)) {
             e.preventDefault();
-
             //removing required swup attribute
             emailForm.removeAttribute('data-swup-form');
-
             this._showEmailError();
         }
 
         if (emailInput.value && regex.test(emailInput.value)) {
             //setting required swup attribute
             emailForm.setAttribute('data-swup-form', '');
-            
             this._hideEmailError();
         }
-        
     }
 
     _showEmailError() {

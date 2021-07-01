@@ -5,6 +5,8 @@
     &__img-con {
         display: flex;
         align-items: center;
+        position: relative;
+        z-index: 5;
     }
 
     &__img {
@@ -12,6 +14,8 @@
     }
 
     &__credits {
+        position: relative;
+        z-index: 5;
         margin: 0 auto;
         font-family: Spiegel,sans-serif;
         letter-spacing: 1px;
