@@ -22,6 +22,7 @@
 
     &__selects-con {
         @include m.flexCenter;
+        position: relative;
         margin: 6rem 0;
     }
 
@@ -40,6 +41,19 @@
 
         &--margin-x {
             margin: 0 .7rem;
+        }
+    }
+
+    &__date-error {
+        position: absolute;
+        top: -2rem;
+        color: c.$error-red;
+        font-family: Spiegel,sans-serif;
+        font-size: .7rem;
+        letter-spacing: 1px;
+
+        &--hidden {
+            display: none;
         }
     }
 }
