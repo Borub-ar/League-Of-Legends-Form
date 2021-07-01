@@ -1,6 +1,18 @@
+@use '../abstracts/variables' as c;
+
 @mixin flexCenter($direction: row) {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: $direction;
+}
+
+@mixin selectStyling {
+    font-family: Friz-Quadrata-Regular;
+    border: 2px solid c.$main-color;
+    background-color: c.$black-elements;
+    cursor: pointer;
+    color: c.$gold-1;
+    outline: none;
+    font-weight: 200;
 }

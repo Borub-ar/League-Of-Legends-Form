@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html date-of-birth.html",
+    "start": "parcel index.html birth-date.html",
     "build": "parcel build index.html"
   },
   "author": "",
