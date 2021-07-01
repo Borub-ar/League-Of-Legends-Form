@@ -10,10 +10,10 @@ const placeholder = document.querySelector('.main-container__placeholder');
 const errorIcon = document.querySelector('.main-container__error-icon');
 const errorMsg = document.querySelector('.main-container__error-msg');
 
-// Library
-const swup = new Swup({
-    plugins: [new SwupFormsPlugin()]
-});
+
+// const swup = new Swup({
+//     plugins: [new SwupFormsPlugin()]
+// });
 
 class App {
     constructor() {
