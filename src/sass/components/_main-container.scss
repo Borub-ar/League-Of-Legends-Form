@@ -1,0 +1,151 @@
+@use '../abstracts/mixins'as m;
+@use '../abstracts/variables'as c;
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__title {
+        font-family: Beaufort-for-LOL;
+        font-weight: 200;
+        color: c.$white-elemets;
+        font-size: 5.4rem;
+        text-align: center;
+        letter-spacing: 4px;
+        margin: 0;
+        line-height: 1.1;
+    }
+
+    &__subtitle {
+        color: c.$main-color;
+        font-weight: 200;
+        font-size: 1rem;
+        margin: 2rem 0;
+        color: c.$gold-5;
+    }
+
+    &__form {
+        @include m.flexCenter(column);
+    }
+
+    &__email-con {
+        position: relative;
+    }
+
+    &__placeholder {
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        width: 100%;
+        z-index: -1;
+        color: c.$gold-1;
+        font-size: 1.7rem;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        transition: transform, .3s;
+
+        &--focus {
+            transform: translate(-73%, -130%);
+            font-size: .9rem;
+            color: c.$white-elemets;
+        }
+    }
+
+    &__email {
+        margin: 3.5rem 0 2rem;
+        outline: none;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid c.$gold-3;
+        color: c.$gold-1;
+        font-family: Friz-Quadrata-Regular;
+        font-size: 1.7rem;
+        min-width: 30rem;
+        line-height: 1.7;
+
+        &--error {
+            border-bottom: 2px solid c.$error-red;
+        }
+    }
+
+    &__error-icon {
+        position: absolute;
+        bottom: 2.6rem;
+        right: 1rem;
+        display: none;
+        height: 1.1rem;
+
+        &--show {
+            display: block;
+        }
+    }
+
+    &__error-msg {
+        display: none;
+        color: c.$error-red;
+        font-family: Spiegel, sans-serif;
+        letter-spacing: 1px;
+        font-size: .7rem;
+        margin: -1.4rem 0 3rem;
+        margin-left: -18.5rem;
+
+        &--show {
+            display: block;
+        }
+    }
+
+    &__download {
+        margin: 2rem 0;
+        font-size: .7rem;
+    }
+
+    &__link {
+        color: c.$gold-1;
+    }
+
+    &__birth-title {
+        color: c.$white-elemets;
+        font-size: 2.5rem;
+        letter-spacing: 7px;
+        margin: 0;
+    }
+
+    &__selects-con {
+        @include m.flexCenter;
+        position: relative;
+        margin: 6rem 0;
+    }
+
+    &__birth-select {
+        @include m.selectStyling;
+        padding: .6rem 1.4rem;
+
+        &:hover,
+        &:focus {
+            border-color: c.$gold-2;
+        }
+
+        &--small {
+            padding: .6rem 1rem;
+        }
+
+        &--margin-x {
+            margin: 0 .7rem;
+        }
+    }
+
+    &__date-error {
+        position: absolute;
+        top: -2rem;
+        color: c.$error-red;
+        font-family: Spiegel,sans-serif;
+        font-size: .7rem;
+        letter-spacing: 1px;
+
+        &--hidden {
+            display: none;
+        }
+    }
+}

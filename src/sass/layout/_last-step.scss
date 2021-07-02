@@ -1,0 +1,7 @@
+@use '../abstracts/mixins' as m;
+
+.last-step-bg {
+    @include m.fixedBackground;
+    background: url('../img/last-step-bg.jpg');
+    z-index: -1;
+}

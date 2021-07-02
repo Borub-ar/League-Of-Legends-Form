@@ -14,9 +14,8 @@ const birthFormValidation = function (e) {
     if ([...formSelects].some(sel => sel.value === '0')) {
         e.preventDefault();
         showError();
-    } else {
-        hideError();
-    }
+    } else hideError();
+    
 };
 
 birthDateForm.addEventListener('submit', birthFormValidation);
