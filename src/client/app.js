@@ -17,7 +17,6 @@ const errorMsg = document.querySelector('.main-container__error-msg');
 
 class App {
     constructor() {
-
         // Add event handlers
         emailInput.addEventListener('focus', this._minimizeEmailPlaceholder.bind(this));
         emailInput.addEventListener('focusout', this._normalizeEmailPlaceholder.bind(this));

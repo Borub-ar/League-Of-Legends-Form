@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rejestracja League of Legends |</title>
-    <meta name="description" content="League of Legends to drużynowa gra z ponad 140 bohaterami, którzy umożliwiają epickie zagrywki. Graj już teraz, za darmo.">
+    <meta name="description"
+        content="League of Legends to drużynowa gra z ponad 140 bohaterami, którzy umożliwiają epickie zagrywki. Graj już teraz, za darmo.">
     <link rel="stylesheet" href="./src/sass/style.scss">
 </head>
 
@@ -24,15 +25,60 @@
         </div>
     </header>
 
-    <label for="select-fixed">Choose aditional options</label>
-    <select class="select-fixed" id="select-fixed">
-        <option class="select-fixed__option" value="PRAWNE">PRAWNE</option>
-        <option class="select-fixed__option" value="WSPARCIE">WSPARCIE</option>
-        <option class="select-fixed__option" value="POLITYKA PRYWATNOŚCI">POLITYKA PRYWATNOŚCI</option>
-        <option class="select-fixed__option" value="POLITYKA CIASTECZEK">POLITYKA CIASTECZEK</option>
-        <option class="select-fixed__option" value="PREFERENCJA CIASTECZEK">PREFERENCJA CIASTECZEK</option>
-        <option class="select-fixed__option" value="WARUNKI UŻYTKOWANIA">WARUNKI UŻYTKOWANIA</option>
-    </select>
+    <main>
+        <div class="last-step-bg"></div>
+
+        <div class="main-container">
+            <h1>NA KONIEC STWÓRZ NAZWĘ URZYTKOWNIAK ORAZ HASŁO.</h1>
+            <h2>SWOJE IMIĘ W GRZE WYBIERZESZ PÓŹNIEJ</h2>
+
+            <form action="#" class="main-container__form">
+                <label for=""></label>
+                <input type="text" name="" id="">
+
+                <label for=""></label>
+                <input type="password" name="" id="">
+
+                <label for=""></label>
+                <input type="password" name="" id="">
+
+                <label for=""></label>
+                <input type="checkbox" name="" id="">
+
+                <label for=""></label>
+                <input type="checkbox" name="" id="">
+
+                <div class="progress-btn progress-btn--margin-xl">
+                    <button class="progress-btn__inner">DALEJ</button>
+                </div>
+            </form>
+
+            <div class="progress-bar">
+                <div class="progress-bar__circle">
+                    <p class="progress-bar__label">1. KROK</p>
+                </div>
+                <div class="progress-bar__line"></div>
+                <div class="progress-bar__circle">
+                    <p class="progress-bar__label">2. KROK</p>
+                </div>
+                <div class="progress-bar__line"></div>
+                <div class="progress-bar__circle progress-bar__circle--active">
+                    <p class="progress-bar__label progress-bar__label--active">3. KROK</p>
+                </div>
+            </div>
+
+            <label for="select-fixed">Choose aditional options</label>
+            <select class="select-fixed" id="select-fixed">
+                <option class="select-fixed__option" value="PRAWNE">PRAWNE</option>
+                <option class="select-fixed__option" value="WSPARCIE">WSPARCIE</option>
+                <option class="select-fixed__option" value="POLITYKA PRYWATNOŚCI">POLITYKA PRYWATNOŚCI</option>
+                <option class="select-fixed__option" value="POLITYKA CIASTECZEK">POLITYKA CIASTECZEK</option>
+                <option class="select-fixed__option" value="PREFERENCJA CIASTECZEK">PREFERENCJA CIASTECZEK</option>
+                <option class="select-fixed__option" value="WARUNKI UŻYTKOWANIA">WARUNKI UŻYTKOWANIA</option>
+            </select>
+        </div>
+    </main>
+
 
     <footer class="footer">
         <div class="footer__img-con">

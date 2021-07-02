@@ -3,57 +3,8 @@
 
 
 .birth-date-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
+    @include m.fixedBackground;
     z-index: -1;
-    width: 100vw;
-    height: 100vh;
     background: url(../img/bg-date-of-birth.jpg);
 }
 
-.main-container {
-    &__birth-title {
-        color: c.$white-elemets;
-        font-size: 2.5rem;
-        letter-spacing: 7px;
-        margin: 0;
-    }
-
-    &__selects-con {
-        @include m.flexCenter;
-        position: relative;
-        margin: 6rem 0;
-    }
-
-    &__birth-select {
-        @include m.selectStyling;
-        padding: .6rem 1.4rem;
-
-        &:hover,
-        &:focus {
-            border-color: c.$gold-2;
-        }
-
-        &--small {
-            padding: .6rem 1rem;
-        }
-
-        &--margin-x {
-            margin: 0 .7rem;
-        }
-    }
-
-    &__date-error {
-        position: absolute;
-        top: -2rem;
-        color: c.$error-red;
-        font-family: Spiegel,sans-serif;
-        font-size: .7rem;
-        letter-spacing: 1px;
-
-        &--hidden {
-            display: none;
-        }
-    }
-}
