@@ -5,7 +5,7 @@ import SwupFormsPlugin from '@swup/forms-plugin';
 
 
 const emailForm = document.querySelector('.main-container__form');
-const emailInput = document.querySelector('.main-container__email');
+const emailInput = document.querySelector('.main-container__input');
 const placeholder = document.querySelector('.main-container__placeholder');
 const errorIcon = document.querySelector('.main-container__error-icon');
 const errorMsg = document.querySelector('.main-container__error-msg');
