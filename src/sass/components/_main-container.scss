@@ -16,6 +16,13 @@
         letter-spacing: 4px;
         margin: 0;
         line-height: 1.1;
+
+        &--small {
+            max-width: 85%;
+            font-size: 2.7rem;
+            letter-spacing: 5px;
+            color: c.$white-elemets;
+        }
     }
 
     &__subtitle {
@@ -30,7 +37,7 @@
         @include m.flexCenter(column);
     }
 
-    &__email-con {
+    &__input-con {
         position: relative;
     }
 
@@ -40,11 +47,17 @@
         left: 50%;
         width: 100%;
         z-index: -1;
-        color: c.$gold-1;
+        color: c.$gold-6;
         font-size: 1.7rem;
         transform: translate(-50%, -50%);
         text-align: center;
         transition: transform, .3s;
+
+        &--small {
+            font-size: .8rem;
+            top: 40%;
+            font-weight: 700;
+        }
 
         &--focus {
             transform: translate(-73%, -130%);
@@ -53,7 +66,7 @@
         }
     }
 
-    &__email {
+    &__input {
         margin: 3.5rem 0 2rem;
         outline: none;
         background: transparent;
@@ -64,6 +77,10 @@
         font-size: 1.7rem;
         min-width: 30rem;
         line-height: 1.7;
+
+        &--margin-s {
+            margin: 2rem 0 2rem;
+        }
 
         &--error {
             border-bottom: 2px solid c.$error-red;
@@ -96,6 +113,26 @@
         }
     }
 
+    &__checkbox {
+        display: inline-block;
+    }
+
+    &__checkbox-label {
+        color: c.$gold-1;
+        max-width: 50%;
+        display: inline-block;
+        font-family: Spiegel,sans-serif;
+        font-size: .8rem;
+    }
+
+    &__label-link {
+        color: c.$gold-1;
+
+        &:hover {
+            color: c.$gold-6;
+        }
+    }
+
     &__download {
         margin: 2rem 0;
         font-size: .7rem;
@@ -103,13 +140,6 @@
 
     &__link {
         color: c.$gold-1;
-    }
-
-    &__birth-title {
-        color: c.$white-elemets;
-        font-size: 2.5rem;
-        letter-spacing: 7px;
-        margin: 0;
     }
 
     &__selects-con {
@@ -140,7 +170,7 @@
         position: absolute;
         top: -2rem;
         color: c.$error-red;
-        font-family: Spiegel,sans-serif;
+        font-family: Spiegel, sans-serif;
         font-size: .7rem;
         letter-spacing: 1px;
 
