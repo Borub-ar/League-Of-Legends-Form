@@ -113,16 +113,30 @@
         }
     }
 
+    &__checkbox-con {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 70%;
+
+        &--margin {
+            margin: 1.5rem 0;
+        }
+    }
+
     &__checkbox {
-        display: inline-block;
+        margin-right: .6rem;
+        height: 18px;
+        width: 18px;
     }
 
     &__checkbox-label {
         color: c.$gold-1;
-        max-width: 50%;
-        display: inline-block;
-        font-family: Spiegel,sans-serif;
+        display: block;
+        font-family: Spiegel, sans-serif;
         font-size: .8rem;
+        letter-spacing: 0;
+        line-height: 1.5;
     }
 
     &__label-link {

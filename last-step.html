@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rejestracja League of Legends |</title>
-    <meta name="description"
-        content="League of Legends to drużynowa gra z ponad 140 bohaterami, którzy umożliwiają epickie zagrywki. Graj już teraz, za darmo.">
+    <meta name="description" content="League of Legends to drużynowa gra z ponad 140 bohaterami, którzy umożliwiają epickie zagrywki. Graj już teraz, za darmo.">
     <link rel="stylesheet" href="./src/sass/style.scss">
+    <script defer src="./src/client/lastStep.js"></script>
 </head>
 
 <body>
@@ -33,7 +33,6 @@
             <h2 class="main-container__subtitle">SWOJE IMIĘ W GRZE WYBIERZESZ PÓŹNIEJ</h2>
 
             <form action="#" class="main-container__form">
-
                 <div class="main-container__input-con">
                     <p class="main-container__placeholder main-container__placeholder--small">NAZWA UŻYTKOWNIKA</p>
                     <label for="name-input">Enter you username</label>
@@ -52,11 +51,16 @@
                     <input class="main-container__input main-container__input--margin-s" type="password" id="password-cof-input">
                 </div>
 
-                <label class="main-container__checkbox-label" for="first-checkbox">Akceptuję <a class="main-container__label-link" href="#">Warunki świadczenia usług</a> oraz przyjmuję do wiadomości - po uprzednim przeczytaniu - Informację o <a class="main-container__label-link" href="#">Polityce prywatnośći</a>.</label>
-                <input class="main-container__checkbox" type="checkbox" id="first-checkbox">
+                <div class="main-container__checkbox-con">
+                    <input class="main-container__checkbox" type="checkbox" id="first-checkbox">
+                    <label class="main-container__checkbox-label" for="first-checkbox">Akceptuję <a class="main-container__label-link" href="#">Warunki świadczenia usług</a> oraz przyjmuję do wiadomości - po uprzednim przeczytaniu - Informację o <a class="main-container__label-link" href="#">Polityce prywatnośći</a>.</label>
+                </div>
 
-                <label class="main-container__checkbox-label" for="second-checkbox">Co jakiś czas będziesz otrzymywać od Riot Games e-maile.</label>
-                <input class="main-container__checkbox" type="checkbox" id="second-checkbox">
+                <div class="main-container__checkbox-con main-container__checkbox-con--margin">
+                    <input class="main-container__checkbox" type="checkbox" id="second-checkbox">
+                    <label class="main-container__checkbox-label" for="second-checkbox">Co jakiś czas będziesz otrzymywać od Riot Games e-maile.</label>
+                </div>
+
 
                 <div class="progress-btn progress-btn--margin-xl">
                     <button class="progress-btn__inner">DALEJ</button>
