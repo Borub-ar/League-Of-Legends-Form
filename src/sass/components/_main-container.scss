@@ -2,10 +2,7 @@
 @use '../abstracts/variables'as c;
 
 .main-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include m.flexCenter(column);
 
     &__title {
         font-family: Beaufort-for-LOL;
