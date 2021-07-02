@@ -2,6 +2,7 @@
 
 .last-step-bg {
     @include m.fixedBackground;
-    background: url('../img/last-step-bg.jpg');
+    background: url('../img/last-step-bg.jpg') fixed no-repeat;
+    background-size: cover;
     z-index: -1;
 }

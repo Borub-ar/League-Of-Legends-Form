@@ -1,10 +1,9 @@
-@use '../abstracts/variables' as c;
 @use '../abstracts/mixins' as m;
-
 
 .birth-date-bg {
     @include m.fixedBackground;
+    background: url(../img/bg-date-of-birth.jpg) fixed no-repeat;
+    background-size: cover;
     z-index: -1;
-    background: url(../img/bg-date-of-birth.jpg);
 }
 

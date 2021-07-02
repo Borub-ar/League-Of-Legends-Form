@@ -1,11 +1,10 @@
-@use '../abstracts/variables'as c;
 @use '../abstracts/mixins'as m;
 
 .welcome-page-bg {
     @include m.fixedBackground;
-    z-index: -2;
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../img/welcome-bg.jpg') fixed center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../img/welcome-bg.jpg') fixed no-repeat;
     background-size: cover;
+    z-index: -2;
     background-position-y: 15%;
 }
 
@@ -15,7 +14,7 @@
     left: 0;
     z-index: -1;
     width: 100vw;
-    height: 100%;
+    height: 100vh;
     backdrop-filter: blur(10px);
 }
 

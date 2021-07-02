@@ -1,7 +1,10 @@
-@use '../abstracts/mixins' as m;
-@use '../abstracts/variables' as c;
+@use '../abstracts/mixins'as m;
+@use '../abstracts/variables'as c;
 
 .footer {
+    display: flex;
+    flex-direction: column;
+
     &__img-con {
         display: flex;
         align-items: center;
@@ -17,7 +20,7 @@
         position: relative;
         z-index: 5;
         margin: 0 auto;
-        font-family: Spiegel,sans-serif;
+        font-family: Spiegel, sans-serif;
         letter-spacing: 1px;
         padding: .2rem 0;
         width: 65%;
@@ -30,4 +33,3 @@
         color: c.$main-color;
     }
 }
-
