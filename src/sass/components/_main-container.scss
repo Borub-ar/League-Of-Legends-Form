@@ -1,9 +1,10 @@
 @use '../abstracts/mixins'as m;
 @use '../abstracts/variables'as c;
+@use '../abstracts/media-queries' as *;
 
 .main-container {
     @include m.flexCenter(column);
-
+        
     &__title {
         font-family: Beaufort-for-LOL;
         font-weight: 200;
@@ -13,6 +14,10 @@
         letter-spacing: 4px;
         margin: 0;
         line-height: 1.1;
+
+        @include responsive {
+            font-size: clamp(3.5rem, 10vw, 7rem);
+        }
 
         &--small {
             max-width: 85%;
@@ -28,6 +33,15 @@
         font-size: 1rem;
         margin: 2rem 0;
         color: c.$gold-5;
+    }
+
+    &__divider {
+        width: clamp(54rem, 70vw, 70rem);
+        height: 6rem;
+
+        @include responsive {
+            height: clamp(2rem, 7vh, 9rem);
+        }
     }
 
     &__form {
