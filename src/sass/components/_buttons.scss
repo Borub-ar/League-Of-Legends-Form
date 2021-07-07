@@ -1,5 +1,54 @@
-@use '../abstracts/variables' as c;
-@use '../abstracts/mixins' as m;
+@use '../abstracts/variables'as c;
+@use '../abstracts/mixins'as m;
+@use '../abstracts/media-queries'as *;
+
+
+.select-region {
+    font-family: Friz-Quadrata-Regular;
+    font-weight: 200;
+    border: 2px solid c.$main-color;
+    background-color: c.$secondary-color;
+    color: c.$gold-1;
+    outline: none;
+    padding: .5rem 6rem .5rem .7rem;
+    cursor: pointer;
+
+    @include responsive {
+        display: none;
+    }
+
+    &:hover,
+    &:focus {
+        border-color: c.$gold-2;
+    }
+
+    &--responsive {
+        display: none;
+
+        @include responsive {
+            display: block;
+            margin: .5rem 0 2rem;
+            background-color: c.$black-elements;
+            width: clamp(15rem, 80vw, 20rem);
+        }
+    }
+
+    &__label {
+        color: c.$main-color;
+        font-size: .75rem;
+        margin-right: .3rem;
+        display: inline-block;
+        letter-spacing: 0;
+
+        &--hidden {
+            display: none;
+        }
+
+        @include responsive {
+            display: none;
+        }
+    }
+}
 
 .select-fixed {
     @include m.selectStyling;
@@ -13,10 +62,16 @@
     letter-spacing: 2px;
     text-align-last: center;
 
+    @include responsive {
+        position: static;
+        margin-top: 2rem;
+        text-align-last: left;
+        padding-left: 1.5rem;
+        width: clamp(12rem, 50vw, 26rem);
+    }
+
     &__option {
-       padding: 1rem 0;
-       background-color: c.$secondary-color;
-       line-height: 2;
+        background-color: c.$secondary-color;
     }
 }
 
@@ -25,6 +80,10 @@
     height: 62px;
     width: 242px;
     background: linear-gradient(180deg, c.$gold-2, c.$gold-4);
+
+    @include responsive {
+        margin-bottom: 1rem;
+    }
 
     &__inner {
         background-color: c.$secondary-color;
@@ -45,5 +104,9 @@
 
     &--margin-xl {
         margin-bottom: 2.6rem;
+
+        @include responsive {
+            margin-bottom: 2rem;
+        }
     }
 }

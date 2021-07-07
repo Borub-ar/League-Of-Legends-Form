@@ -1,10 +1,10 @@
 @use '../abstracts/mixins'as m;
 @use '../abstracts/variables'as c;
+@use '../abstracts/media-queries' as *;
 
 .progress-bar {
     @include m.flexCenter;
     height: 4rem;
-    width: 25vw;
 
     &__circle {
         position: relative;
@@ -46,7 +46,7 @@
     }
 
     &__line {
-        width: 7rem;
+        width: clamp(2rem, 20vw, 7rem);
         border-top: 1px solid c.$main-color;
     }
 

@@ -13,48 +13,12 @@
         justify-content: center;
     }
 
-    &__inner-con {
-        align-self: center;
-    }
-
-    &__select-label {
-        color: c.$main-color;
-        font-size: .75rem;
-        margin-right: .3rem;
-        display: inline-block;
-        letter-spacing: 0;
-
-        @include responsive {
-            display: none;
-        }
-    }
-
     &__logo {
         height: 3.5rem;
         cursor: pointer;
 
         @include responsive {
             height: 6rem;
-        }
-    }
-
-    &__select {
-        font-family: Friz-Quadrata-Regular;
-        font-weight: 200;
-        border: 2px solid c.$main-color;
-        background-color: c.$secondary-color;
-        color: c.$gold-1;
-        outline: none;
-        padding: .5rem 6rem .5rem .7rem;
-        cursor: pointer;
-
-        @include responsive {
-            display: none;
-        }
-
-        &:hover,
-        &:focus {
-            border-color: c.$gold-2;
         }
     }
 }

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel index.html birth-date.html last-step.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html birth-date.html last-step.html"
   },
   "author": "",
   "license": "ISC",

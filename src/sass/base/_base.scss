@@ -1,5 +1,6 @@
 @use '../abstracts/variables' as c;
 @use '../abstracts/mixins' as m;
+@use '../abstracts/media-queries' as *;
 
 *,
 *::after,
@@ -16,6 +17,10 @@ body {
     letter-spacing: 2px;
     color: c.$main-color;
     padding: 0 2rem;
+
+    @include responsive {
+        padding: 0;
+    }
 }
 
 label {

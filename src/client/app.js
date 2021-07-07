@@ -38,13 +38,13 @@ class App {
 
         if (!emailInput.value || !regex.test(emailInput.value)) {
             e.preventDefault();
-            //removing required swup attribute
+            // removing required swup attribute
             // emailForm.removeAttribute('data-swup-form');
             this._showEmailError();
         }
 
         if (emailInput.value && regex.test(emailInput.value)) {
-            //setting required swup attribute
+            // setting required swup attribute
             // emailForm.setAttribute('data-swup-form', '');
             this._hideEmailError();
         }

@@ -1,6 +1,6 @@
 @use '../abstracts/mixins'as m;
 @use '../abstracts/variables'as c;
-@use '../abstracts/media-queries' as *;
+@use '../abstracts/media-queries'as *;
 
 .footer {
     display: flex;
@@ -43,7 +43,8 @@
         font-size: .9rem;
 
         @include responsive {
-            width: 90%;
+            width: 95%;
+            line-height: 1.2;
         }
     }
 
