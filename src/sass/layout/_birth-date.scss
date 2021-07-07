@@ -2,7 +2,7 @@
 
 .birth-date-bg {
     @include m.fixedBackground;
-    background: url(../img/bg-date-of-birth.jpg) fixed no-repeat;
+    background: url(../img/bg-date-of-birth.jpg) fixed no-repeat center;
     background-size: cover;
     z-index: -1;
 }

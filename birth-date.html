@@ -17,12 +17,10 @@
         <div class="top-bar">
             <img class="top-bar__logo" src="./src/img/lol-logo.png" alt="logo of League of Legends">
 
-            <div class="top-bar__inner-con">
-                <label class="top-bar__select-label" for="region-list">REGION:</label>
-                <select class="top-bar__select" id="region-list">
-                    <option value="">EU PÓŁNOC I WSCHÓD (POLSKI)</option>
-                </select>
-            </div>
+            <select class="select-region" id="region-list">
+                <label class="select-region__label" for="region-list">REGION:</label>
+                <option value="EU PÓŁNOC I WSCHÓD">EU PÓŁNOC I WSCHÓD (POLSKI)</option>
+            </select>
         </div>
     </header>
 
@@ -134,6 +132,11 @@
                 </div>
             </form>
 
+            <select class="select-region select-region--responsive" id="region-list">
+                <label class="select-region__label" for="region-list">REGION:</label>
+                <option value="EU PÓŁNOC I WSCHÓD">EU PÓŁNOC I WSCHÓD (POLSKI)</option>
+            </select>
+
             <div class="progress-bar">
                 <div class="progress-bar__circle">
                     <p class="progress-bar__label">1. KROK</p>
@@ -147,23 +150,23 @@
                     <p class="progress-bar__label">3. KROK</p>
                 </div>
             </div>
-        </div>
 
-        <label for="select-fixed">Choose aditional options</label>
-        <select class="select-fixed" id="select-fixed">
-            <option class="select-fixed__option" value="PRAWNE">PRAWNE</option>
-            <option class="select-fixed__option" value="WSPARCIE">WSPARCIE</option>
-            <option class="select-fixed__option" value="POLITYKA PRYWATNOŚCI">POLITYKA PRYWATNOŚCI</option>
-            <option class="select-fixed__option" value="POLITYKA CIASTECZEK">POLITYKA CIASTECZEK</option>
-            <option class="select-fixed__option" value="PREFERENCJA CIASTECZEK">PREFERENCJA CIASTECZEK</option>
-            <option class="select-fixed__option" value="WARUNKI UŻYTKOWANIA">WARUNKI UŻYTKOWANIA</option>
-        </select>
+            <label for="select-fixed">Choose aditional options</label>
+            <select class="select-fixed" id="select-fixed">
+                <option class="select-fixed__option" value="PRAWNE">PRAWNE</option>
+                <option class="select-fixed__option" value="WSPARCIE">WSPARCIE</option>
+                <option class="select-fixed__option" value="POLITYKA PRYWATNOŚCI">POLITYKA PRYWATNOŚCI</option>
+                <option class="select-fixed__option" value="POLITYKA CIASTECZEK">POLITYKA CIASTECZEK</option>
+                <option class="select-fixed__option" value="PREFERENCJA CIASTECZEK">PREFERENCJA CIASTECZEK</option>
+                <option class="select-fixed__option" value="WARUNKI UŻYTKOWANIA">WARUNKI UŻYTKOWANIA</option>
+            </select>
+        </div>
     </main>
 
     <footer class="footer">
         <div class="footer__img-con">
-            <a class="footer__img" href="#" target="_blank"><img src="./src/img/riotgames-logo-white-s.png"
-                    alt="Riot logo"></a>
+            <a class="footer__img footer__img--margin-vertical" href="#" target="_blank"><img
+                    src="./src/img/riotgames-logo-white-s.png" alt="Riot logo"></a>
             <a href="#" target="_blank"><img src="./src/img/pegi.jpg" alt="Pegi 12"></a>
         </div>
         <p class="footer__credits">Nie jest to prawdziwa strona. Powstała ona w celu poszerzenia mojej wiedzy oraz
