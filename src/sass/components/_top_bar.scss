@@ -1,7 +1,8 @@
 @use '../abstracts/variables'as c;
-@use '../abstracts/media-queries' as *;
+@use '../abstracts/media-queries'as *;
 
 .top-bar {
+    position: relative;
     min-height: 9rem;
     display: flex;
     align-items: center;
@@ -18,6 +19,22 @@
 
         @include responsive {
             height: 6rem;
+        }
+    }
+
+    &__divider {
+        display: block;
+        background: url(https://lolstatic-a.akamaihd.net/frontpage/apps/prod/signup/pl_PL/6e82421c55921f66bb79de5bff5d2216d964650f/assets/pl_PL/assets/hangtag.svg) no-repeat;
+        background-position: bottom;
+        background-size: cover;
+        position: absolute;
+        top: -14rem;
+        left: 50%;
+        width: 18px;
+        height: 50vh;
+
+        @include responsive {
+            display: none;
         }
     }
 }

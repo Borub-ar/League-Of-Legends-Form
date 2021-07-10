@@ -21,7 +21,7 @@
         }
 
         &--small {
-            max-width: 95%;
+            max-width: 90%;
             font-size: 2.7rem;
             letter-spacing: 6px;
             color: c.$white-elemets;
@@ -71,9 +71,13 @@
         position: relative;
         margin: 3.5rem 0 2rem;
 
+        &--small {
+            margin: 2rem 0 1rem;
+        }
+
         @include responsive {
             overflow: hidden;
-            margin-top: 2rem;
+            margin-top: 0rem;
         }
     }
 
@@ -91,19 +95,26 @@
 
         @include responsive {
             transform: scale(.5) translate(-100%, -160%);
-            top: 40%;
+            top: 45%;
+            color: c.$bright-elements;
         }
 
         &--small {
-            font-size: .9rem;
-            top: 40%;
+            color: c.$bright-elements;
+            font-size: .8rem;
+            top: 20%;
             font-weight: 700;
+
+            @include responsive {
+                top: 45%;
+                font-size: 1.7rem;
+            }
         }
 
         &--focus {
             transform: translate(-67%, -180%);
             font-size: .8rem;
-            color: c.$white-elemets;
+            color: c.$bright-elements;
 
             @include responsive-small {
                 transform: translate(-50%, -180%);
@@ -112,6 +123,8 @@
     }
 
     &__input {
+        position: relative;
+        z-index: 1;
         outline: none;
         background: transparent;
         border: none;
@@ -125,11 +138,7 @@
         @include responsive {
             margin-top: 2rem;
             min-width: 0;
-            width: c.$inputs-width;
-        }
-
-        &--margin-s {
-            margin: 2rem 0 2rem;
+            width: clamp(8rem, 90vw, 30rem);
         }
 
         &--error {
@@ -172,16 +181,23 @@
         align-items: center;
         justify-content: flex-start;
         width: 70%;
+        margin-top: .7rem;
 
-        &--margin {
-            margin: 1.5rem 0;
+        @include responsive {
+            width: 90%;
+        }
+
+        &--m-bottom {
+            margin-bottom: 1.7rem;
         }
     }
 
     &__checkbox {
         margin-right: .6rem;
-        height: 18px;
-        width: 18px;
+        min-height: 18px;
+        min-width: 18px;
+        background-color: c.$black-elements;
+        border: 2px solid c.$main-color;
     }
 
     &__checkbox-label {
@@ -197,7 +213,7 @@
         color: c.$gold-1;
 
         &:hover {
-            color: c.$gold-6;
+            color: c.$bright-elements;
         }
     }
 
@@ -208,7 +224,41 @@
     }
 
     &__link {
+        position: relative;
+        text-decoration: none;
         color: c.$gold-1;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -.3rem;
+            width: 100%;
+            height: 1px;
+            background-color: c.$dark-elements;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            z-index: 5;
+            bottom: -.3rem;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: c.$bright-elements;
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform .2s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        &:hover {
+            color: c.$bright-elements;
+        }
+
+        &:hover::after {
+            color: c.$bright-elements;
+            transform: scaleX(1);
+        }
     }
 
     &__selects-con {

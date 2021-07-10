@@ -39,6 +39,7 @@
         font-size: .7rem;
         min-width: 4rem;
         transform: translate(-50%, -50%);
+        color: c.$dark-elements;
 
         &--active {
             color: c.$gold-1;
@@ -46,7 +47,7 @@
     }
 
     &__line {
-        width: clamp(2rem, 20vw, 7rem);
+        width: clamp(2rem, 24vw, 7rem);
         border-top: 1px solid c.$main-color;
     }
 
