@@ -1,10 +1,10 @@
 @use '../abstracts/mixins'as m;
 @use '../abstracts/variables'as c;
-@use '../abstracts/media-queries' as *;
+@use '../abstracts/media-queries'as *;
 
 .main-container {
     @include m.flexCenter(column);
-        
+
     &__title {
         font-family: Beaufort-for-LOL;
         font-weight: 200;
@@ -44,26 +44,22 @@
             font-size: .8rem;
             text-align: center;
             margin: 1rem 0 4rem;
-            width: 95%;
+            width: 98%;
         }
     }
 
     &__divider-con {
         @include responsive {
-            display: flex;
-            justify-content: center;
+            @include m.flexCenter;
             overflow: hidden;
-            width: 100vw;
         }
     }
 
     &__divider {
-        width: clamp(60rem ,90vw, 70rem);
+        width: clamp(60rem, 90vw, 70rem);
 
         @include responsive {
-            object-fit: cover;
-            width: clamp(43rem, 100vw, 90rem);
-
+            width: clamp(43rem, 100%, 90rem);
         }
     }
 
@@ -76,6 +72,7 @@
         margin: 3.5rem 0 2rem;
 
         @include responsive {
+            overflow: hidden;
             margin-top: 2rem;
         }
     }
@@ -84,8 +81,8 @@
         position: absolute;
         top: -20%;
         left: 50%;
-        width: 150%;
         z-index: -1;
+        width: 150%;
         color: c.$gold-1;
         font-size: 1.7rem;
         transform: translate(-50%, -50%);
@@ -107,6 +104,10 @@
             transform: translate(-67%, -180%);
             font-size: .8rem;
             color: c.$white-elemets;
+
+            @include responsive-small {
+                transform: translate(-50%, -180%);
+            }
         }
     }
 
@@ -157,6 +158,10 @@
         margin: -1.4rem 0 3rem;
         margin-left: -18.5rem;
 
+        @include responsive-small {
+            margin-left: 0;
+        }
+
         &--show {
             display: block;
         }
@@ -198,7 +203,7 @@
 
     &__download {
         margin: 2rem 0;
-        font-size: .7rem;   
+        font-size: .7rem;
         text-align: center;
     }
 

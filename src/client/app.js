@@ -51,7 +51,7 @@ class App {
     }
 
     _showEmailError() {
-        emailInput.classList.add('main-container__email--error');
+        emailInput.classList.add('main-container__input--error');
         errorIcon.classList.add('main-container__error-icon--show');
         errorMsg.classList.add('main-container__error-msg--show');
     }
