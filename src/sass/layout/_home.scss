@@ -2,20 +2,20 @@
 
 .welcome-page-bg {
     @include m.fixedBackground;
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('../img/welcome-bg.jpg') fixed no-repeat center;
+    background: linear-gradient(#000000bf, #000000bf), url('../img/welcome-bg.jpg') fixed no-repeat center;
     background-size: cover;
     z-index: -2;
     background-position-y: 15%;
+
+    &::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: inherit;
+        -webkit-filter: blur(8px);
+        -moz-filter: blur(8px);
+        -o-filter: blur(8px);
+        -ms-filter: blur(8px);
+        filter: blur(8px);
+    }
 }
-
-.blur-layer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100vw;
-    height: 100vh;
-    backdrop-filter: blur(10px);
-}
-
-
