@@ -37,7 +37,7 @@
         font-family: Spiegel, sans-serif;
         letter-spacing: 1px;
         padding: .2rem 0;
-        width: 65%;
+        width: 80%;
         text-align: center;
         line-height: 2;
         font-size: .9rem;
@@ -45,6 +45,7 @@
         @include responsive {
             width: 95%;
             line-height: 1.2;
+            padding: .8rem 0 .5rem;
         }
     }
 
