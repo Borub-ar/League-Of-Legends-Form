@@ -19,3 +19,4 @@ const birthFormValidation = function (e) {
 };
 
 birthDateForm.addEventListener('submit', birthFormValidation);
+formSelects.forEach(sel => sel.addEventListener('focusout', birthFormValidation));

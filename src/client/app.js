@@ -57,7 +57,7 @@ class App {
     }
 
     _hideEmailError() {
-        emailInput.classList.remove('main-container__email--error');
+        emailInput.classList.remove('main-container__input--error');
         errorIcon.classList.remove('main-container__error-icon--show');
         errorMsg.classList.remove('main-container__error-msg--show');
     }
