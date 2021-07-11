@@ -1,5 +1,7 @@
+import 'normalize.css';
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
+
 import Swup from 'swup';
 import SwupFormsPlugin from '@swup/forms-plugin';
 

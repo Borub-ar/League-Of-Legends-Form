@@ -85,13 +85,14 @@
         position: absolute;
         top: -20%;
         left: 50%;
-        z-index: -1;
+        z-index: 3;
         width: 150%;
         color: c.$gold-1;
         font-size: 1.7rem;
         transform: translate(-50%, -50%);
         text-align: center;
         transition: transform, .4s;
+        pointer-events: none;
 
         @include responsive {
             transform: scale(.5) translate(-100%, -160%);
@@ -274,6 +275,7 @@
 
     &__birth-select {
         @include m.selectStyling;
+        @include m.selectStyleReset;
         background-color: c.$secondary-color;
         padding: .6rem 1.4rem;
 

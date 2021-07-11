@@ -28,10 +28,10 @@
         background-position: bottom;
         background-size: cover;
         position: absolute;
-        top: -14rem;
+        top: 0;
         left: 50%;
         width: 18px;
-        height: 50vh;
+        height: 19vh;
 
         @include responsive {
             display: none;

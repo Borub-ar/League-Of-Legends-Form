@@ -9,12 +9,12 @@
 
 @mixin selectStyling {
     font-family: Friz-Quadrata-Regular;
+    font-weight: 200;
     border: 2px solid c.$main-color;
     background-color: c.$black-elements;
     cursor: pointer;
     color: c.$gold-1;
     outline: none;
-    font-weight: 200;
 }
 
 @mixin fixedBackground {
@@ -23,4 +23,10 @@
     left: 0;
     width: 100vw;
     height: 100vh;
+}
+
+@mixin selectStyleReset {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border-radius: 0;
 }
