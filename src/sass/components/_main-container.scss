@@ -85,7 +85,7 @@
         position: absolute;
         top: -45%;
         left: 50%;
-        z-index: 2;
+        z-index: 5;
         width: 150%;
         color: c.$gold-1;
         font-size: 1.7rem;
@@ -95,7 +95,7 @@
         pointer-events: none;
 
         @include responsive {
-            transform: scale(.5) translate(-100%, -160%);
+            transform: scale(.5) translate(-100%, -190%);
             top: 45%;
             color: c.$bright-elements;
         }
