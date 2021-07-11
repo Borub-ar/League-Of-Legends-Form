@@ -25,8 +25,10 @@
             margin-right: 0;
         }
 
-        &--margin-vertical {
-            margin: 1.5rem 0;
+        &--margin-ver {
+            @include responsive {
+                margin: 1rem 0;
+            }
         }
     }
 

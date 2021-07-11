@@ -28,6 +28,14 @@
         }
     }
 
+    &--margin-x {
+        margin: 0 .7rem;
+
+        @include responsive {
+            margin: 0;
+        }
+    }
+
     &__select {
         @include m.selectStyleReset;
         @include m.selectStyling;
@@ -68,6 +76,18 @@
                 width: clamp(15rem, 80vw, 20rem);
             }
         }
+
+        &--birth-date {
+            background-color: c.$secondary-color;
+            padding: .6rem 2.2rem .6rem 1rem;
+            text-align-last: left;
+
+            @include responsive {
+                display: block;
+                width: clamp(13rem, 80vw, 35rem);
+                margin-bottom: 1rem;
+            }
+        }
     }
 
     &__arrow {
@@ -79,6 +99,10 @@
         width: 3rem;
         pointer-events: none;
 
+        &--narrow {
+            width: 2.3rem;
+        }
+
         &::before {
             content: '';
             position: absolute;
@@ -87,9 +111,9 @@
             transform: translate(-50%, -50%);
             height: 0;
             width: 0;
-            border-left: .3em solid transparent;
-            border-right: .3em solid transparent;
-            border-top: .3em solid c.$main-color;
+            border-left: .25em solid transparent;
+            border-right: .25em solid transparent;
+            border-top: .25em solid c.$main-color;
         }
 
         &--hidden {
@@ -115,12 +139,6 @@
         }
     }
 }
-
-
-
-
-
-
 
 
 .progress-btn {
