@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="https://lolstatic-a.akamaihd.net/lolkit/1.1.9/resources/images/favicon.ico"
         type="image/vnd.microsoft.icon">
     <link rel="stylesheet" href="./src/sass/style.scss">
-    <script defer src="./src/client/birthDate.js"></script>
+    <script defer src="./src/client/app.js"></script>
 </head>
 
 <body>
@@ -31,6 +31,9 @@
 
     <main>
         <div class="main-container transition-fade" id="swup">
+            <!-- This id allows Swup.js to recognize on which page you are currently -->
+            <div id="birth-date-page"></div>
+
             <div class="birth-date-bg"></div>
 
             <h1 class="main-container__title main-container__title--small">JAKA JEST DATA TWOICH URODZIN?</h1>
@@ -183,7 +186,8 @@
 
     <footer class="footer">
         <div class="footer__img-con">
-            <a class="footer__img footer__img--margin-ver" href="#"><img src="./src/img/riotgames-logo-white-s.png" alt="Riot logo"></a>
+            <a class="footer__img footer__img--margin-ver" href="/index.html"><img
+                    src="./src/img/riotgames-logo-white-s.png" alt="Riot logo"></a>
             <a class="footer__img" href="#"><img src="./src/img/pegi.jpg" alt="Pegi 12"></a>
         </div>
         <p class="footer__credits">Nie jest to prawdziwa strona. Powstała ona w celu poszerzenia mojej wiedzy oraz
