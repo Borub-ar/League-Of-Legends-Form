@@ -5,6 +5,20 @@
 .custom-select {
     position: relative;
 
+    &--fixed {
+        position: fixed;
+        z-index: 10;
+        bottom: 6.5rem;
+        right: 40px;
+
+        @include responsive {
+            position: relative;
+            bottom: 0;
+            right: 0;
+            margin-top: 2rem;
+        }
+    }
+
     &--responsive {
         display: none;
 
@@ -30,6 +44,21 @@
             border-color: c.$gold-2;
         }
 
+        &--fixed {
+            font-size: .7rem;
+            align-self: center;
+            padding: .5rem 0;
+            letter-spacing: 2px;
+            text-align-last: center;
+
+            @include responsive {
+                display: block;
+                text-align-last: left;
+                padding-left: 1.5rem;
+                width: clamp(12rem, 50vw, 26rem);
+            }
+        }
+
         &--responsive {
             display: none;
 
@@ -43,13 +72,31 @@
 
     &__arrow {
         position: absolute;
-        top: 50%;
-        right: 1rem;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        height: 100%;
+        width: 3rem;
         pointer-events: none;
-        height: 1rem;
-        width: 1rem;
-        background-color: aqua;
-        transform: translateY(-50%);
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 0;
+            width: 0;
+            border-left: .3em solid transparent;
+            border-right: .3em solid transparent;
+            border-top: .3em solid c.$main-color;
+        }
+
+        &--hidden {
+            @include responsive {
+                display: none;
+            }
+        }
     }
 
     &__label {
@@ -68,49 +115,6 @@
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-.select-fixed {
-    @include m.selectStyling;
-    @include m.selectStyleReset;
-    position: fixed;
-    z-index: 10;
-    bottom: 6.5rem;
-    right: 40px;
-    font-size: .7rem;
-    align-self: center;
-    padding: .5rem 0;
-    letter-spacing: 2px;
-    text-align-last: center;
-
-    @include responsive {
-        position: static;
-        margin-top: 2rem;
-        text-align-last: left;
-        padding-left: 1.5rem;
-        width: clamp(12rem, 50vw, 26rem);
-    }
-
-    &__option {
-        background-color: c.$secondary-color;
-    }
-}
-
-
-
-
-
-
-
-
 
 
 

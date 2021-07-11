@@ -22,7 +22,7 @@
                 <select class="custom-select__select" id="region-list">
                     <option value="EU PÓŁNOC I WSCHÓD">EU PÓŁNOC I WSCHÓD (POLSKI)</option>
                 </select>
-                <span class="custom-select__arrow"></span>
+                <span class="custom-select__arrow custom-select__arrow--hidden"></span>
             </div>
         </div>
     </header>
@@ -157,15 +157,18 @@
                 </div>
             </div>
 
-            <label for="select-fixed">Choose aditional options</label>
-            <select class="select-fixed" id="select-fixed">
-                <option class="select-fixed__option" value="PRAWNE">PRAWNE</option>
-                <option class="select-fixed__option" value="WSPARCIE">WSPARCIE</option>
-                <option class="select-fixed__option" value="POLITYKA PRYWATNOŚCI">POLITYKA PRYWATNOŚCI</option>
-                <option class="select-fixed__option" value="POLITYKA CIASTECZEK">POLITYKA CIASTECZEK</option>
-                <option class="select-fixed__option" value="PREFERENCJA CIASTECZEK">PREFERENCJA CIASTECZEK</option>
-                <option class="select-fixed__option" value="WARUNKI UŻYTKOWANIA">WARUNKI UŻYTKOWANIA</option>
-            </select>
+            <div class="custom-select custom-select--fixed">
+                <label for="select-fixed">Choose aditional options</label>
+                <select class="custom-select__select custom-select__select--fixed" id="region-list">
+                    <option value="PRAWNE">PRAWNE</option>
+                    <option value="WSPARCIE">WSPARCIE</option>
+                    <option value="POLITYKA PRYWATNOŚCI">POLITYKA PRYWATNOŚCI</option>
+                    <option value="POLITYKA CIASTECZEK">POLITYKA CIASTECZEK</option>
+                    <option value="PREFERENCJA CIASTECZEK">PREFERENCJA CIASTECZEK</option>
+                    <option value="WARUNKI UŻYTKOWANIA">WARUNKI UŻYTKOWANIA</option>
+                </select>
+                <span class="custom-select__arrow"></span>
+            </div>
         </div>
     </main>
 
