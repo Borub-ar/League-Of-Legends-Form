@@ -2,10 +2,10 @@
   "name": "leagueform",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
+  "default": "index.html",
   "scripts": {
     "start": "parcel index.html birth-date.html last-step.html",
-    "build": "parcel build index.html birth-date.html last-step.html"
+    "build": "parcel build index.html birth-date.html last-step.html --dist-dir ./dist"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +17,7 @@
   "dependencies": {
     "@swup/forms-plugin": "^1.1.1",
     "core-js": "^3.15.1",
+    "normalize.css": "^8.0.1",
     "regenerator-runtime": "^0.13.7",
     "swup": "^2.0.14"
   }

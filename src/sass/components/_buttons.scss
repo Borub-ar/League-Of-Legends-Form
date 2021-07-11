@@ -2,25 +2,8 @@
 @use '../abstracts/mixins'as m;
 @use '../abstracts/media-queries'as *;
 
-
-.select-region {
-    font-family: Friz-Quadrata-Regular;
-    font-weight: 200;
-    border: 2px solid c.$main-color;
-    background-color: c.$secondary-color;
-    color: c.$gold-1;
-    outline: none;
-    padding: .5rem 6rem .5rem .7rem;
-    cursor: pointer;
-
-    @include responsive {
-        display: none;
-    }
-
-    &:hover,
-    &:focus {
-        border-color: c.$gold-2;
-    }
+.custom-select {
+    position: relative;
 
     &--responsive {
         display: none;
@@ -28,9 +11,45 @@
         @include responsive {
             display: block;
             margin: .5rem 0 2rem;
-            background-color: c.$black-elements;
-            width: clamp(15rem, 80vw, 20rem);
         }
+    }
+
+    &__select {
+        @include m.selectStyleReset;
+        @include m.selectStyling;
+        padding: .7rem 7rem .7rem .7rem;
+        font-size: .8rem;
+
+
+        @include responsive {
+            display: none;
+        }
+
+        &:hover,
+        &:focus {
+            border-color: c.$gold-2;
+        }
+
+        &--responsive {
+            display: none;
+
+            @include responsive {
+                display: block;
+                background-color: c.$black-elements;
+                width: clamp(15rem, 80vw, 20rem);
+            }
+        }
+    }
+
+    &__arrow {
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        pointer-events: none;
+        height: 1rem;
+        width: 1rem;
+        background-color: aqua;
+        transform: translateY(-50%);
     }
 
     &__label {
@@ -50,8 +69,18 @@
     }
 }
 
+
+
+
+
+
+
+
+
+
 .select-fixed {
     @include m.selectStyling;
+    @include m.selectStyleReset;
     position: fixed;
     z-index: 10;
     bottom: 6.5rem;
@@ -74,6 +103,21 @@
         background-color: c.$secondary-color;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .progress-btn {
     @include m.flexCenter;
