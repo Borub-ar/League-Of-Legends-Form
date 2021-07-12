@@ -8,7 +8,7 @@ export default class Common {
 
     _handleTopDivider() {
         if (!document.querySelector('#index-page')) {
-            this.topDivider.style.display = 'none';
-        } else this.topDivider.style.display = 'block';
+            this.topDivider.style.visibility = 'hidden';
+        } else this.topDivider.style.visibility = 'visible';
     }
 }

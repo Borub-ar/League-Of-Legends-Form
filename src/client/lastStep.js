@@ -1,6 +1,6 @@
 import Common from './common';
 
-export default class App extends Common{
+export default class App extends Common {
     constructor() {
         super();
     }
