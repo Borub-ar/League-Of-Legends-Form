@@ -5,13 +5,9 @@ import 'regenerator-runtime/runtime';
 import Swup from 'swup';
 import SwupFormsPlugin from '@swup/forms-plugin';
 
-// import IndexJS from './app';
-// import BirthDateJS from './birthDate';
-
 const swup = new Swup({
     plugins: [new SwupFormsPlugin()]
 });
-
 
 class App {
     constructor() {
@@ -26,6 +22,8 @@ class App {
             const placeholder = document.querySelector('.main-container__placeholder');
             const errorIcon = document.querySelector('.main-container__error-icon');
             const errorMsg = document.querySelector('.main-container__error-msg');
+
+            this._displayTopDivider();
 
             const minimizeEmailPlaceholder = function() {
                 placeholder.classList.add('main-container__placeholder--focus');
@@ -76,11 +74,18 @@ class App {
             const formSelects = document.querySelectorAll('.custom-select__select');
             const errorMsg = document.querySelector('.main-container__date-error');
 
+
+            this._displayTopDivider();
+
             const birthFormValidation = function (e) {
                 if ([...formSelects].some(sel => sel.value === '0')) {
                     e.preventDefault();
+                    birthDateForm.removeAttribute('data-swup-form');
                     showError();
-                } else hideError();
+                } else {
+                    birthDateForm.setAttribute('data-swup-form', '');
+                    hideError();
+                }
             }
 
             const showError = function () {
@@ -91,10 +96,24 @@ class App {
                 errorMsg.classList.add('main-container__date-error--hidden');
             }
 
-
             birthDateForm.addEventListener('submit', birthFormValidation);
             formSelects.forEach(sel => sel.addEventListener('focusout', birthFormValidation));
         }
+
+        if (document.querySelector('#last-step-page')) {
+
+            this._displayTopDivider();
+
+            console.log('dsadasd')
+        }
+    }
+
+    _displayTopDivider() {
+        const topDivider = document.querySelector('.top-bar__divider');
+
+        if(!document.querySelector('#index-page')) {
+            topDivider.style.display = 'none';
+        } else topDivider.style.display = 'block';
     }
 }
 
