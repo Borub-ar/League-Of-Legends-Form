@@ -1,4 +1,4 @@
-import Common from './common';
+import Common from '../common';
 
 export default class App extends Common {
     formSelects = document.querySelectorAll('.custom-select__select--birth-date');
@@ -22,7 +22,13 @@ export default class App extends Common {
 
        _handleEvents() {
         this.form.addEventListener('submit', this._birthFormValidation.bind(this));
-        this.formSelects.forEach(sel => sel.addEventListener('focusout', this._birthFormValidation.bind(this))); 
+        this.formSelects.forEach(sel => sel.addEventListener('focusout', this._checkIfCorrect.bind(this))); 
+    }
+
+    _checkIfCorrect() {
+        if (![...this.formSelects].some(sel => sel.value === '0')) {
+            this._hideError();
+        }
     }
 
     _showError() {

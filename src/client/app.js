@@ -17,19 +17,19 @@ class App {
 
     _init() {
         if (document.querySelector('#index-page')) {
-            import('./index').then(({ default: IndexJS }) => {
+            import('./pages/index').then(({ default: IndexJS }) => {
                 const index = new  IndexJS;
             })
         }
 
         if (document.querySelector('#birth-date-page')) {
-            import('./birthDate').then(({ default: BirthDateJS }) => {
+            import('./pages/birthDate').then(({ default: BirthDateJS }) => {
                 const birthDate = new BirthDateJS();
             })
         }
 
         if (document.querySelector('#last-step-page')) {
-            import('./lastStep').then(({ default: LastStepJS }) => {
+            import('./pages/lastStep').then(({ default: LastStepJS }) => {
                 const lastStep = new LastStepJS();
             })
         }
