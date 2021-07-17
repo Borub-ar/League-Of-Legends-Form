@@ -86,7 +86,7 @@
         top: -45%;
         left: 50%;
         z-index: 5;
-        width: 150%;
+        width: 100%;
         color: c.$gold-1;
         font-size: 1.7rem;
         transform: translate(-50%, -50%);
@@ -95,7 +95,7 @@
         pointer-events: none;
 
         @include responsive {
-            transform: scale(.5) translate(-100%, -190%);
+            font-size: .8rem;
             top: 45%;
             color: c.$bright-elements;
         }
@@ -105,21 +105,34 @@
             font-size: .8rem;
             top: 20%;
             font-weight: 700;
+            width: 100%;
 
             @include responsive {
                 top: 45%;
-                font-size: 1.7rem;
             }
         }
 
+        &--small-focus {
+            text-align: left;
+            top: -20%;
+        }
+
         &--focus {
-            transform: translate(-67%, -160%);
+            left: 0;
+            top: -90%;
+            transform: translateX(-25%);
             font-size: .8rem;
             color: c.$bright-elements;
 
-            @include responsive-small {
-                transform: translate(-50%, -190%);
+            @include responsive {
+                top: -5%;;
             }
+
+            @include responsive-small {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
         }
     }
 
@@ -195,11 +208,32 @@
     }
 
     &__checkbox {
+        position: relative;
         margin-right: .6rem;
         min-height: 18px;
         min-width: 18px;
         background-color: c.$black-elements;
         border: 2px solid c.$main-color;
+        cursor: pointer;
+
+        &--marked {
+            &::after {
+                content: "";
+                position: absolute;
+                left: 4px;
+                top: -1px;
+                width: 6px;
+                height: 13px;
+                border: solid #c4b998;
+                border-width: 0 3px 3px 0;
+                transform: rotate(45deg);
+                border-radius: 0;
+            }
+        }
+
+        &:hover {
+            border-color: c.$gold-1;
+        }
     }
 
     &__checkbox-label {
@@ -209,6 +243,11 @@
         font-size: .8rem;
         letter-spacing: 0;
         line-height: 1.5;
+        cursor: pointer;
+
+        &:hover .main-container__checkbox {
+            border-color: c.$gold-1;
+        }
     }
 
     &__label-link {
