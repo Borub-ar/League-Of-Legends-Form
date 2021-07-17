@@ -25,14 +25,12 @@ export default class App extends Common {
     
         if (!this.emailInput.value || !regex.test(this.emailInput.value)) {
             e.preventDefault();
-            // removing required swup attribute
-            this.form.removeAttribute('data-swup-form');
+            this._removeSwupAttribute();
             this._showEmailError();
         }
     
         if (this.emailInput.value && regex.test(this.emailInput.value)) {
-            // setting required swup attribute
-            this.form.setAttribute('data-swup-form', '');
+            this._setSwupAttribute();
             this._hideEmailError();
         }
     }

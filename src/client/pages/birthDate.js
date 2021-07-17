@@ -12,10 +12,10 @@ export default class App extends Common {
     _birthFormValidation(e) {
         if ([...this.formSelects].some(sel => sel.value === '0')) {
             e.preventDefault();
-            this.form.removeAttribute('data-swup-form');
+            this._removeSwupAttribute();
             this._showError();
         } else {
-            this.form.setAttribute('data-swup-form', '');
+            this._setSwupAttribute();
             this._hideError();
         }
     }

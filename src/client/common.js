@@ -11,5 +11,13 @@ export default class Common {
             this.topDivider.style.visibility = 'hidden';
         } else this.topDivider.style.visibility = 'visible';
     }
+
+    _setSwupAttribute() {
+        this.form.setAttribute('data-swup-form', '');
+    }
+
+    _removeSwupAttribute() {
+        this.form.removeAttribute('data-swup-form');
+    }
 }
 
