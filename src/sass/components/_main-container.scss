@@ -103,9 +103,11 @@
         &--small {
             color: c.$bright-elements;
             font-size: .8rem;
-            top: 20%;
+            top: 25%;
             font-weight: 700;
             width: 100%;
+            text-align: center;
+
 
             @include responsive {
                 top: 45%;
@@ -113,8 +115,11 @@
         }
 
         &--small-focus {
-            text-align: left;
-            top: -20%;
+            top: -65%;
+
+            @include responsive {
+                top: 0%;
+            }
         }
 
         &--focus {
@@ -125,6 +130,7 @@
             color: c.$bright-elements;
 
             @include responsive {
+                left: 0;
                 top: -5%;;
             }
 
@@ -244,10 +250,6 @@
         letter-spacing: 0;
         line-height: 1.5;
         cursor: pointer;
-
-        &:hover .main-container__checkbox {
-            border-color: c.$gold-1;
-        }
     }
 
     &__label-link {
