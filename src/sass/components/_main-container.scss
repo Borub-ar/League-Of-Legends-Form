@@ -69,10 +69,10 @@
 
     &__input-con {
         position: relative;
-        margin: 3.5rem 0 2rem;
+        margin: 3.5rem 0 .4rem;
 
         &--small {
-            margin: 2rem 0 1rem;
+            margin: 2rem 0 .4rem;
         }
 
         @include responsive {
@@ -181,7 +181,7 @@
 
     &__error-list {
         padding: 0;
-        margin: -1.5rem 0 0 0;
+        margin: 0;
         width: clamp(8rem, 90vw, 30rem);
 
         &--date {
@@ -204,7 +204,7 @@
         font-family: Spiegel, sans-serif;
         letter-spacing: 1px;
         font-size: .7rem;
-        margin: 0 0 3rem 0;
+        margin: 0;
 
 
         @include responsive-small {
@@ -217,7 +217,7 @@
 
         &--last-step {
             list-style-type: disc;
-            margin: 0 0 0 2rem;
+            margin: 0 0 0 1rem;
             line-height: 1.5;
             width: clamp(8rem, 90vw, 30rem);
 
