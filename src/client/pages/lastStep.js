@@ -8,29 +8,37 @@ export default class App extends Common {
     requiredCheckbox = document.querySelector('[data-required]');
     usernameInput = document.querySelector('[data-username]');
 
-    
-    checkboxError = document.querySelector('[data-checkboxError]');
-    usernameFirstError = document.querySelector('[data-usernameFirstError]');
-
-
     constructor() {
         super();
         this._handleEvents();
     }
 
     _usernameValidation() {
-        const firstRegex = /^[a-zA-Z, 0-9]{3,}$/;
- 
-        if (!firstRegex.test(this.usernameInput.value)) {
-            this.usernameFirstError.style.display = 'block';
-        } else this.usernameFirstError.style.display = 'none';
-        
+        const usernameFirstError = document.querySelector('[data-usernameFirstError]');
+        const usernameSecondError = document.querySelector('[data-usernameSecondError]');
+        const usernameThirdError = document.querySelector('[data-usernameThirdError]');
 
-        const secondRegex = /b/;
-        const thirdRegex = /c/;
+        const firstRegex = /^[a-zA-Z, 0-9]{3,}$/;
+
+        if (!firstRegex.test(this.usernameInput.value)) {
+            usernameFirstError.style.display = 'block';
+        } else usernameFirstError.style.display = 'none';
+
+        const secondRegex = /^[a-zA-Z, 0-9]{3,25}$/
+
+        if (!secondRegex.test(this.usernameInput.value)) {
+            usernameSecondError.style.display = 'block';
+        } else usernameSecondError.style.display = 'none';
+
+        if (this.usernameInput.value.includes(' ')) {
+            usernameThirdError.style.display = 'block';
+        } else usernameThirdError.style.display = 'none';
+       
     }
 
     // _checkboxValidation(e) {
+    // const checkboxError = document.querySelector('[data-checkboxError]');
+
     //     if (this.requiredCheckbox.classList.contains('main-container__checkbox--marked')) {
     //         e.preventDefault();
     //         this.checkboxError.style.display = 'block';
