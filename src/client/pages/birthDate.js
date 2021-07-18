@@ -2,7 +2,7 @@ import Common from '../common';
 
 export default class App extends Common {
     formSelects = document.querySelectorAll('.custom-select__select--birth-date');
-    errorMsg = document.querySelector('.main-container__date-error');
+    errorMsg = document.querySelector('.main-container__error-msg');
 
     constructor() {
         super();
@@ -32,11 +32,11 @@ export default class App extends Common {
     }
 
     _showError() {
-        this.errorMsg.classList.remove('main-container__date-error--hidden');
+        this.errorMsg.classList.add('main-container__error-msg--show');
     }
     
     _hideError() {
-        this.errorMsg.classList.add('main-container__date-error--hidden');
+        this.errorMsg.classList.remove('main-container__error-msg--show');
     }
 }
 
