@@ -35,6 +35,12 @@ class App {
                 const lastStep = new LastStepJS();
             })
         }
+
+        if (document.querySelector('#summary')) {
+            import('./pages/summary').then(({ default: SummaryJS }) => {
+                const summary = new SummaryJS();
+            })
+        }
     }
 }
 

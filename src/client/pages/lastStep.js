@@ -153,11 +153,12 @@ export default class App extends Common {
     _pageValidation(e) {
         if (!this._usernameValidation() || !this._passwordValidation() || !this._repeatPassValidation() || !this._checkboxValidation()) {
             e.preventDefault();
+            this._removeSwupAttribute();
             this._checkAll();
         } 
         
         if (this._usernameValidation() && this._passwordValidation() && this._repeatPassValidation() && this._checkboxValidation()) {
-            return
+            this._setSwupAttribute();
         } else e.preventDefault();
     }
 
@@ -187,6 +188,6 @@ export default class App extends Common {
         this._usernameInput.addEventListener('focusout', this._usernameValidation.bind(this));
         this._passwordInput.addEventListener('focusout', this._passwordValidation.bind(this));
         this._repeatPassInput.addEventListener('focusout', this._repeatPassValidation.bind(this));
-        this._form.addEventListener('submit', this._pageValidation.bind(this));
+        // this._form.addEventListener('submit', this._pageValidation.bind(this));
     }
 }

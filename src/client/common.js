@@ -3,7 +3,7 @@ export default class Common {
     _form = document.querySelector('.main-container__form');
 
     constructor() {
-        // this._handleTopDivider();
+        this._handleTopDivider();
     }
 
     _handleTopDivider() {
