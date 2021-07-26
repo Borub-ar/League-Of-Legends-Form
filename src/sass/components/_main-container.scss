@@ -93,6 +93,7 @@
             @include responsive {
                 grid-template-columns: 1fr;
                 grid-template-rows: repeat(7, auto);
+                row-gap: 1rem;
             }
         }
     }
@@ -101,13 +102,42 @@
         position: relative;
         margin: 3.5rem 0 .4rem;
 
+        @include responsive {
+            overflow: hidden;
+            margin-top: 0rem;
+        }
+
         &--small {
             margin: 2rem 0 .4rem;
         }
 
-        @include responsive {
-            overflow: hidden;
-            margin-top: 0rem;
+        &--email {
+            @include responsive {
+                grid-column: 1;
+                grid-row: 1/2;
+            }
+
+            &--username {
+                @include responsive {
+                    grid-column: 1;
+                    grid-row: 2/3;
+                }
+            }
+
+            &--password {
+                @include responsive {
+                    grid-column: 1;
+                    grid-row: 3/4;
+                }
+            }
+
+            &--repeat {
+                @include responsive {
+                    grid-column: 1;
+                    grid-row: 4/5;
+
+                }
+            }
         }
     }
 
@@ -132,6 +162,10 @@
 
         &--error {
             border-bottom: 2px solid c.$error-red;
+        }
+
+        &--summary {
+            margin-top: 0;
         }
     }
 
@@ -185,6 +219,10 @@
             @include responsive {
                 top: 45%;
             }
+        }
+
+        &--summary {
+            top: 0;
         }
 
         &--small-focus {
@@ -280,9 +318,14 @@
             margin-bottom: 1.7rem;
         }
 
-        &--download {
+        &--summary {
             width: 100%;
             margin-top: 0;
+
+            @include responsive {
+                grid-column: 1;
+                grid-row: 6/7;
+            }
         }
     }
 
@@ -393,8 +436,14 @@
             margin: 2rem 0 1rem;
         }
 
-        &--download {
+        &--summary {
             margin: 0;
+
+            @include responsive {
+                grid-column: 1;
+                grid-row: 5/6;
+                margin-top: 2rem;
+            }
         }
     }
 }
