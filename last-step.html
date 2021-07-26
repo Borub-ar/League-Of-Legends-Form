@@ -41,42 +41,42 @@
                     <p class="main-container__placeholder main-container__placeholder--small">NAZWA UŻYTKOWNIKA</p>
                     <label for="name-input">Enter you username</label>
                     <input class="main-container__input" type="text" data-username>
-                </div>
 
-                <ul class="main-container__error-list main-container__error-list--last-step">
-                    <li class="main-container__error-msg main-container__error-msg--last-step" data-usernameFirstError>Nazwa użytkownika musi zawierać więcej niż 3 znaki.</li>
-                    <li class="main-container__error-msg main-container__error-msg--last-step" data-usernameSecondError>Nazwa użytkownika musi zawierać mniej niż 25 znaków.</li>
-                    <li class="main-container__error-msg main-container__error-msg--last-step" data-usernameThirdError>Nazwa użytkownika nie może zawierać spacji.</li>
-                </ul>
+                    <ul class="main-container__error-list main-container__error-list--last-step">
+                        <li class="main-container__error-msg main-container__error-msg--last-step" data-usernameFirstError>Nazwa użytkownika musi zawierać więcej niż 3 znaki.</li>
+                        <li class="main-container__error-msg main-container__error-msg--last-step" data-usernameSecondError>Nazwa użytkownika musi zawierać mniej niż 25 znaków.</li>
+                        <li class="main-container__error-msg main-container__error-msg--last-step" data-usernameThirdError>Nazwa użytkownika nie może zawierać spacji.</li>
+                    </ul>
+                </div>
 
                 <div class="main-container__input-con main-container__input-con--small">
                     <p class="main-container__placeholder main-container__placeholder--small">HASŁO</p>
                     <label for="password-input">Enter your password</label>
-                    <input class="main-container__input" type="password">
-                </div>
+                    <input class="main-container__input" type="password" data-password>
 
-                <ul class="main-container__error-list main-container__error-list--last-step">
-                    <li class="main-container__error-msg main-container__error-msg--last-step">Hasło musi zawierać co najmniej następującą liczbę znaków: 8.</li>
-                    <li class="main-container__error-msg main-container__error-msg--last-step">Hasło usi zawierać przynajmniej jedna literę i jeden znak nibędący literą.</li>
-                </ul>
+                    <ul class="main-container__error-list main-container__error-list--last-step">
+                        <li class="main-container__error-msg main-container__error-msg--last-step" data-passwordFirstError>Hasło musi zawierać co najmniej następującą liczbę znaków: 8.</li>
+                        <li class="main-container__error-msg main-container__error-msg--last-step" data-passwordSecondError>Hasło usi zawierać przynajmniej jedna literę i jeden znak nibędący literą.</li>
+                    </ul>
+                </div>
 
                 <div class="main-container__input-con main-container__input-con--small">
                     <p class="main-container__placeholder main-container__placeholder--small">POTWIERDŹ HASŁO</p>
                     <label for="password-conf-input">Confirm your password</label>
-                    <input class="main-container__input" type="password">
+                    <input class="main-container__input" type="password" data-repeat>
+
+                    <ul class="main-container__error-list main-container__error-list--last-step">
+                        <li class="main-container__error-msg main-container__error-msg--last-step" data-repeatFirstError>Podane hasła się różnią.</li>
+                        <li class="main-container__error-msg main-container__error-msg--last-step" data-repeatSecondError>To pole nie może być puste.</li>
+                    </ul>
                 </div>
 
-                <ul class="main-container__error-list main-container__error-list--last-step">
-                    <li class="main-container__error-msg main-container__error-msg--last-step">Podane hasła się różnią.</li>
-                    <li class="main-container__error-msg main-container__error-msg--last-step">To pole nie może być puste.</li>
-                </ul>
+                <div class="main-container__checkbox-con" data-checkboxCon>
+                    <ul class="main-container__error-list main-container__error-list--absolute">
+                       <li class="main-container__error-msg" data-checkboxError>Aby dokonać rejestracji, musisz zaakceptować nasze warunki.</li>
+                   </ul>
 
-                 <!-- <ul class="main-container__error-list"">
-                    <li class="main-container__error-msg" data-checkboxError>Aby dokonać rejestracji, musisz zaakceptować nasze warunki.</li>
-                </ul> -->
-
-                <div class="main-container__checkbox-con">
-                    <div class="main-container__checkbox"></div>
+                    <div class="main-container__checkbox" data-required></div>
                     <p class="main-container__checkbox-label">Akceptuję <a class="main-container__label-link" href="#">Warunki świadczenia usług</a> oraz przyjmuję do wiadomości - po uprzednim przeczytaniu - Informację o <a class="main-container__label-link" href="#">Polityce prywatnośći</a>.</p>
                 </div>
 

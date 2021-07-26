@@ -76,7 +76,6 @@
         }
     }
 
-
     &__form {
         @include m.flexCenter(column);
 
@@ -190,7 +189,7 @@
 
         &--focus {
             left: 0;
-            top: -90%;
+            top: -80%;
             transform: translateX(-25%);
             font-size: .8rem;
             color: c.$bright-elements;
@@ -212,9 +211,7 @@
             font-size: .8rem;
             top: 0;
             font-weight: 700;
-
             text-align: center;
-
 
             @include responsive {
                 top: 45%;
@@ -222,7 +219,7 @@
         }
 
         &--summary {
-            top: 0;
+            top: 20%;
         }
 
         &--small-focus {
@@ -260,7 +257,7 @@
         }
 
         &--last-step {
-            margin-top: 0;
+            margin-top: .2rem;
         }
 
         &--checkbox {
@@ -270,6 +267,15 @@
 
             @include responsive-small {
                 top: -.7rem;
+            }
+        }
+
+        &--absolute {
+            position: absolute;
+            top: -.2rem;
+
+            @include responsive {
+                top: -.6rem;
             }
         }
     }
@@ -298,7 +304,6 @@
             margin: 0 0 0 1rem;
             line-height: 1.5;
             width: clamp(8rem, 90vw, 30rem);
-
         }
     }
 
