@@ -129,23 +129,31 @@ export default class App extends Common {
         }
     }
 
-    _checkboxValidation(e) {
-        if (!this._requiredCheckbox.classList.contains('main-container__checkbox--marked')) {
-            this._requiredCheckbox.style.borderColor = '#be1e37';
-            this._checkboxError.style.display = 'block';
-            this._checkboxCon.style.marginTop = '2rem';
-            return false
-        } else {
+    _checkboxValidation() {
+        if (this._requiredCheckbox.classList.contains('main-container__checkbox--marked')) {
             this._requiredCheckbox.style.borderColor = '#937341';
             this._checkboxError.style.display = 'none';
             this._checkboxCon.style.marginTop = '.7rem';
             return true
+        } else {
+            this._requiredCheckbox.style.borderColor = '#be1e37';
+            this._checkboxError.style.display = 'block';
+            this._checkboxCon.style.marginTop = '2rem';
+            return false
         }
     }
 
+    _checkAll() {
+        this._usernameValidation();
+        this._passwordValidation();
+        this._repeatPassValidation();
+        this._checkboxValidation();
+    }
+
     _pageValidation(e) {
-        if (!this._usernameValidation() && !this._passwordValidation() && !this._repeatPassValidation() && !this._checkboxValidation()) {
+        if (!this._usernameValidation() || !this._passwordValidation() || !this._repeatPassValidation() || !this._checkboxValidation()) {
             e.preventDefault();
+            this._checkAll();
         } 
         
         if (this._usernameValidation() && this._passwordValidation() && this._repeatPassValidation() && this._checkboxValidation()) {
@@ -179,6 +187,6 @@ export default class App extends Common {
         this._usernameInput.addEventListener('focusout', this._usernameValidation.bind(this));
         this._passwordInput.addEventListener('focusout', this._passwordValidation.bind(this));
         this._repeatPassInput.addEventListener('focusout', this._repeatPassValidation.bind(this));
-        // this._form.addEventListener('submit', this._pageValidation.bind(this));
+        this._form.addEventListener('submit', this._pageValidation.bind(this));
     }
 }
