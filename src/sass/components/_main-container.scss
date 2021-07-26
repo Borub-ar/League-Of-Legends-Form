@@ -49,6 +49,11 @@
     }
 
     &__divider-con {
+        &--download {
+            @include m.flexCenter;
+            margin: 2rem 0 3rem;
+        }
+
         @include responsive {
             @include m.flexCenter;
             overflow: hidden;
@@ -61,10 +66,35 @@
         @include responsive {
             width: clamp(43rem, 100%, 90rem);
         }
+
+        &--download {
+            width: clamp(60rem, 60%, 90rem);
+
+            @include responsive {
+                width: clamp(30rem, 50%, 90rem);
+            }
+        }
     }
+
 
     &__form {
         @include m.flexCenter(column);
+
+        &--grid {
+            width: 70%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(3, auto);
+            justify-items: center;
+            align-items: center;
+            column-gap: 1.5rem;
+            row-gap: 2rem;
+
+            @include responsive {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(7, auto);
+            }
+        }
     }
 
     &__input-con {
@@ -146,9 +176,9 @@
         &--small {
             color: c.$bright-elements;
             font-size: .8rem;
-            top: 25%;
+            top: 0;
             font-weight: 700;
-            width: 100%;
+
             text-align: center;
 
 
@@ -171,7 +201,7 @@
         z-index: 7;
         bottom: .7rem;
         right: 1rem;
-        display: none;
+        // display: none;
         height: 1.1rem;
 
         &--show {
@@ -193,6 +223,16 @@
 
         &--last-step {
             margin-top: 0;
+        }
+
+        &--checkbox {
+            position: absolute;
+            top: -.2rem;
+            left: 0;
+
+            @include responsive-small {
+                top: -.7rem;
+            }
         }
     }
 
@@ -225,6 +265,7 @@
     }
 
     &__checkbox-con {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -237,6 +278,11 @@
 
         &--m-bottom {
             margin-bottom: 1.7rem;
+        }
+
+        &--download {
+            width: 100%;
+            margin-top: 0;
         }
     }
 
@@ -298,6 +344,12 @@
         text-decoration: none;
         color: c.$gold-1;
 
+        &--download {
+            margin-top: 3rem;
+            font-size: .7rem;
+            letter-spacing: 0;
+        }
+
         &::before {
             content: '';
             position: absolute;
@@ -339,6 +391,10 @@
         @include responsive {
             flex-direction: column;
             margin: 2rem 0 1rem;
+        }
+
+        &--download {
+            margin: 0;
         }
     }
 }

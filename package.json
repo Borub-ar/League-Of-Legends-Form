@@ -4,7 +4,7 @@
   "description": "",
   "default": "index.html",
   "scripts": {
-    "start": "parcel index.html birth-date.html last-step.html summary.html",
+    "start": "parcel index.html birth-date.html last-step.html summary.html download.html",
     "build": "parcel build index.html birth-date.html last-step.html summary.html --dist-dir ./dist"
   },
   "author": "",

@@ -1,8 +1,8 @@
 import Common from '../common';
 
 export default class App extends Common {
-    formSelects = document.querySelectorAll('.custom-select__select--birth-date');
-    errorMsg = document.querySelector('.main-container__error-msg');
+    _formSelects = document.querySelectorAll('.custom-select__select--birth-date');
+    _errorMsg = document.querySelector('.main-container__error-msg');
 
     constructor() {
         super();
@@ -10,7 +10,7 @@ export default class App extends Common {
     }
 
     _birthFormValidation(e) {
-        if ([...this.formSelects].some(sel => sel.value === '0')) {
+        if ([...this._formSelects].some(sel => sel.value === '0')) {
             e.preventDefault();
             this._removeSwupAttribute();
             this._showError();
@@ -20,23 +20,22 @@ export default class App extends Common {
         }
     }
 
-       _handleEvents() {
-        this.form.addEventListener('submit', this._birthFormValidation.bind(this));
-        this.formSelects.forEach(sel => sel.addEventListener('focusout', this._checkIfCorrect.bind(this))); 
-    }
-
     _checkIfCorrect() {
-        if (![...this.formSelects].some(sel => sel.value === '0')) {
+        if (![...this._formSelects].some(sel => sel.value === '0')) {
             this._hideError();
         }
     }
-
+    
     _showError() {
-        this.errorMsg.classList.add('main-container__error-msg--show');
+        this._errorMsg.classList.add('main-container__error-msg--show');
     }
     
     _hideError() {
-        this.errorMsg.classList.remove('main-container__error-msg--show');
+        this._errorMsg.classList.remove('main-container__error-msg--show');
+    }
+
+    _handleEvents() {
+        // this._form.addEventListener('submit', this._birthFormValidation.bind(this));
+        this._formSelects.forEach(sel => sel.addEventListener('change', this._checkIfCorrect.bind(this)));
     }
 }
-
