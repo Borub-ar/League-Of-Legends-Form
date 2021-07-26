@@ -158,6 +158,7 @@ export default class App extends Common {
         } 
         
         if (this._usernameValidation() && this._passwordValidation() && this._repeatPassValidation() && this._checkboxValidation()) {
+            this._setLocalStorage();
             this._setSwupAttribute();
         } else e.preventDefault();
     }
