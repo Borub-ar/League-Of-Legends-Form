@@ -41,136 +41,106 @@
                 KLAWISZA.</h2>
 
             <form action="./download.html" class="main-container__form main-container__form--grid">
-                <div
-                    class="main-container__input-con main-container__input-con--small main-container__input-con--email">
-                    <p
-                        class="main-container__placeholder main-container__placeholder--small main-container__placeholder--summary">
-                        E-MAIL</p>
+                <div class="main-container__input-con main-container__input-con--small main-container__input-con--email">
+                    <p class="main-container__placeholder main-container__placeholder--small main-container__placeholder--summary main-container__placeholder--focus-summary">E-MAIL</p>
                     <label for="email-input">Enter your e-mail</label>
                     <input class="main-container__input main-container__input--summary" type="email" id="email-input">
                 </div>
 
-                <div
-                    class="main-container__input-con main-container__input-con--small main-container__input-con--username">
-                    <p class="main-container__placeholder main-container__placeholder--small main-container__placeholder--summary">NAZWA UŻYTKOWNIKA</p>
+                <div class="main-container__input-con main-container__input-con--small main-container__input-con--username">
+                    <p class="main-container__placeholder main-container__placeholder--small main-container__placeholder--summary main-container__placeholder--focus-summary">NAZWA UŻYTKOWNIKA</p>
                     <label for="name-input">Enter you username</label>
                     <input class="main-container__input main-container__input--summary" type="text" data-username>
 
                     <ul class="main-container__error-list main-container__error-list--last-step">
-                        <li class="main-container__error-msg main-container__error-msg--last-step"
-                            data-usernameFirstError>
-                            Nazwa użytkownika musi zawierać więcej niż 3 znaki.</li>
-                        <li class="main-container__error-msg main-container__error-msg--last-step"
-                            data-usernameSecondError>
-                            Nazwa użytkownika musi zawierać mniej niż 25 znaków.</li>
-                        <li class="main-container__error-msg main-container__error-msg--last-step"
-                            data-usernameThirdError>
-                            Nazwa użytkownika nie może zawierać spacji.</li>
+                        <li class="main-container__error-msg main-container__error-msg--last-step"data-usernameFirstError>Nazwa użytkownika musi zawierać więcej niż 3 znaki.</li>
+                        <li class="main-container__error-msg main-container__error-msg--last-step"data-usernameSecondError>Nazwa użytkownika musi zawierać mniej niż 25 znaków.</li>
+                        <li class="main-container__error-msg main-container__error-msg--last-step" data-usernameThirdError>Nazwa użytkownika nie może zawierać spacji.</li>
                     </ul>
                 </div>
 
-                <div
-                    class="main-container__input-con main-container__input-con--small main-container__input-con--password">
-                    <p
-                        class="main-container__placeholder main-container__placeholder--small main-container__placeholder--summary">
-                        HASŁO</p>
-                    <label for="password-input">Enter your password</label>
-                    <input class="main-container__input main-container__input--summary" type="password" data-password>
+                    <div class="main-container__input-con main-container__input-con--small main-container__input-con--password">
+                        <p class="main-container__placeholder main-container__placeholder--small main-container__placeholder--summary main-container__placeholder--focus-summary">HASŁO</p>
+                        <label for="password-input">Enter your password</label>
+                        <input class="main-container__input main-container__input--summary" type="password" data-password>
 
-                    <ul class="main-container__error-list main-container__error-list--last-step">
-                        <li class="main-container__error-msg main-container__error-msg--last-step"
-                            data-passwordFirstError>
-                            Hasło musi zawierać co najmniej następującą liczbę znaków: 8.</li>
-                        <li class="main-container__error-msg main-container__error-msg--last-step"
-                            data-passwordSecondError>
-                            Hasło musi zawierać przynajmniej jedna literę i jeden znak niebędący literą.</li>
-                    </ul>
-                </div>
-
-                <div
-                    class="main-container__input-con main-container__input-con--small main-container__input-con--repeat">
-                    <p
-                        class="main-container__placeholder main-container__placeholder--small main-container__placeholder--summary">
-                        POTWIERDŹ HASŁO</p>
-                    <label for="password-conf-input">Confirm your password</label>
-                    <input class="main-container__input main-container__input--summary" type="password" data-repeat>
-
-                    <ul class="main-container__error-list main-container__error-list--last-step">
-                        <li class="main-container__error-msg main-container__error-msg--last-step"
-                            data-repeatFirstError>
-                            Podane hasła się różnią.</li>
-                        <li class="main-container__error-msg main-container__error-msg--last-step"
-                            data-repeatSecondError>To
-                            pole nie może być puste.</li>
-                    </ul>
-                </div>
-
-                <div class="main-container__selects-con main-container__selects-con--summary">
-                    <ul class="main-container__error-list main-container__error-list--date">
-                        <li class="main-container__error-msg" data-birthError>Wybierz prawidłową datę</li>
-                    </ul>
-
-                    <div class="custom-select">
-                        <label for="day">choose your birth day</label>
-                        <select class="custom-select__select custom-select__select--birth-date" id="day" data-day>
-                            <option value="0" disabled selected>DZIEŃ</option>
-                        </select>
-                        <span class="custom-select__arrow custom-select__arrow--narrow"></span>
-                    </div>
-
-                    <div class="custom-select custom-select--margin-x">
-                        <label for="month">choose your birth month</label>
-                        <select class="custom-select__select custom-select__select--birth-date" id="month">
-                            <option value="0" disabled selected>MIESIĄC</option>
-                            <option value="1">STYCZEŃ</option>
-                            <option value="2">LUTY</option>
-                            <option value="3">MARZEC</option>
-                            <option value="4">KWIECIEŃ</option>
-                            <option value="5">MAJ</option>
-                            <option value="6">CZERWIEC</option>
-                            <option value="7">LIPIEC</option>
-                            <option value="8">SIERPIEŃ</option>
-                            <option value="9">WRZESIEŃ</option>
-                            <option value="10">PAŹDZIERNIK</option>
-                            <option value="11">LISTOPAD</option>
-                            <option value="12">GRUDZIEŃ</option>
-                        </select>
-                        <span class="custom-select__arrow custom-select__arrow--narrow"></span>
-                    </div>
-
-                    <div class="custom-select">
-                        <label for="year">choose your birth year</label>
-                        <select class="custom-select__select custom-select__select--birth-date" id="year" data-year>
-                            <option value="0" disabled selected>ROK</option>
-                        </select>
-                        <span class="custom-select__arrow custom-select__arrow--narrow"></span>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="main-container__checkbox-con main-container__checkbox-con--summary" data-checkboxCon>
-                        <ul class="main-container__error-list main-container__error-list--checkbox">
-                            <li class="main-container__error-msg" data-checkboxError>Aby dokonać rejestracji, musisz zaakceptować nasze warunki.</li>
+                        <ul class="main-container__error-list main-container__error-list--last-step">
+                            <li class="main-container__error-msg main-container__error-msg--last-step" data-passwordFirstError> Hasło musi zawierać co najmniej następującą liczbę znaków: 8.</li>
+                            <li class="main-container__error-msg main-container__error-msg--last-step" data-passwordSecondError>Hasło musi zawierać przynajmniej jedna literę i jeden znak niebędący literą.</li>
                         </ul>
-                        <div class="main-container__checkbox main-container__checkbox--marked" data-required></div>
-                        <p class="main-container__checkbox-label">Akceptuję <a class="main-container__label-link"
-                                href="#">Warunki świadczenia usług</a> oraz przyjmuję do wiadomości - po uprzednim
-                            przeczytaniu - Informację o <a class="main-container__label-link" href="#">Polityce
-                                prywatnośći</a>.</p>
                     </div>
 
-                    <div
-                        class="main-container__checkbox-con main-container__checkbox-con--m-bottom main-container__checkbox-con--summary">
-                        <div class="main-container__checkbox"></div>
-                        <p class="main-container__checkbox-label">Co jakiś czas będziesz otrzymywać od Riot Games
-                            e-maile.
-                        </p>
-                    </div>
-                </div>
+                    <div class="main-container__input-con main-container__input-con--small main-container__input-con--repeat">
+                        <p class="main-container__placeholder main-container__placeholder--small main-container__placeholder--summary main-container__placeholder--focus-summary">POTWIERDŹ HASŁO</p>
+                        <label for="password-conf-input">Confirm your password</label>
+                        <input class="main-container__input main-container__input--summary" type="password" data-repeat>
 
-                <div class="progress-btn progress-btn--margin-xl progress-btn--summary">
-                    <button class="progress-btn__inner">DOŁĄCZ TERAZ</button>
-                </div>
+                        <ul class="main-container__error-list main-container__error-list--last-step">
+                            <li class="main-container__error-msg main-container__error-msg--last-step"data-repeatFirstError>Podane hasła się różnią.</li>
+                            <li class="main-container__error-msg main-container__error-msg--last-step"data-repeatSecondError>To pole nie może być puste.</li>
+                        </ul>
+                    </div>
+
+                    <div class="main-container__selects-con main-container__selects-con--summary">
+                        <ul class="main-container__error-list main-container__error-list--date">
+                            <li class="main-container__error-msg" data-birthError>Wybierz prawidłową datę</li>
+                        </ul>
+
+                        <div class="custom-select">
+                            <label for="day">choose your birth day</label>
+                            <select class="custom-select__select custom-select__select--birth-date" id="day" data-day>
+                                <option value="0" disabled selected>DZIEŃ</option>
+                            </select>
+                            <span class="custom-select__arrow custom-select__arrow--narrow"></span>
+                        </div>
+
+                        <div class="custom-select custom-select--margin-x">
+                            <label for="month">choose your birth month</label>
+                            <select class="custom-select__select custom-select__select--birth-date" id="month" data-month>
+                                <option value="0" disabled selected>MIESIĄC</option>
+                                <option value="1">STYCZEŃ</option>
+                                <option value="2">LUTY</option>
+                                <option value="3">MARZEC</option>
+                                <option value="4">KWIECIEŃ</option>
+                                <option value="5">MAJ</option>
+                                <option value="6">CZERWIEC</option>
+                                <option value="7">LIPIEC</option>
+                                <option value="8">SIERPIEŃ</option>
+                                <option value="9">WRZESIEŃ</option>
+                                <option value="10">PAŹDZIERNIK</option>
+                                <option value="11">LISTOPAD</option>
+                                <option value="12">GRUDZIEŃ</option>
+                            </select>
+                            <span class="custom-select__arrow custom-select__arrow--narrow"></span>
+                        </div>
+
+                        <div class="custom-select">
+                            <label for="year">choose your birth year</label>
+                            <select class="custom-select__select custom-select__select--birth-date" id="year" data-year>
+                                <option value="0" disabled selected>ROK</option>
+                            </select>
+                            <span class="custom-select__arrow custom-select__arrow--narrow"></span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="main-container__checkbox-con main-container__checkbox-con--summary"data-checkboxCon>
+                            <ul class="main-container__error-list main-container__error-list--checkbox">
+                                <li class="main-container__error-msg" data-checkboxError>Aby dokonać rejestracji, musisz zaakceptować nasze warunki.</li>
+                            </ul>
+                            <div class="main-container__checkbox main-container__checkbox--marked" data-required></div>
+                            <p class="main-container__checkbox-label">Akceptuję <a class="main-container__label-link" href="#">Warunki świadczenia usług</a> oraz przyjmuję do wiadomości - po uprzednim przeczytaniu - Informację o <a class="main-container__label-link" href="#">Polityce prywatnośći</a>.</p>
+                        </div>
+
+                        <div class="main-container__checkbox-con main-container__checkbox-con--m-bottom main-container__checkbox-con--summary">
+                            <div class="main-container__checkbox" data-optional></div>
+                            <p class="main-container__checkbox-label">Co jakiś czas będziesz otrzymywać od Riot Games e-maile.</p>
+                        </div>
+                    </div>
+
+                    <div class="progress-btn progress-btn--margin-xl progress-btn--summary">
+                        <button class="progress-btn__inner">DOŁĄCZ TERAZ</button>
+                    </div>
             </form>
 
             <div class="custom-select custom-select--responsive">
@@ -212,15 +182,10 @@
 
     <footer class="footer">
         <div class="footer__img-con">
-            <a class="footer__img footer__img--margin-ver" href="/index.html"><img
-                    src="./src/img/riotgames-logo-white-s.png" alt="Riot logo"></a>
+            <a class="footer__img footer__img--margin-ver" href="/index.html"><img src="./src/img/riotgames-logo-white-s.png" alt="Riot logo"></a>
             <a class="footer__img" href="#"><img src="./src/img/pegi.jpg" alt="Pegi 12"></a>
         </div>
-        <p class="footer__credits">Nie jest to prawdziwa strona. Powstała ona w celu poszerzenia mojej wiedzy oraz
-            wzbogacenia mojego portfolio dostępnego <a class="footer__link" href="https://github.com/Borub-ar"
-                target="_blank">tutaj</a>. Link do prawdziwej strony League of Legends - <a class="footer__link"
-                href="https://na.leagueoflegends.com/pl-pl/" target="_blank">https://na.leagueoflegends.com/pl-pl/</a>.
-            Dziękuję za uwagę i życzę miłego zwiedzania!</p>
+        <p class="footer__credits">Nie jest to prawdziwa strona. Powstała ona w celu poszerzenia mojej wiedzy oraz wzbogacenia mojego portfolio dostępnego <a class="footer__link" href="https://github.com/Borub-ar" target="_blank">tutaj</a>. Link do prawdziwej strony League of Legends - <a class="footer__link" href="https://na.leagueoflegends.com/pl-pl/" target="_blank">https://na.leagueoflegends.com/pl-pl/</a>. Dziękuję za uwagę i życzę miłego zwiedzania!</p>
     </footer>
 </body>
 

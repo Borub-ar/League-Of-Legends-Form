@@ -189,6 +189,6 @@ export default class App extends Common {
         this._usernameInput.addEventListener('focusout', this._usernameValidation.bind(this));
         this._passwordInput.addEventListener('focusout', this._passwordValidation.bind(this));
         this._repeatPassInput.addEventListener('focusout', this._repeatPassValidation.bind(this));
-        // this._form.addEventListener('submit', this._pageValidation.bind(this));
+        this._form.addEventListener('submit', this._pageValidation.bind(this));
     }
 }

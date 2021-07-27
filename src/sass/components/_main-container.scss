@@ -108,6 +108,10 @@
 
         &--small {
             margin: 2rem 0 .4rem;
+
+            @include responsive {
+                overflow: visible;
+            }
         }
 
         &--email {
@@ -226,8 +230,12 @@
             top: -65%;
 
             @include responsive {
-                top: 0%;
+                top: 0;
             }
+        }
+
+        &--focus-summary {
+            top: -65%;
         }
     }
 
