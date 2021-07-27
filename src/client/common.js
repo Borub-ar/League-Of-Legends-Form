@@ -3,13 +3,14 @@ export default class Common {
     _form = document.querySelector('.main-container__form');
 
     constructor() {
-        // this._handleTopDivider();
+        this._handleTopDivider();
     }
 
     _handleTopDivider() {
-        if (!document.querySelector('#index-page')) {
-            this._topDivider.style.visibility = 'hidden';
-        } else this._topDivider.style.visibility = 'visible';
+        if (document.querySelector('#index-page') || document.querySelector('#download-page')) return;
+        if (!document.querySelector('.top-bar__divider')) return;
+        
+        this._topDivider.style.visibility = 'hidden';
     }
 
     _setSwupAttribute() {
@@ -33,10 +34,9 @@ export default class Common {
 
         if (document.querySelector('#last-step-page')) {
             const checkboxData = document.querySelector('[data-optional]').classList.contains('main-container__checkbox--marked') ? true : false;
-
             localStorage.setItem('username', this._usernameInput.value);
             localStorage.setItem('password', this._passwordInput.value);
-            localStorage.setItem('checkboxTwo', checkboxData);
+            localStorage.setItem('checkboxOptional', checkboxData);
         }
     }
 
@@ -76,29 +76,9 @@ export default class Common {
     //     e.target.parentElement.querySelector('.main-container__error-icon').remove();
     // }
 
-    _birthFormValidation(e) {
-        if ([...this._formSelects].some(sel => sel.value === '0')) {
-            e.preventDefault();
-            this._removeSwupAttribute();
-            this._showError();
-        } else {
-            this._setLocalStorage();
-            this._hideError();
-            this._setSwupAttribute();
-        }
-    }
 
-    _checkIfCorrect() {
-        if (![...this._formSelects].some(sel => sel.value === '0')) {
-            this._hideError();
-        }
-    }
-
-    _showError() {
-        this._errorMsg.classList.add('main-container__error-msg--show');
-    }
-
-    _hideError() {
-        this._errorMsg.classList.remove('main-container__error-msg--show');
-    }
 }
+
+// export class CommonValidation {
+
+// }

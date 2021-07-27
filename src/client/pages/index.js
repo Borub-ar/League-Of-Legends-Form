@@ -52,6 +52,6 @@ export default class App extends Common {
         this._emailInput.addEventListener('focus', this._placeholderFocus.bind(this));
         this._emailInput.addEventListener('focusout', this._normalizePlaceholder.bind(this));
         this._emailInput.addEventListener('focusout', this._emailValidation.bind(this));
-        // this._form.addEventListener('submit', this._emailValidation.bind(this));
+        this._form.addEventListener('submit', this._emailValidation.bind(this));
     }
 }
