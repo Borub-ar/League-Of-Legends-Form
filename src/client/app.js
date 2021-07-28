@@ -23,7 +23,7 @@ class App {
                 const index = new  IndexJS;
             })
         }
-
+ 
         if (document.querySelector('#birth-date-page')) {
             import('./pages/birthDate').then(({ default: BirthDateJS }) => {
                 const birthDate = new BirthDateJS();

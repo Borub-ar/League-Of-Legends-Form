@@ -1,11 +1,6 @@
 import Common from '../common';
 
 export default class App extends Common {
-    _formSelects = document.querySelectorAll('.custom-select__select--birth-date');
-    _errorMsg = document.querySelector('[data-birthError]');
-    _selectDay = document.querySelector('[data-day]');
-    _selectYear = document.querySelector('[data-year]');
-
     constructor() {
         super();
         this._generateSelectOptions();
