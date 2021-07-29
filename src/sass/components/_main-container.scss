@@ -97,6 +97,10 @@
         }
     }
 
+    &__height-normalize {
+        min-height: 6rem;
+    }
+
     &__input-con {
         position: relative;
         margin: 3.5rem 0 .4rem;
@@ -119,27 +123,27 @@
                 grid-column: 1;
                 grid-row: 1/2;
             }
+        }
 
-            &--username {
-                @include responsive {
-                    grid-column: 1;
-                    grid-row: 2/3;
-                }
+        &--username {
+            @include responsive {
+                grid-column: 1;
+                grid-row: 2/3;
             }
+        }
 
-            &--password {
-                @include responsive {
-                    grid-column: 1;
-                    grid-row: 3/4;
-                }
+        &--password {
+            @include responsive {
+                grid-column: 1;
+                grid-row: 3/4;
             }
+        }
 
-            &--repeat {
-                @include responsive {
-                    grid-column: 1;
-                    grid-row: 4/5;
+        &--repeat {
+            @include responsive {
+                grid-column: 1;
+                grid-row: 4/5;
 
-                }
             }
         }
     }
@@ -264,10 +268,6 @@
             text-align: center;
         }
 
-        &--last-step {
-            margin-top: .2rem;
-        }
-
         &--checkbox {
             position: absolute;
             top: -.2rem;
@@ -275,15 +275,6 @@
 
             @include responsive-small {
                 top: -.7rem;
-            }
-        }
-
-        &--absolute {
-            position: absolute;
-            top: -.2rem;
-
-            @include responsive {
-                top: -.6rem;
             }
         }
     }
