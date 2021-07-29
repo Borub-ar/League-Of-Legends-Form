@@ -19,7 +19,13 @@ export default class App extends Common {
     }
 
     _pageValidation(e) {
-        if (!this._emailValidation()) e.preventDefault();
+        if (!this._emailValidation()) {
+            e.preventDefault();
+            this._removeSwupAttribute();
+            return
+        } 
+
+        this._setSwupAttribute();
     }
 
     _handleEvents() {

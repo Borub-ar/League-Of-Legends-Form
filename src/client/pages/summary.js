@@ -23,7 +23,7 @@ export default class App extends Common {
     }
 
     _pageValidation(e) {
-        if (!this._usernameValidation() || !this._passwordValidation() || !this._repeatPassValidation() || !this._checkboxValidation() || !this._emailValidation()) {
+        if (!this._usernameValidation() || !this._passwordValidation() || !this._repeatPassValidation() || !this._checkboxValidation() || this._emailValidation()) {
             e.preventDefault();
             this._removeSwupAttribute();
             this._checkAll();
