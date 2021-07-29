@@ -98,7 +98,7 @@
     }
 
     &__height-normalize {
-        min-height: 6rem;
+        min-height: 7rem;
     }
 
     &__input-con {
@@ -111,10 +111,11 @@
         }
 
         &--small {
-            margin: 2rem 0 .4rem;
+            margin: 3rem 0 .4rem;
 
             @include responsive {
                 overflow: visible;
+                margin: 1.5rem 0 .4rem;
             }
         }
 
@@ -248,7 +249,6 @@
         z-index: 7;
         bottom: .7rem;
         right: 1rem;
-        // display: none;
         height: 1.1rem;
 
         &--show {
@@ -365,6 +365,7 @@
     &__checkbox-label {
         color: c.$gold-1;
         display: block;
+        margin: .5rem 0;
         font-family: Spiegel, sans-serif;
         font-size: .8rem;
         letter-spacing: 0;
