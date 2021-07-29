@@ -2,6 +2,8 @@ export default class Common {
     // General
     _topDivider = document.querySelector('.top-bar__divider');
     _form = document.querySelector('.main-container__form');
+    _inputs = document.querySelectorAll('.main-container__input');
+    _placeholders = document.querySelectorAll('.main-container__placeholder');
     //Select Input
     _formSelects = document.querySelectorAll('.custom-select__select--birth-date');
     _errorMsg = document.querySelector('[data-birthError]');
@@ -88,23 +90,6 @@ export default class Common {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     _renderInputErr(input, error, inpCon) {
         const inpContainer = document.querySelector(`[data-${inpCon}]`)
         const inp = document.querySelector(`[data-${input}]`);
@@ -136,20 +121,6 @@ export default class Common {
         err.classList.remove('main-container__error-msg--show');
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     _emailValidation() {
         const regex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
 
@@ -164,28 +135,6 @@ export default class Common {
             return true
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     _usernameValidation() {
         const checkMinLength = () => {
@@ -223,12 +172,6 @@ export default class Common {
         } else return false;
     }
 
-
-
-
-
-
-
     _passwordValidation() {
         const checkMinLength = () => {
             if (this._passwordInput.value.length < 8) {
@@ -264,25 +207,10 @@ export default class Common {
             }
         }
 
-        if (checkMinLength() && checkLetters() && checkSpecialChar()) {
+        if (checkMinLength() && checkSpecialChar() && checkLetters()) {
             return true;
         } else return false;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     _repeatPassValidation() {
         const comparePass = () => {
@@ -309,34 +237,6 @@ export default class Common {
             return true;
         } else return false;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     _markCheckbox(e) {
         e.target.parentElement.querySelector('.main-container__checkbox').classList.toggle('main-container__checkbox--marked');
