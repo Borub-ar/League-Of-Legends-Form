@@ -201,15 +201,15 @@
     background: linear-gradient(180deg, #0596aa 0, #005a82);
 
     @include responsive {
-        min-width: 0;
-        height: 4.4rem;
+        min-width: 20rem;
     }
 
     @include responsive-small {
-        width: clamp(230px, 70vw, 60rem);
+        min-width: 0;
+        width: clamp(260px, 80vw, 60rem);
     }
 
-    &__inner {
+    &__inner-btn {
         position: relative;
         height: 100%;
         width: 100%;
@@ -218,7 +218,7 @@
         background: transparent;
         border: none;
         cursor: pointer;
-        padding: 30px 35px;
+        padding: 0 .16rem;
         color: #cdfafa;
         font-size: 1.1rem;
         font-weight: 700;
@@ -226,12 +226,11 @@
         line-height: 0.1;
 
         @include responsive {
-            font-size: clamp(10px, 2vw, 1.2rem);
+            font-size: .6rem;
         }
 
         &:hover::after {
             opacity: .6;
-            animation-play-state: running;
         }
 
         &::before {
@@ -254,11 +253,8 @@
             width: 100%;
             height: 100%;
             background: url('../img/page-elements/button-bg-pattern.png') 0 0;
-            background-repeat: repeat-x;
             background-size: auto 100%;
             opacity: .3;
-            animation: floatLeft 60s linear infinite;
-            animation-play-state: paused;
             transition: opacity .4s;
         }
     }
