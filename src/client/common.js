@@ -39,10 +39,10 @@ export default class Common {
     }
 
     _handleTopDivider() {
-        if (document.querySelector('#index-page') || document.querySelector('#download-page')) return;
         if (!document.querySelector('.top-bar__divider')) return;
-
-        this._topDivider.style.visibility = 'hidden';
+        if (document.querySelector('#index-page')) {
+            this._topDivider.style.visibility = 'visible';
+        } else this._topDivider.style.visibility = 'hidden';
     }
 
     _setSwupAttribute() {
@@ -102,7 +102,7 @@ export default class Common {
                 d="M305.1 229.1l-119-186.5c-6.7-10.5-18.2-16.8-30.7-16.8s-23.9 6.3-30.7 16.8L5.7 229.1c-7.1 11.2-7.6 25.4-1.2 37 6.4 11.6 18.6 18.9 31.9 18.9h238.1c13.3 0 25.5-7.2 31.9-18.9 6.3-11.6 5.8-25.8-1.3-37zm-149.7 24.5c-10.9 0-19.8-8.9-19.8-19.8s8.9-19.8 19.8-19.8 19.8 8.9 19.8 19.8c0 11-8.9 19.8-19.8 19.8zm27.5-137.7l-9.8 65.7c-1.4 9.7-10.4 16.4-20.1 14.9-7.8-1.2-13.7-7.3-14.9-14.7l-10.6-65.6c-2.5-15.3 7.9-29.7 23.2-32.1s29.7 7.9 32.1 23.2c.5 2.9.5 5.9.1 8.6z">
                 </path>
             </svg>
-        `;   
+        `;
 
         inpContainer.insertAdjacentHTML('beforeend', HTML);
         inp.classList.add('main-container__input--error');
@@ -126,13 +126,13 @@ export default class Common {
 
         if (!this._emailInput.value || !regex.test(this._emailInput.value)) {
             this._renderInputErr('email', 'emailFirstError', 'emailCon');
-            return false
+            return false;
         }
 
         if (this._emailInput.value && regex.test(this._emailInput.value)) {
             this._setLocalStorage();
             this._hideInputErr('email', 'emailFirstError', 'emailCon');
-            return true
+            return true;
         }
     }
 
@@ -149,21 +149,21 @@ export default class Common {
 
         const checkMaxLength = () => {
             if (this._usernameInput.value.length >= 25) {
-                this._renderInputErr('username', 'usernameSecondError', 'usernameCon')
+                this._renderInputErr('username', 'usernameSecondError', 'usernameCon');
                 return false;
             } else {
-                this._hideInputErr('username', 'usernameSecondError', 'usernameCon')
+                this._hideInputErr('username', 'usernameSecondError', 'usernameCon');
                 return true;
             }
         };
 
         const checkSpaces = () => {
             if (this._usernameInput.value.includes(' ')) {
-                this._renderInputErr('username', 'usernameThirdError', 'usernameCon')
-                return false
+                this._renderInputErr('username', 'usernameThirdError', 'usernameCon');
+                return false;
             } else {
-                this._hideInputErr('username', 'usernameThirdError', 'usernameCon')
-                return true
+                this._hideInputErr('username', 'usernameThirdError', 'usernameCon');
+                return true;
             }
         };
 
@@ -215,20 +215,20 @@ export default class Common {
     _repeatPassValidation() {
         const comparePass = () => {
             if (this._passwordInput.value !== this._repeatPassInput.value) {
-                this._renderInputErr('repeat', 'repeatFirstError', 'repeatCon')
+                this._renderInputErr('repeat', 'repeatFirstError', 'repeatCon');
                 return false;
             } else {
-                this._hideInputErr('repeat', 'repeatFirstError', 'repeatCon')
+                this._hideInputErr('repeat', 'repeatFirstError', 'repeatCon');
                 return true;
             }
         }
 
         const checkIfEmpty = () => {
             if (!this._repeatPassInput.value) {
-                this._renderInputErr('repeat', 'repeatSecondError', 'repeatCon')
+                this._renderInputErr('repeat', 'repeatSecondError', 'repeatCon');
                 return false;
             } else {
-                this._hideInputErr('repeat', 'repeatSecondError', 'repeatCon')
+                this._hideInputErr('repeat', 'repeatSecondError', 'repeatCon');
                 return true;
             }
         };

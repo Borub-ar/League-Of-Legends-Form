@@ -45,6 +45,7 @@
             text-align: center;
             margin: 1rem 0 3rem;
             max-width: 90%;
+            line-height: 1.5;
         }
     }
 
@@ -98,7 +99,7 @@
     }
 
     &__height-normalize {
-        min-height: 7rem;
+        min-height: 8.5rem;
     }
 
     &__input-con {
@@ -192,7 +193,7 @@
 
         @include responsive {
             font-size: .8rem;
-            top: 45%;
+            top: 55%;
             color: c.$bright-elements;
         }
 
@@ -223,7 +224,7 @@
             text-align: center;
 
             @include responsive {
-                top: 45%;
+                top: 57%;
             }
         }
 
@@ -270,7 +271,7 @@
 
         &--checkbox {
             position: absolute;
-            top: -.2rem;
+            top: -.4rem;
             left: 0;
 
             @include responsive-small {
@@ -385,6 +386,11 @@
         margin: 2rem 0;
         font-size: .7rem;
         text-align: center;
+
+        @include responsive {
+            line-height: 1.5;
+            max-width: 90vw;
+        }
     }
 
     &__link {

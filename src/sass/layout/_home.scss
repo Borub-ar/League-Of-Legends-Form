@@ -2,7 +2,7 @@
 
 .welcome-page-bg {
     @include m.fixedBackground;
-    background: linear-gradient(#000000bf, #000000bf), url('../img/welcome-bg.jpg') fixed no-repeat center;
+    background: linear-gradient(#000000bf, #000000bf), url('../img/background/index-bg.jpg') fixed no-repeat center;
     background-size: cover;
     z-index: -2;
     background-position-y: 15%;
