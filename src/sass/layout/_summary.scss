@@ -2,7 +2,7 @@
 
 .summary-bg {
     @include m.fixedBackground;
-    background: url('../img/summary.bg.jpg') fixed no-repeat center;
+    background: url('../img/background/summary-bg.jpg') fixed no-repeat center;
     background-size: cover;
     z-index: -1;
     background-position-y: 15%;
