@@ -184,9 +184,9 @@ export default class Common {
         }
 
         const checkLetters = () => {
-            const secondRegex = /[a-zA-Z]/g;
+            const secondRegex = /[a-zA-Z]/;
 
-            if (!secondRegex.test(this._repeatPassInput.value)) {
+            if (!secondRegex.test(this._passwordInput.value)) {
                 this._renderInputErr('password', 'passwordSecondError', 'passwordCon');
                 return false;
             } else {
@@ -198,7 +198,7 @@ export default class Common {
         const checkSpecialChar = () => {
             const thirdRegex = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~, 0-9]/g;
 
-            if (!thirdRegex.test(this._repeatPassInput.value)) {
+            if (!thirdRegex.test(this._passwordInput.value)) {
                 this._renderInputErr('password', 'passwordSecondError', 'passwordCon');
                 return false;
             } else {
@@ -207,7 +207,7 @@ export default class Common {
             }
         }
 
-        if (checkMinLength() && checkSpecialChar() && checkLetters()) {
+        if (checkMinLength() && checkLetters() && checkSpecialChar()) {
             return true;
         } else return false;
     }
@@ -251,7 +251,7 @@ export default class Common {
         } else {
             this._requiredCheckbox.style.borderColor = '#be1e37';
             this._checkboxError.style.display = 'block';
-            this._checkboxCon.style.marginTop = '2rem';
+             if (!document.querySelector('#summary')) this._checkboxCon.style.marginTop = '2.8rem';
             return false
         }
     }
