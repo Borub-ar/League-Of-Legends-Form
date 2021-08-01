@@ -95,9 +95,14 @@
         top: 0;
         bottom: 0;
         right: 0;
-        height: 100%;
         width: 3rem;
         pointer-events: none;
+
+        &--top-norm {
+            @include responsive {
+                top: -20%;
+            }
+        }
 
         &--narrow {
             width: 2.3rem;
