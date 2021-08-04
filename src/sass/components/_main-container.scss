@@ -1,14 +1,12 @@
-@use '../abstracts/mixins'as m;
-@use '../abstracts/variables'as c;
-@use '../abstracts/media-queries'as *;
+@use '../abstracts' as *;
 
 .main-container {
-    @include m.flexCenter(column);
+    @include flexCenter(column);
 
     &__title {
         font-family: Beaufort-for-LOL;
         font-weight: 200;
-        color: c.$white-elemets;
+        color: $white-elemets;
         font-size: 5.4rem;
         text-align: center;
         letter-spacing: 4px;
@@ -24,7 +22,7 @@
             max-width: 90%;
             font-size: 2.7rem;
             letter-spacing: 6px;
-            color: c.$white-elemets;
+            color: $white-elemets;
 
             @include responsive {
                 max-width: 95%;
@@ -34,11 +32,11 @@
     }
 
     &__subtitle {
-        color: c.$main-color;
+        color: $main-color;
         font-weight: 200;
         font-size: 1rem;
         margin: 2rem 0;
-        color: c.$gold-5;
+        color: $gold-5;
 
         @include responsive {
             font-size: .8rem;
@@ -55,12 +53,12 @@
 
     &__divider-con {
         &--download {
-            @include m.flexCenter;
+            @include flexCenter;
             margin: 2rem 0 3rem;
         }
 
         @include responsive {
-            @include m.flexCenter;
+            @include flexCenter;
             overflow: hidden;
         }
     }
@@ -82,7 +80,7 @@
     }
 
     &__form {
-        @include m.flexCenter(column);
+        @include flexCenter(column);
 
         &--grid {
             width: 70%;
@@ -164,9 +162,9 @@
         outline: none;
         background: transparent;
         border: none;
-        border-bottom: 1px solid c.$gold-3;
-        color: c.$gold-1;
-        font-family: Friz-Quadrata-Regular;
+        border-bottom: 1px solid $gold-3;
+        color: $gold-1;
+        font-family: inherit;
         font-size: 1.7rem;
         min-width: 30rem;
         line-height: 1.2;
@@ -178,7 +176,7 @@
         }
 
         &--error {
-            border-bottom: 2px solid c.$error-red;
+            border-bottom: 2px solid $error-red;
         }
 
         &--summary {
@@ -192,7 +190,7 @@
         left: 50%;
         z-index: 5;
         width: 100%;
-        color: c.$gold-1;
+        color: $gold-1;
         font-size: 1.7rem;
         transform: translate(-50%, -50%);
         text-align: center;
@@ -202,7 +200,7 @@
         @include responsive {
             font-size: .8rem;
             top: 55%;
-            color: c.$bright-elements;
+            color: $bright-elements;
         }
 
         &--focus {
@@ -210,7 +208,7 @@
             top: -80%;
             transform: translateX(-25%);
             font-size: .8rem;
-            color: c.$bright-elements;
+            color: $bright-elements;
 
             @include responsive {
                 left: 0;
@@ -225,7 +223,7 @@
         }
 
         &--small {
-            color: c.$bright-elements;
+            color: $bright-elements;
             font-size: .8rem;
             top: 0;
             font-weight: 700;
@@ -291,7 +289,7 @@
     &__error-msg {
         padding: 0;
         display: none;
-        color: c.$error-red;
+        color: $error-red;
         font-family: Spiegel, sans-serif;
         letter-spacing: 1px;
         font-size: .7rem;
@@ -359,8 +357,8 @@
         margin-right: .6rem;
         min-height: 18px;
         min-width: 18px;
-        background-color: c.$black-elements;
-        border: 2px solid c.$main-color;
+        background-color: $black-elements;
+        border: 2px solid $main-color;
         cursor: pointer;
 
         &--marked {
@@ -379,12 +377,12 @@
         }
 
         &:hover {
-            border-color: c.$gold-1;
+            border-color: $gold-1;
         }
     }
 
     &__checkbox-label {
-        color: c.$gold-1;
+        color: $gold-1;
         display: block;
         margin: .5rem 0;
         font-family: Spiegel, sans-serif;
@@ -395,10 +393,10 @@
     }
 
     &__label-link {
-        color: c.$gold-1;
+        color: $gold-1;
 
         &:hover {
-            color: c.$bright-elements;
+            color: $bright-elements;
         }
     }
 
@@ -416,7 +414,7 @@
     &__link {
         position: relative;
         text-decoration: none;
-        color: c.$gold-1;
+        color: $gold-1;
 
         &--download {
             margin-top: 3rem;
@@ -430,7 +428,7 @@
             bottom: -.3rem;
             width: 100%;
             height: 1px;
-            background-color: c.$dark-elements;
+            background-color: $dark-elements;
         }
 
         &::after {
@@ -441,24 +439,24 @@
             left: 0;
             width: 100%;
             height: 1px;
-            background-color: c.$bright-elements;
+            background-color: $bright-elements;
             transform: scaleX(0);
             transform-origin: center;
             transition: transform .2s cubic-bezier(.4, 0, .2, 1);
         }
 
         &:hover {
-            color: c.$bright-elements;
+            color: $bright-elements;
         }
 
         &:hover::after {
-            color: c.$bright-elements;
+            color: $bright-elements;
             transform: scaleX(1);
         }
     }
 
     &__selects-con {
-        @include m.flexCenter;
+        @include flexCenter;
         position: relative;
         margin: 6rem 0;
 

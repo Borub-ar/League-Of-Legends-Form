@@ -1,6 +1,4 @@
-@use '../abstracts/mixins'as m;
-@use '../abstracts/variables'as c;
-@use '../abstracts/media-queries'as *;
+@use '../abstracts' as *;
 
 .footer {
     display: flex;
@@ -52,6 +50,6 @@
     }
 
     &__link {
-        color: c.$main-color;
+        color: $main-color;
     }
 }

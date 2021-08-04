@@ -1,6 +1,4 @@
-@use '../abstracts/variables'as c;
-@use '../abstracts/mixins'as m;
-@use '../abstracts/media-queries'as *;
+@use '../abstracts' as *;
 
 .custom-select {
     position: relative;
@@ -37,8 +35,8 @@
     }
 
     &__select {
-        @include m.selectStyleReset;
-        @include m.selectStyling;
+        @include selectStyleReset;
+        @include selectStyling;
         padding: .7rem 7rem .7rem .7rem;
         font-size: .8rem;
 
@@ -49,7 +47,7 @@
 
         &:hover,
         &:focus {
-            border-color: c.$gold-2;
+            border-color: $gold-2;
         }
 
         &--fixed {
@@ -72,13 +70,14 @@
 
             @include responsive {
                 display: block;
-                background-color: c.$black-elements;
+                padding-right: 0;
+                background-color: $black-elements;
                 width: clamp(15rem, 80vw, 20rem);
             }
         }
 
         &--birth-date {
-            background-color: c.$secondary-color;
+            background-color: $secondary-color;
             padding: .6rem 2.2rem .6rem 1rem;
             text-align-last: left;
 
@@ -118,7 +117,7 @@
             width: 0;
             border-left: .25em solid transparent;
             border-right: .25em solid transparent;
-            border-top: .25em solid c.$main-color;
+            border-top: .25em solid $main-color;
         }
 
         &--hidden {
@@ -129,7 +128,7 @@
     }
 
     &__label {
-        color: c.$main-color;
+        color: $main-color;
         font-size: .75rem;
         margin-right: .3rem;
         display: inline-block;
@@ -146,19 +145,19 @@
 }
 
 .progress-btn {
-    @include m.flexCenter;
+    @include flexCenter;
     height: 62px;
     width: 242px;
     padding: 3px;
-    background: linear-gradient(180deg, c.$gold-2, c.$gold-4);
+    background: linear-gradient(180deg, $gold-2, $gold-4);
 
     @include responsive {
         margin-bottom: 1rem;
     }
 
     &__inner {
-        background-color: c.$secondary-color;
-        color: c.$main-color;
+        background-color: $secondary-color;
+        color: $main-color;
         font-family: inherit;
         border: none;
         padding: 1.2rem 3.4rem;
@@ -170,7 +169,7 @@
         cursor: pointer;
 
         &:hover {
-            color: c.$gold-1;
+            color: $gold-1;
         }
     }
 
@@ -199,7 +198,7 @@
 }
 
 .download-btn {
-    @include m.flexCenter;
+    @include flexCenter;
     min-width: 30rem;
     padding: 4px;
     height: 5rem;

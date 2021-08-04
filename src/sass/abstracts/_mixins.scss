@@ -1,4 +1,4 @@
-@use '../abstracts/variables' as c;
+@use '../abstracts/variables' as *;
 
 @mixin flexCenter($direction: row) {
     display: flex;
@@ -10,19 +10,18 @@
 @mixin selectStyling {
     font-family: Friz-Quadrata-Regular;
     font-weight: 200;
-    border: 2px solid c.$main-color;
-    background-color: c.$black-elements;
+    border: 2px solid $main-color;
+    background-color: $black-elements;
     cursor: pointer;
-    color: c.$gold-1;
+    color: $gold-1;
     outline: none;
 }
 
 @mixin fixedBackground {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    inset: 0;
+    max-height: 100%;
+    z-index: -1;
 }
 
 @mixin selectStyleReset {
