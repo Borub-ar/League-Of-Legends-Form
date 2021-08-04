@@ -2,8 +2,14 @@
 
 .last-step-bg {
     @include m.fixedBackground;
-    background: url('../img/background/last-step-bg.jpg') fixed no-repeat center;
-    background-size: cover;
-    z-index: -1;
-    background-position-y: 15%;
+
+    &::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        display: block;
+        background: url('../img/background/last-step-bg.jpg') fixed no-repeat center;
+        background-size: cover;
+        background-position-y: 15%;
+    }
 }

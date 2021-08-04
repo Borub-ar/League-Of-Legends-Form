@@ -1,10 +1,15 @@
-@use '../abstracts/mixins' as m;
+@use '../abstracts/mixins'as m;
 
 .birth-date-bg {
     @include m.fixedBackground;
-    background: url('../img/background/birth-date-bg.jpg') fixed no-repeat center;
-    background-position-y: 15%;
-    background-size: cover;
-    z-index: -1;
+    
+    &::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        display: block;
+        background: url('../img/background/birth-date-bg.jpg') fixed no-repeat center;
+        background-position-y: 15%;
+        background-size: cover;
+    }
 }
-

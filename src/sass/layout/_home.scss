@@ -2,20 +2,15 @@
 
 .welcome-page-bg {
     @include m.fixedBackground;
-    background: linear-gradient(#000000bf, #000000bf), url('../img/background/index-bg.jpg') fixed no-repeat center;
-    background-size: cover;
-    z-index: -2;
-    background-position-y: 15%;
 
     &::before {
-        content: "";
+        content: '';
         position: fixed;
         inset: 0;
-        background: inherit;
-        -webkit-filter: blur(8px);
-        -moz-filter: blur(8px);
-        -o-filter: blur(8px);
-        -ms-filter: blur(8px);
+        display: block;
+        background: linear-gradient(#000000bf, #000000bf), url('../img/background/index-bg.jpg') fixed no-repeat center;
+        background-size: cover;
+        background-position-y: 15%;
         filter: blur(8px);
     }
 }

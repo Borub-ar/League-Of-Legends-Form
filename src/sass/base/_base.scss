@@ -1,6 +1,4 @@
-@use '../abstracts/variables' as c;
-@use '../abstracts/mixins' as m;
-@use '../abstracts/media-queries' as *;
+@use '../abstracts' as *;
 
 *,
 *::after,
@@ -16,7 +14,7 @@ body {
     margin: 0;
     font-family: Friz-Quadrata-Regular; 
     letter-spacing: 2px;
-    color: c.$main-color;
+    color: $main-color;
     padding: 0 2rem;
 
     @include responsive {

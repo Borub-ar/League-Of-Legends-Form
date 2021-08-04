@@ -1,5 +1,5 @@
-@use '../abstracts/variables'as c;
-@use '../abstracts/media-queries'as *;
+@use '../abstracts' as *;
+
 
 .top-bar {
     position: relative;
