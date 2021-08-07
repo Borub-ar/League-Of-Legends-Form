@@ -1,7 +1,7 @@
-@use '../abstracts/mixins'as m;
+@use '../abstracts/mixins'as *;
 
 .birth-date-bg {
-    @include m.fixedBackground;
+    @include fixedBackground;
     
     &::before {
         content: '';

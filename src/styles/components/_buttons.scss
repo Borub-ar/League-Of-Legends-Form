@@ -226,11 +226,11 @@
         color: #cdfafa;
         font-size: 1.1rem;
         font-weight: 700;
-        letter-spacing: 3px;
+        letter-spacing: 1px;
         line-height: 0.1;
 
         @include responsive {
-            font-size: .6rem;
+            font-size: .8rem;
         }
 
         &:hover::after {

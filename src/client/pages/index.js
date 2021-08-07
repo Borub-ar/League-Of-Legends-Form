@@ -1,5 +1,4 @@
-import Common from '../common';
-
+import Common from './common';
 export default class App extends Common {
     _placeholder = document.querySelector('.main-container__placeholder');
 

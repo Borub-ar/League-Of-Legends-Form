@@ -1,5 +1,4 @@
-import Common from '../common';
-
+import Common from './common';
 export default class App extends Common {
     constructor() {
         super();
@@ -18,6 +17,19 @@ export default class App extends Common {
                 input.parentElement.querySelector('.main-container__placeholder').classList.remove('main-container__placeholder--small-focus');
             }
         })
+    }
+
+    _pageValidation(e) {
+        if (!this._usernameValidation() || !this._passwordValidation() || !this._repeatPassValidation() || !this._checkboxValidation()) {
+            e.preventDefault();
+            this._removeSwupAttribute();
+            this._checkAll();
+        }
+
+        if (this._usernameValidation() && this._passwordValidation() && this._repeatPassValidation() && this._checkboxValidation()) {
+            this._setLocalStorage();
+            this._setSwupAttribute();
+        } else e.preventDefault();
     }
 
     _handleEvents() {
