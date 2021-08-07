@@ -1,7 +1,7 @@
-@use '../abstracts/mixins' as m;
+@use '../abstracts/mixins' as *;
 
 .background-video {
-    @include m.flexCenter;
+    @include flexCenter;
     position: fixed;
     inset: 0;
     z-index: -1;

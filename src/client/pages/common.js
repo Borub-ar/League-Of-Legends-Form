@@ -264,19 +264,6 @@ export default class Common {
         if (document.querySelector('#summary')) this._emailValidation();
     }
 
-    _pageValidation(e) {
-        if (!this._usernameValidation() || !this._passwordValidation() || !this._repeatPassValidation() || !this._checkboxValidation()) {
-            e.preventDefault();
-            this._removeSwupAttribute();
-            this._checkAll();
-        }
-
-        if (this._usernameValidation() && this._passwordValidation() && this._repeatPassValidation() && this._checkboxValidation()) {
-            this._setLocalStorage();
-            this._setSwupAttribute();
-        } else e.preventDefault();
-    }
-
     _handleValidationEvents() {
         [...this._checkboxes].forEach(checkbox => checkbox.addEventListener('click', this._markCheckbox.bind(this)));
         [...this._checkboxLabels].forEach(checkbox => checkbox.addEventListener('click', this._markCheckbox.bind(this)));
