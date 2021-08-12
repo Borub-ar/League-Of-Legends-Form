@@ -1,15 +1,15 @@
 @use '../abstracts/mixins' as *;
 
 .summary-bg {
-    @include fixedBackground;
+  @include fixedBackground;
 
-    &::before {
-        content: '';
-        position: fixed;
-        inset: 0;
-        display: block;
-        background: url('../img/background/summary-bg.jpg') fixed no-repeat center;
-        background-size: cover;
-        background-position-y: 15%;
-    }
+  &::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    display: block;
+    background: url('../img/background/summary-bg.jpg') fixed no-repeat center;
+    background-size: cover;
+    background-position-y: 15%;
+  }
 }

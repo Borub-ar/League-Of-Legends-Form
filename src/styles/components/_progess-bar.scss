@@ -1,53 +1,52 @@
 @use '../abstracts' as *;
 
 .progress-bar {
-    @include flexCenter;
-    height: 4rem;
+  @include flexCenter;
+  height: 4rem;
 
-    &__circle {
-        position: relative;
-        height: .4rem;
-        width: .4rem;
-        border-radius: 50%;
-        background-color: $main-color;
-        margin: 1rem;
+  &__circle {
+    position: relative;
+    height: 0.4rem;
+    width: 0.4rem;
+    border-radius: 50%;
+    background-color: $main-color;
+    margin: 1rem;
 
-        &--active {
-            background-color: $gold-1;
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            height: .85rem;
-            width: .85rem;
-            border-radius: 50%;
-            border: 1px solid $main-color;
-        }
+    &--active {
+      background-color: $gold-1;
     }
 
-    &__label {
-        font-family: Beaufort-for-LOL;
-        position: absolute;
-        top: 250%;
-        left: 130%;
-        display: block;
-        font-size: .7rem;
-        min-width: 4rem;
-        transform: translate(-50%, -50%);
-        color: $dark-elements;
-
-        &--active {
-            color: $gold-1;
-        }
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 0.85rem;
+      width: 0.85rem;
+      border-radius: 50%;
+      border: 1px solid $main-color;
     }
+  }
 
-    &__line {
-        width: clamp(2rem, 24vw, 7rem);
-        border-top: 1px solid $main-color;
+  &__label {
+    font-family: Beaufort-for-LOL;
+    position: absolute;
+    top: 250%;
+    left: 130%;
+    display: block;
+    font-size: 0.7rem;
+    min-width: 4rem;
+    transform: translate(-50%, -50%);
+    color: $dark-elements;
+
+    &--active {
+      color: $gold-1;
     }
+  }
 
+  &__line {
+    width: clamp(2rem, 24vw, 7rem);
+    border-top: 1px solid $main-color;
+  }
 }

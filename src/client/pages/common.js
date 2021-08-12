@@ -1,101 +1,103 @@
 export default class Common {
-    // General
-    _topDivider = document.querySelector('.top-bar__divider');
-    _form = document.querySelector('.main-container__form');
-    _inputs = document.querySelectorAll('.main-container__input');
-    _placeholders = document.querySelectorAll('.main-container__placeholder');
-    //Select Input
-    _formSelects = document.querySelectorAll('.custom-select__select--birth-date');
-    _errorMsg = document.querySelector('[data-birthError]');
-    _selectDay = document.querySelector('[data-day]');
-    _selectMonth = document.querySelector('[data-month]');
-    _selectYear = document.querySelector('[data-year]');
-    //Email Input
-    _emailInput = document.querySelector('[data-email]');
-    _errorIcon = document.querySelector('.main-container__error-icon');
-    _errorMsg = document.querySelector('.main-container__error-msg');
-    // UsernameInput
-    _usernameInput = document.querySelector('[data-username]');
-    _usernameFirstError = document.querySelector('[data-usernameFirstError]');
-    _usernameSecondError = document.querySelector('[data-usernameSecondError]');
-    _usernameThirdError = document.querySelector('[data-usernameThirdError]');
-    // Password input
-    _passwordInput = document.querySelector('[data-password]');
-    _passwordFirstError = document.querySelector('[data-passwordFirstError]');
-    _passwordSecondError = document.querySelector('[data-passwordSecondError]');
-    // Repeat password input
-    _repeatPassInput = document.querySelector('[data-repeat]');
-    _repeatFirstError = document.querySelector('[data-repeatFirstError]');
-    _repeatSecondError = document.querySelector('[data-repeatSecondError]');
-    // Checkboxes
-    _checkboxes = document.querySelectorAll('.main-container__checkbox');
-    _checkboxCon = document.querySelector('[data-checkboxCon]');
-    _checkboxLabels = document.querySelectorAll('.main-container__checkbox-label');
-    _requiredCheckbox = document.querySelector('[data-required]');
-    _checkboxError = document.querySelector('[data-checkboxError]');
+  // General
+  _topDivider = document.querySelector('.top-bar__divider');
+  _form = document.querySelector('.main-container__form');
+  _inputs = document.querySelectorAll('.main-container__input');
+  _placeholders = document.querySelectorAll('.main-container__placeholder');
+  //Select Input
+  _formSelects = document.querySelectorAll('.custom-select__select--birth-date');
+  _errorMsg = document.querySelector('[data-birthError]');
+  _selectDay = document.querySelector('[data-day]');
+  _selectMonth = document.querySelector('[data-month]');
+  _selectYear = document.querySelector('[data-year]');
+  //Email Input
+  _emailInput = document.querySelector('[data-email]');
+  _errorIcon = document.querySelector('.main-container__error-icon');
+  _errorMsg = document.querySelector('.main-container__error-msg');
+  // UsernameInput
+  _usernameInput = document.querySelector('[data-username]');
+  _usernameFirstError = document.querySelector('[data-usernameFirstError]');
+  _usernameSecondError = document.querySelector('[data-usernameSecondError]');
+  _usernameThirdError = document.querySelector('[data-usernameThirdError]');
+  // Password input
+  _passwordInput = document.querySelector('[data-password]');
+  _passwordFirstError = document.querySelector('[data-passwordFirstError]');
+  _passwordSecondError = document.querySelector('[data-passwordSecondError]');
+  // Repeat password input
+  _repeatPassInput = document.querySelector('[data-repeat]');
+  _repeatFirstError = document.querySelector('[data-repeatFirstError]');
+  _repeatSecondError = document.querySelector('[data-repeatSecondError]');
+  // Checkboxes
+  _checkboxes = document.querySelectorAll('.main-container__checkbox');
+  _checkboxCon = document.querySelector('[data-checkboxCon]');
+  _checkboxLabels = document.querySelectorAll('.main-container__checkbox-label');
+  _requiredCheckbox = document.querySelector('[data-required]');
+  _checkboxError = document.querySelector('[data-checkboxError]');
 
-    constructor() {
-        this._handleTopDivider();
+  constructor() {
+    this._handleTopDivider();
+  }
+
+  _handleTopDivider() {
+    if (!document.querySelector('.top-bar__divider')) return;
+    if (document.querySelector('#index-page')) this._topDivider.style.opacity = 1;
+  }
+
+  _setSwupAttribute() {
+    this._form.setAttribute('data-swup-form', '');
+  }
+
+  _removeSwupAttribute() {
+    this._form.removeAttribute('data-swup-form');
+  }
+
+  _setLocalStorage() {
+    if (document.querySelector('#index-page')) {
+      localStorage.setItem('email', document.querySelector('[data-email]').value);
     }
 
-    _handleTopDivider() {
-        if (!document.querySelector('.top-bar__divider')) return;
-        if (document.querySelector('#index-page')) {
-            this._topDivider.style.visibility = 'visible';
-        } else this._topDivider.style.visibility = 'hidden';
+    if (document.querySelector('#birth-date-page')) {
+      localStorage.setItem('day', document.querySelector('[data-day]').value);
+      localStorage.setItem('month', document.querySelector('[data-month]').value);
+      localStorage.setItem('year', document.querySelector('[data-year]').value);
     }
 
-    _setSwupAttribute() {
-        this._form.setAttribute('data-swup-form', '');
+    if (document.querySelector('#last-step-page')) {
+      const checkboxData = document
+        .querySelector('[data-optional]')
+        .classList.contains('main-container__checkbox--marked')
+        ? true
+        : false;
+      localStorage.setItem('username', this._usernameInput.value);
+      localStorage.setItem('password', this._passwordInput.value);
+      localStorage.setItem('checkboxOptional', checkboxData);
     }
+  }
 
-    _removeSwupAttribute() {
-        this._form.removeAttribute('data-swup-form');
-    }
-
-    _setLocalStorage() {
-        if (document.querySelector('#index-page')) {
-            localStorage.setItem('email', document.querySelector('[data-email]').value);
-        }
-
-        if (document.querySelector('#birth-date-page')) {
-            localStorage.setItem('day', document.querySelector('[data-day]').value);
-            localStorage.setItem('month', document.querySelector('[data-month]').value);
-            localStorage.setItem('year', document.querySelector('[data-year]').value);
-        }
-
-        if (document.querySelector('#last-step-page')) {
-            const checkboxData = document.querySelector('[data-optional]').classList.contains('main-container__checkbox--marked') ? true : false;
-            localStorage.setItem('username', this._usernameInput.value);
-            localStorage.setItem('password', this._passwordInput.value);
-            localStorage.setItem('checkboxOptional', checkboxData);
-        }
-    }
-
-    _generateSelectOptions() {
-        for (let i = 1; i <= 31; i++) {
-            const HTML = `
+  _generateSelectOptions() {
+    for (let i = 1; i <= 31; i++) {
+      const HTML = `
             <option value="${i}">${i}</option>
         `;
 
-            this._selectDay.insertAdjacentHTML('beforeend', HTML);
-        }
+      this._selectDay.insertAdjacentHTML('beforeend', HTML);
+    }
 
-        for (let i = 2021; i >= 1900; i--) {
-            const HTML = `
+    for (let i = 2021; i >= 1900; i--) {
+      const HTML = `
                 <option value="${i}">${i}</option>
             `;
 
-            this._selectYear.insertAdjacentHTML('beforeend', HTML);
-        }
+      this._selectYear.insertAdjacentHTML('beforeend', HTML);
     }
+  }
 
-    _renderInputErr(input, error, inpCon) {
-        const inpContainer = document.querySelector(`[data-${inpCon}]`)
-        const inp = document.querySelector(`[data-${input}]`);
-        const err = document.querySelector(`[data-${error}]`);
+  _renderInputErr(input, error, inpCon) {
+    const inpContainer = document.querySelector(`[data-${inpCon}]`);
+    const inp = document.querySelector(`[data-${input}]`);
+    const err = document.querySelector(`[data-${error}]`);
 
-        const HTML = `
+    const HTML = `
             <svg class="main-container__error-icon" xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 310.8 310.8">
                 <path fill="#be1e37"
@@ -104,174 +106,178 @@ export default class Common {
             </svg>
         `;
 
-        inpContainer.insertAdjacentHTML('beforeend', HTML);
-        inp.classList.add('main-container__input--error');
-        err.classList.add('main-container__error-msg--show');
+    inpContainer.insertAdjacentHTML('beforeend', HTML);
+    inp.classList.add('main-container__input--error');
+    err.classList.add('main-container__error-msg--show');
+  }
+
+  _hideInputErr(input, error, inpCon) {
+    const inpContainer = document.querySelector(`[data-${inpCon}]`);
+    const inp = document.querySelector(`[data-${input}]`);
+    const err = document.querySelector(`[data-${error}]`);
+
+    if (inpContainer.querySelector('.main-container__error-icon')) {
+      inpContainer.querySelector('.main-container__error-icon').remove();
+    }
+    inp.classList.remove('main-container__input--error');
+    err.classList.remove('main-container__error-msg--show');
+  }
+
+  _emailValidation() {
+    const emailVal =
+      /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+
+    if (!this._emailInput.value || !emailVal.test(this._emailInput.value)) {
+      this._renderInputErr('email', 'emailFirstError', 'emailCon');
+      return false;
     }
 
-    _hideInputErr(input, error, inpCon) {
-        const inpContainer = document.querySelector(`[data-${inpCon}]`)
-        const inp = document.querySelector(`[data-${input}]`);
-        const err = document.querySelector(`[data-${error}]`);
-
-        if (inpContainer.querySelector('.main-container__error-icon')) {
-            inpContainer.querySelector('.main-container__error-icon').remove();
-        }
-        inp.classList.remove('main-container__input--error');
-        err.classList.remove('main-container__error-msg--show');
+    if (this._emailInput.value && emailVal.test(this._emailInput.value)) {
+      this._setLocalStorage();
+      this._hideInputErr('email', 'emailFirstError', 'emailCon');
+      return true;
     }
+  }
 
-    _emailValidation() {
-        const emailVal = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+  _usernameValidation() {
+    const checkMinLength = () => {
+      if (this._usernameInput.value.length < 4) {
+        this._renderInputErr('username', 'usernameFirstError', 'usernameCon');
+        return false;
+      } else {
+        this._hideInputErr('username', 'usernameFirstError', 'usernameCon');
+        return true;
+      }
+    };
 
-        if (!this._emailInput.value || !emailVal.test(this._emailInput.value)) {
-            this._renderInputErr('email', 'emailFirstError', 'emailCon');
-            return false;
-        }
+    const checkMaxLength = () => {
+      if (this._usernameInput.value.length >= 25) {
+        this._renderInputErr('username', 'usernameSecondError', 'usernameCon');
+        return false;
+      } else {
+        this._hideInputErr('username', 'usernameSecondError', 'usernameCon');
+        return true;
+      }
+    };
 
-        if (this._emailInput.value && emailVal.test(this._emailInput.value)) {
-            this._setLocalStorage();
-            this._hideInputErr('email', 'emailFirstError', 'emailCon');
-            return true;
-        }
+    const checkSpaces = () => {
+      if (this._usernameInput.value.includes(' ')) {
+        this._renderInputErr('username', 'usernameThirdError', 'usernameCon');
+        return false;
+      } else {
+        this._hideInputErr('username', 'usernameThirdError', 'usernameCon');
+        return true;
+      }
+    };
+
+    if (checkMinLength() && checkMaxLength() && checkSpaces()) {
+      return true;
+    } else return false;
+  }
+
+  _passwordValidation() {
+    const checkMinLength = () => {
+      if (this._passwordInput.value.length < 8) {
+        this._renderInputErr('password', 'passwordFirstError', 'passwordCon');
+        return false;
+      } else {
+        this._hideInputErr('password', 'passwordFirstError', 'passwordCon');
+        return true;
+      }
+    };
+
+    const checkLetters = () => {
+      const hasLetters = /[a-zA-Z]/;
+
+      if (!hasLetters.test(this._passwordInput.value)) {
+        this._renderInputErr('password', 'passwordSecondError', 'passwordCon');
+        return false;
+      } else {
+        this._hideInputErr('password', 'passwordSecondError', 'passwordCon');
+        return true;
+      }
+    };
+
+    const checkSpecialChar = () => {
+      const hasSpecialChar = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~, 0-9]/g;
+
+      if (!hasSpecialChar.test(this._passwordInput.value)) {
+        this._renderInputErr('password', 'passwordSecondError', 'passwordCon');
+        return false;
+      } else {
+        this._hideInputErr('password', 'passwordSecondError', 'passwordCon');
+        return true;
+      }
+    };
+
+    if (checkMinLength() && checkLetters() && checkSpecialChar()) {
+      return true;
+    } else return false;
+  }
+
+  _repeatPassValidation() {
+    const comparePass = () => {
+      if (this._passwordInput.value !== this._repeatPassInput.value) {
+        this._renderInputErr('repeat', 'repeatFirstError', 'repeatCon');
+        return false;
+      } else {
+        this._hideInputErr('repeat', 'repeatFirstError', 'repeatCon');
+        return true;
+      }
+    };
+
+    const checkIfEmpty = () => {
+      if (!this._repeatPassInput.value) {
+        this._renderInputErr('repeat', 'repeatSecondError', 'repeatCon');
+        return false;
+      } else {
+        this._hideInputErr('repeat', 'repeatSecondError', 'repeatCon');
+        return true;
+      }
+    };
+
+    if (checkIfEmpty() && comparePass()) {
+      return true;
+    } else return false;
+  }
+
+  _markCheckbox(e) {
+    e.target.parentElement
+      .querySelector('.main-container__checkbox')
+      .classList.toggle('main-container__checkbox--marked');
+  }
+
+  _checkboxValidation() {
+    if (this._requiredCheckbox.classList.contains('main-container__checkbox--marked')) {
+      this._requiredCheckbox.style.borderColor = '#937341';
+      this._checkboxError.style.display = 'none';
+      this._checkboxCon.style.marginTop = '.7rem';
+      return true;
+    } else {
+      this._requiredCheckbox.style.borderColor = '#be1e37';
+      this._checkboxError.style.display = 'block';
+      if (!document.querySelector('#summary')) this._checkboxCon.style.marginTop = '2.8rem';
+      return false;
     }
+  }
 
-    _usernameValidation() {
-        const checkMinLength = () => {
-            if (this._usernameInput.value.length < 4) {
-                this._renderInputErr('username', 'usernameFirstError', 'usernameCon');
-                return false;
-            } else {
-                this._hideInputErr('username', 'usernameFirstError', 'usernameCon');
-                return true;
-            }
-        };
+  _checkAll() {
+    this._usernameValidation();
+    this._passwordValidation();
+    this._repeatPassValidation();
+    this._checkboxValidation();
+    if (document.querySelector('#summary')) this._emailValidation();
+  }
 
-        const checkMaxLength = () => {
-            if (this._usernameInput.value.length >= 25) {
-                this._renderInputErr('username', 'usernameSecondError', 'usernameCon');
-                return false;
-            } else {
-                this._hideInputErr('username', 'usernameSecondError', 'usernameCon');
-                return true;
-            }
-        };
-
-        const checkSpaces = () => {
-            if (this._usernameInput.value.includes(' ')) {
-                this._renderInputErr('username', 'usernameThirdError', 'usernameCon');
-                return false;
-            } else {
-                this._hideInputErr('username', 'usernameThirdError', 'usernameCon');
-                return true;
-            }
-        };
-
-        if (checkMinLength() && checkMaxLength() && checkSpaces()) {
-            return true;
-        } else return false;
-    }
-
-    _passwordValidation() {
-        const checkMinLength = () => {
-            if (this._passwordInput.value.length < 8) {
-                this._renderInputErr('password', 'passwordFirstError', 'passwordCon');
-                return false;
-            } else {
-                this._hideInputErr('password', 'passwordFirstError', 'passwordCon');
-                return true;
-            }
-        }
-
-        const checkLetters = () => {
-            const hasLetters = /[a-zA-Z]/;
-
-            if (!hasLetters.test(this._passwordInput.value)) {
-                this._renderInputErr('password', 'passwordSecondError', 'passwordCon');
-                return false;
-            } else {
-                this._hideInputErr('password', 'passwordSecondError', 'passwordCon');
-                return true;
-            }
-        }
-
-        const checkSpecialChar = () => {
-            const hasSpecialChar = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~, 0-9]/g;
-
-            if (!hasSpecialChar.test(this._passwordInput.value)) {
-                this._renderInputErr('password', 'passwordSecondError', 'passwordCon');
-                return false;
-            } else {
-                this._hideInputErr('password', 'passwordSecondError', 'passwordCon');
-                return true;
-            }
-        }
-
-        if (checkMinLength() && checkLetters() && checkSpecialChar()) {
-            return true;
-        } else return false;
-    }
-
-    _repeatPassValidation() {
-        const comparePass = () => {
-            if (this._passwordInput.value !== this._repeatPassInput.value) {
-                this._renderInputErr('repeat', 'repeatFirstError', 'repeatCon');
-                return false;
-            } else {
-                this._hideInputErr('repeat', 'repeatFirstError', 'repeatCon');
-                return true;
-            }
-        }
-
-        const checkIfEmpty = () => {
-            if (!this._repeatPassInput.value) {
-                this._renderInputErr('repeat', 'repeatSecondError', 'repeatCon');
-                return false;
-            } else {
-                this._hideInputErr('repeat', 'repeatSecondError', 'repeatCon');
-                return true;
-            }
-        };
-
-        if (checkIfEmpty() && comparePass()) {
-            return true;
-        } else return false;
-    }
-
-    _markCheckbox(e) {
-        e.target.parentElement.querySelector('.main-container__checkbox').classList.toggle('main-container__checkbox--marked');
-    }
-
-    _checkboxValidation() {
-        if (this._requiredCheckbox.classList.contains('main-container__checkbox--marked')) {
-            this._requiredCheckbox.style.borderColor = '#937341';
-            this._checkboxError.style.display = 'none';
-            this._checkboxCon.style.marginTop = '.7rem';
-            return true
-        } else {
-            this._requiredCheckbox.style.borderColor = '#be1e37';
-            this._checkboxError.style.display = 'block';
-             if (!document.querySelector('#summary')) this._checkboxCon.style.marginTop = '2.8rem';
-            return false
-        }
-    }
-
-    _checkAll() {
-        this._usernameValidation();
-        this._passwordValidation();
-        this._repeatPassValidation();
-        this._checkboxValidation();
-        if (document.querySelector('#summary')) this._emailValidation();
-    }
-
-    _handleValidationEvents() {
-        [...this._checkboxes].forEach(checkbox => checkbox.addEventListener('click', this._markCheckbox.bind(this)));
-        [...this._checkboxLabels].forEach(checkbox => checkbox.addEventListener('click', this._markCheckbox.bind(this)));
-        this._requiredCheckbox.addEventListener('click', this._checkboxValidation.bind(this));
-        this._usernameInput.addEventListener('focusout', this._usernameValidation.bind(this));
-        this._passwordInput.addEventListener('focusout', this._passwordValidation.bind(this));
-        this._repeatPassInput.addEventListener('focusout', this._repeatPassValidation.bind(this));
-        if (document.querySelector('#summary')) this._emailInput.addEventListener('focusout', this._pageValidation.bind(this));
-        this._form.addEventListener('submit', this._pageValidation.bind(this));
-    }
+  _handleValidationEvents() {
+    [...this._checkboxes].forEach((checkbox) => checkbox.addEventListener('click', this._markCheckbox.bind(this)));
+    [...this._checkboxLabels].forEach((checkbox) => checkbox.addEventListener('click', this._markCheckbox.bind(this)));
+    this._requiredCheckbox.addEventListener('click', this._checkboxValidation.bind(this));
+    this._usernameInput.addEventListener('focusout', this._usernameValidation.bind(this));
+    this._passwordInput.addEventListener('focusout', this._passwordValidation.bind(this));
+    this._repeatPassInput.addEventListener('focusout', this._repeatPassValidation.bind(this));
+    if (document.querySelector('#summary'))
+      this._emailInput.addEventListener('focusout', this._pageValidation.bind(this));
+    this._form.addEventListener('submit', this._pageValidation.bind(this));
+  }
 }

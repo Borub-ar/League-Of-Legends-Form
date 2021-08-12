@@ -1,205 +1,312 @@
 <!DOCTYPE html>
 <html lang="pl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="League of Legends to drużynowa gra z ponad 140 bohaterami, którzy umożliwiają epickie zagrywki. Graj już teraz, za darmo.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="League of Legends to drużynowa gra z ponad 140 bohaterami, którzy umożliwiają epickie zagrywki. Graj już teraz, za darmo."
+    />
     <title>Rejestracja League of Legends |</title>
-    <link rel="shortcut icon" href="https://lolstatic-a.akamaihd.net/lolkit/1.1.9/resources/images/favicon.ico"
-        type="image/vnd.microsoft.icon">
-    <link rel="stylesheet" href="./src/styles/style.scss">
+    <link
+      rel="shortcut icon"
+      href="https://lolstatic-a.akamaihd.net/lolkit/1.1.9/resources/images/favicon.ico"
+      type="image/vnd.microsoft.icon"
+    />
+    <link rel="stylesheet" href="./src/styles/style.scss" />
     <script defer src="./src/client/app.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="top-bar">
-            <img class="top-bar__logo" src="./src/img/page-elements/league-logo.png" alt="logo of League of Legends">
+      <div class="top-bar">
+        <img class="top-bar__logo" src="./src/img/page-elements/league-logo.png" alt="logo of League of Legends" />
 
-            <div class="custom-select">
-                <label class="custom-select__label" for="region-list-topbar">REGION:</label>
-                <select class="custom-select__select" id="region-list-topbar">
-                    <option value="EU PÓŁNOC I WSCHÓD">EU PÓŁNOC I WSCHÓD (POLSKI)</option>
-                    <option value="EU PÓŁNOC I WSCHÓD">NORTH AMERICA (ENGLISH)</option>
-                </select>
-                <span class="custom-select__arrow custom-select__arrow--hidden"></span>
-            </div>
+        <div class="custom-select">
+          <label class="custom-select__label" for="region-list-topbar">REGION:</label>
+          <select class="custom-select__select" id="region-list-topbar">
+            <option value="EU PÓŁNOC I WSCHÓD">EU PÓŁNOC I WSCHÓD (POLSKI)</option>
+            <option value="EU PÓŁNOC I WSCHÓD">NORTH AMERICA (ENGLISH)</option>
+          </select>
+          <span class="custom-select__arrow custom-select__arrow--hidden"></span>
         </div>
+      </div>
     </header>
 
     <main>
-        <div class="main-container transition-fade" id="swup">
-            <div class="summary-bg"></div>
+      <div class="main-container transition-fade" id="swup">
+        <div class="summary-bg"></div>
 
-            <!-- This id allows Swup.js to recognize on which page you are currently -->
-            <div id="summary"></div>
+        <!-- This id allows Swup.js to recognize on which page you are currently -->
+        <div id="summary"></div>
 
-            <h1 class="main-container__title main-container__title--small">WSZYSTKO WYGLĄDA DOBRZE?</h1>
-            <h2 class="main-container__subtitle">UPEWNIJ SIĘ, ŻE ANI TY, ANI TWÓJ KOT NIE NACISNĘLIŚCIE ŻADNEGO LOSOWEGO
-                KLAWISZA.</h2>
+        <h1 class="main-container__title main-container__title--small">WSZYSTKO WYGLĄDA DOBRZE?</h1>
+        <h2 class="main-container__subtitle">
+          UPEWNIJ SIĘ, ŻE ANI TY, ANI TWÓJ KOT NIE NACISNĘLIŚCIE ŻADNEGO LOSOWEGO KLAWISZA.
+        </h2>
 
-            <form action="./download.html" class="main-container__form main-container__form--grid">
-                <div class="main-container__height-normalize">
-                    <div class="main-container__input-con main-container__input-con--small main-container__input-con--email" data-emailCon>
-                        <p class="main-container__placeholder main-container__placeholder--small main-container__placeholder--summary main-container__placeholder--focus-summary">E-MAIL</p>
-                        <label for="email-input">Check your e-mail</label>
-                        <input class="main-container__input main-container__input--summary" type="text" id="email-input" data-email>
-                    </div>
-                    
-                    <ul class="main-container__error-list">
-                        <li class="main-container__error-msg" data-emailFirstError>Podaj prawidłowy adres e-mail</li>
-                    </ul>
-                </div>
-   
-                <div class="main-container__height-normalize">
-                    <div class="main-container__input-con main-container__input-con--small main-container__input-con--username" data-usernameCon>
-                        <p class="main-container__placeholder main-container__placeholder--small main-container__placeholder--summary main-container__placeholder--focus-summary">NAZWA UŻYTKOWNIKA</p>
-                        <label for="name-input">Check you username</label>
-                        <input class="main-container__input main-container__input--summary" id="name-input" type="text" data-username>
-                    </div>
-
-                    <ul class="main-container__error-list main-container__error-list--last-step">
-                        <li class="main-container__error-msg main-container__error-msg--last-step"data-usernameFirstError>Nazwa użytkownika musi zawierać więcej niż 3 znaki.</li>
-                        <li class="main-container__error-msg main-container__error-msg--last-step"data-usernameSecondError>Nazwa użytkownika musi zawierać mniej niż 25 znaków.</li>
-                        <li class="main-container__error-msg main-container__error-msg--last-step" data-usernameThirdError>Nazwa użytkownika nie może zawierać spacji.</li>
-                    </ul>
-                </div>
-          
-                <div class="main-container__height-normalize">
-                    <div class="main-container__input-con main-container__input-con--small main-container__input-con--password" data-passwordCon>
-                        <p class="main-container__placeholder main-container__placeholder--small main-container__placeholder--summary main-container__placeholder--focus-summary">HASŁO</p>
-                        <label for="password-input">Check your password</label>
-                        <input class="main-container__input main-container__input--summary" id="password-iput" type="password" data-password>
-                    </div>
-
-                    <ul class="main-container__error-list main-container__error-list--last-step">
-                        <li class="main-container__error-msg main-container__error-msg--last-step" data-passwordFirstError> Hasło musi zawierać co najmniej następującą liczbę znaków: 8.</li>
-                        <li class="main-container__error-msg main-container__error-msg--last-step" data-passwordSecondError>Hasło musi zawierać przynajmniej jedna literę i jeden znak niebędący literą.</li>
-                    </ul>
-                </div>
-                   
-                <div class="main-container__height-normalize">
-                    <div class="main-container__input-con main-container__input-con--small main-container__input-con--repeat" data-repeatCon>
-                        <p class="main-container__placeholder main-container__placeholder--small main-container__placeholder--summary main-container__placeholder--focus-summary">POTWIERDŹ HASŁO</p>
-                        <label for="password-conf-input">Confirm your password</label>
-                        <input class="main-container__input main-container__input--summary" id="password-conf-input" type="password" data-repeat>
-                    </div>
-
-                    <ul class="main-container__error-list main-container__error-list--last-step">
-                        <li class="main-container__error-msg main-container__error-msg--last-step"data-repeatFirstError>Podane hasła się różnią.</li>
-                        <li class="main-container__error-msg main-container__error-msg--last-step"data-repeatSecondError>To pole nie może być puste.</li>
-                    </ul>
-                </div>
-                   
-                    <div class="main-container__selects-con main-container__selects-con--summary">
-                        <ul class="main-container__error-list main-container__error-list--date">
-                            <li class="main-container__error-msg" data-birthError>Wybierz prawidłową datę</li>
-                        </ul>
-
-                        <div class="custom-select">
-                            <label for="day">Check your birth day</label>
-                            <select class="custom-select__select custom-select__select--birth-date" id="day" data-day>
-                                <option value="0" disabled selected>DZIEŃ</option>
-                            </select>
-                            <span class="custom-select__arrow custom-select__arrow--narrow custom-select__arrow--top-norm"></span>
-                        </div>
-
-                        <div class="custom-select custom-select--margin-x">
-                            <label for="month">Check your birth month</label>
-                            <select class="custom-select__select custom-select__select--birth-date" id="month" data-month>
-                                <option value="0" disabled selected>MIESIĄC</option>
-                                <option value="1">STYCZEŃ</option>
-                                <option value="2">LUTY</option>
-                                <option value="3">MARZEC</option>
-                                <option value="4">KWIECIEŃ</option>
-                                <option value="5">MAJ</option>
-                                <option value="6">CZERWIEC</option>
-                                <option value="7">LIPIEC</option>
-                                <option value="8">SIERPIEŃ</option>
-                                <option value="9">WRZESIEŃ</option>
-                                <option value="10">PAŹDZIERNIK</option>
-                                <option value="11">LISTOPAD</option>
-                                <option value="12">GRUDZIEŃ</option>
-                            </select>
-                            <span class="custom-select__arrow custom-select__arrow--narrow custom-select__arrow--top-norm"></span>
-                        </div>
-
-                        <div class="custom-select">
-                            <label for="year">Check your birth year</label>
-                            <select class="custom-select__select custom-select__select--birth-date" id="year" data-year>
-                                <option value="0" disabled selected>ROK</option>
-                            </select>
-                            <span class="custom-select__arrow custom-select__arrow--narrow custom-select__arrow--top-norm"></span>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="main-container__checkbox-con main-container__checkbox-con--summary"data-checkboxCon>
-                            <ul class="main-container__error-list main-container__error-list--checkbox">
-                                <li class="main-container__error-msg main-container__error-msg--summary" data-checkboxError>Aby dokonać rejestracji, musisz zaakceptować nasze warunki.</li>
-                            </ul>
-                            <div class="main-container__checkbox main-container__checkbox--marked" data-required></div>
-                            <p class="main-container__checkbox-label">Akceptuję <a class="main-container__label-link" href="#">Warunki świadczenia usług</a> oraz przyjmuję do wiadomości - po uprzednim przeczytaniu - Informację o <a class="main-container__label-link" href="#">Polityce prywatnośći</a>.</p>
-                        </div>
-
-                        <div class="main-container__checkbox-con main-container__checkbox-con--m-bottom main-container__checkbox-con--summary">
-                            <div class="main-container__checkbox" data-optional></div>
-                            <p class="main-container__checkbox-label">Co jakiś czas będziesz otrzymywać od Riot Games e-maile.</p>
-                        </div>
-                    </div>
-
-                    <div class="progress-btn progress-btn--margin-xl progress-btn--summary">
-                        <button class="progress-btn__inner">DOŁĄCZ TERAZ</button>
-                    </div>
-            </form>
-
-            <div class="custom-select custom-select--responsive">
-                <label class="custom-select__label custom-select__label-hidden" for="region-list">REGION:</label>
-                <select class="custom-select__select custom-select__select--responsive" id="region-list">
-                    <option value="EU PÓŁNOC I WSCHÓD">EU PÓŁNOC I WSCHÓD (POLSKI)</option>
-                </select>
-                <span class="custom-select__arrow"></span>
+        <form action="./download.html" class="main-container__form main-container__form--grid">
+          <div class="main-container__height-normalize">
+            <div
+              class="main-container__input-con main-container__input-con--small main-container__input-con--email"
+              data-emailCon
+            >
+              <p
+                class="
+                  main-container__placeholder
+                  main-container__placeholder--small
+                  main-container__placeholder--summary
+                  main-container__placeholder--focus-summary
+                "
+              >
+                E-MAIL
+              </p>
+              <label for="email-input">Check your e-mail</label>
+              <input
+                class="main-container__input main-container__input--summary"
+                type="text"
+                id="email-input"
+                data-email
+              />
             </div>
 
-            <div class="progress-bar">
-                <div class="progress-bar__circle">
-                    <p class="progress-bar__label">1. KROK</p>
-                </div>
-                <div class="progress-bar__line"></div>
-                <div class="progress-bar__circle">
-                    <p class="progress-bar__label">2. KROK</p>
-                </div>
-                <div class="progress-bar__line"></div>
-                <div class="progress-bar__circle progress-bar__circle--active">
-                    <p class="progress-bar__label progress-bar__label--active">3. KROK</p>
-                </div>
+            <ul class="main-container__error-list">
+              <li class="main-container__error-msg" data-emailFirstError>Podaj prawidłowy adres e-mail</li>
+            </ul>
+          </div>
+
+          <div class="main-container__height-normalize">
+            <div
+              class="main-container__input-con main-container__input-con--small main-container__input-con--username"
+              data-usernameCon
+            >
+              <p
+                class="
+                  main-container__placeholder
+                  main-container__placeholder--small
+                  main-container__placeholder--summary
+                  main-container__placeholder--focus-summary
+                "
+              >
+                NAZWA UŻYTKOWNIKA
+              </p>
+              <label for="name-input">Check you username</label>
+              <input
+                class="main-container__input main-container__input--summary"
+                id="name-input"
+                type="text"
+                data-username
+              />
             </div>
 
-            <div class="custom-select custom-select--fixed">
-                <label for="select-fixed">Choose aditional options</label>
-                <select class="custom-select__select custom-select__select--fixed" id="select-fixed">
-                    <option value="PRAWNE">PRAWNE</option>
-                    <option value="WSPARCIE">WSPARCIE</option>
-                    <option value="POLITYKA PRYWATNOŚCI">POLITYKA PRYWATNOŚCI</option>
-                    <option value="POLITYKA CIASTECZEK">POLITYKA CIASTECZEK</option>
-                    <option value="PREFERENCJA CIASTECZEK">PREFERENCJA CIASTECZEK</option>
-                    <option value="WARUNKI UŻYTKOWANIA">WARUNKI UŻYTKOWANIA</option>
-                </select>
-                <span class="custom-select__arrow"></span>
+            <ul class="main-container__error-list main-container__error-list--last-step">
+              <li class="main-container__error-msg main-container__error-msg--last-step" data-usernameFirstError>
+                Nazwa użytkownika musi zawierać więcej niż 3 znaki.
+              </li>
+              <li class="main-container__error-msg main-container__error-msg--last-step" data-usernameSecondError>
+                Nazwa użytkownika musi zawierać mniej niż 25 znaków.
+              </li>
+              <li class="main-container__error-msg main-container__error-msg--last-step" data-usernameThirdError>
+                Nazwa użytkownika nie może zawierać spacji.
+              </li>
+            </ul>
+          </div>
+
+          <div class="main-container__height-normalize">
+            <div
+              class="main-container__input-con main-container__input-con--small main-container__input-con--password"
+              data-passwordCon
+            >
+              <p
+                class="
+                  main-container__placeholder
+                  main-container__placeholder--small
+                  main-container__placeholder--summary
+                  main-container__placeholder--focus-summary
+                "
+              >
+                HASŁO
+              </p>
+              <label for="password-input">Check your password</label>
+              <input
+                class="main-container__input main-container__input--summary"
+                id="password-iput"
+                type="password"
+                data-password
+              />
             </div>
+
+            <ul class="main-container__error-list main-container__error-list--last-step">
+              <li class="main-container__error-msg main-container__error-msg--last-step" data-passwordFirstError>
+                Hasło musi zawierać co najmniej następującą liczbę znaków: 8.
+              </li>
+              <li class="main-container__error-msg main-container__error-msg--last-step" data-passwordSecondError>
+                Hasło musi zawierać przynajmniej jedna literę i jeden znak niebędący literą.
+              </li>
+            </ul>
+          </div>
+
+          <div class="main-container__height-normalize">
+            <div
+              class="main-container__input-con main-container__input-con--small main-container__input-con--repeat"
+              data-repeatCon
+            >
+              <p
+                class="
+                  main-container__placeholder
+                  main-container__placeholder--small
+                  main-container__placeholder--summary
+                  main-container__placeholder--focus-summary
+                "
+              >
+                POTWIERDŹ HASŁO
+              </p>
+              <label for="password-conf-input">Confirm your password</label>
+              <input
+                class="main-container__input main-container__input--summary"
+                id="password-conf-input"
+                type="password"
+                data-repeat
+              />
+            </div>
+
+            <ul class="main-container__error-list main-container__error-list--last-step">
+              <li class="main-container__error-msg main-container__error-msg--last-step" data-repeatFirstError>
+                Podane hasła się różnią.
+              </li>
+              <li class="main-container__error-msg main-container__error-msg--last-step" data-repeatSecondError>
+                To pole nie może być puste.
+              </li>
+            </ul>
+          </div>
+
+          <div class="main-container__selects-con main-container__selects-con--summary">
+            <ul class="main-container__error-list main-container__error-list--date">
+              <li class="main-container__error-msg" data-birthError>Wybierz prawidłową datę</li>
+            </ul>
+
+            <div class="custom-select">
+              <label for="day">Check your birth day</label>
+              <select class="custom-select__select custom-select__select--birth-date" id="day" data-day>
+                <option value="0" disabled selected>DZIEŃ</option>
+              </select>
+              <span class="custom-select__arrow custom-select__arrow--narrow custom-select__arrow--top-norm"></span>
+            </div>
+
+            <div class="custom-select custom-select--margin-x">
+              <label for="month">Check your birth month</label>
+              <select class="custom-select__select custom-select__select--birth-date" id="month" data-month>
+                <option value="0" disabled selected>MIESIĄC</option>
+                <option value="1">STYCZEŃ</option>
+                <option value="2">LUTY</option>
+                <option value="3">MARZEC</option>
+                <option value="4">KWIECIEŃ</option>
+                <option value="5">MAJ</option>
+                <option value="6">CZERWIEC</option>
+                <option value="7">LIPIEC</option>
+                <option value="8">SIERPIEŃ</option>
+                <option value="9">WRZESIEŃ</option>
+                <option value="10">PAŹDZIERNIK</option>
+                <option value="11">LISTOPAD</option>
+                <option value="12">GRUDZIEŃ</option>
+              </select>
+              <span class="custom-select__arrow custom-select__arrow--narrow custom-select__arrow--top-norm"></span>
+            </div>
+
+            <div class="custom-select">
+              <label for="year">Check your birth year</label>
+              <select class="custom-select__select custom-select__select--birth-date" id="year" data-year>
+                <option value="0" disabled selected>ROK</option>
+              </select>
+              <span class="custom-select__arrow custom-select__arrow--narrow custom-select__arrow--top-norm"></span>
+            </div>
+          </div>
+
+          <div>
+            <div class="main-container__checkbox-con main-container__checkbox-con--summary" data-checkboxCon>
+              <ul class="main-container__error-list main-container__error-list--checkbox">
+                <li class="main-container__error-msg main-container__error-msg--summary" data-checkboxError>
+                  Aby dokonać rejestracji, musisz zaakceptować nasze warunki.
+                </li>
+              </ul>
+              <div class="main-container__checkbox main-container__checkbox--marked" data-required></div>
+              <p class="main-container__checkbox-label">
+                Akceptuję <a class="main-container__label-link" href="#">Warunki świadczenia usług</a> oraz przyjmuję do
+                wiadomości - po uprzednim przeczytaniu - Informację o
+                <a class="main-container__label-link" href="#">Polityce prywatnośći</a>.
+              </p>
+            </div>
+
+            <div
+              class="
+                main-container__checkbox-con
+                main-container__checkbox-con--m-bottom
+                main-container__checkbox-con--summary
+              "
+            >
+              <div class="main-container__checkbox" data-optional></div>
+              <p class="main-container__checkbox-label">Co jakiś czas będziesz otrzymywać od Riot Games e-maile.</p>
+            </div>
+          </div>
+
+          <div class="progress-btn progress-btn--margin-xl progress-btn--summary">
+            <button class="progress-btn__inner">DOŁĄCZ TERAZ</button>
+          </div>
+        </form>
+
+        <div class="custom-select custom-select--responsive">
+          <label class="custom-select__label custom-select__label-hidden" for="region-list">REGION:</label>
+          <select class="custom-select__select custom-select__select--responsive" id="region-list">
+            <option value="EU PÓŁNOC I WSCHÓD">EU PÓŁNOC I WSCHÓD (POLSKI)</option>
+          </select>
+          <span class="custom-select__arrow"></span>
         </div>
+
+        <div class="progress-bar">
+          <div class="progress-bar__circle">
+            <p class="progress-bar__label">1. KROK</p>
+          </div>
+          <div class="progress-bar__line"></div>
+          <div class="progress-bar__circle">
+            <p class="progress-bar__label">2. KROK</p>
+          </div>
+          <div class="progress-bar__line"></div>
+          <div class="progress-bar__circle progress-bar__circle--active">
+            <p class="progress-bar__label progress-bar__label--active">3. KROK</p>
+          </div>
+        </div>
+
+        <div class="custom-select custom-select--fixed">
+          <label for="select-fixed">Choose aditional options</label>
+          <select class="custom-select__select custom-select__select--fixed" id="select-fixed">
+            <option value="PRAWNE">PRAWNE</option>
+            <option value="WSPARCIE">WSPARCIE</option>
+            <option value="POLITYKA PRYWATNOŚCI">POLITYKA PRYWATNOŚCI</option>
+            <option value="POLITYKA CIASTECZEK">POLITYKA CIASTECZEK</option>
+            <option value="PREFERENCJA CIASTECZEK">PREFERENCJA CIASTECZEK</option>
+            <option value="WARUNKI UŻYTKOWANIA">WARUNKI UŻYTKOWANIA</option>
+          </select>
+          <span class="custom-select__arrow"></span>
+        </div>
+      </div>
     </main>
 
     <footer class="footer">
-        <div class="footer__img-con">
-            <a class="footer__img footer__img--margin-ver" href="#"><img src="./src/img/page-elements/riotgames-logo-white.png" alt="Riot logo"></a>
-            <a class="footer__img" href="#"><img src="./src/img/page-elements/pegi.jpg" alt="Pegi 12"></a>
-        </div>
-        <p class="footer__credits">Nie jest to prawdziwa strona. Powstała ona w celu poszerzenia mojej wiedzy oraz wzbogacenia mojego portfolio dostępnego <a class="footer__link" href="https://github.com/Borub-ar" target="_blank">tutaj</a>. Link do prawdziwej strony League of Legends - <a class="footer__link" href="https://na.leagueoflegends.com/pl-pl/" target="_blank">https://na.leagueoflegends.com/pl-pl/</a>. Dziękuję za uwagę i życzę miłego zwiedzania!</p>
+      <div class="footer__img-con">
+        <a class="footer__img footer__img--margin-ver" href="#"
+          ><img src="./src/img/page-elements/riotgames-logo-white.png" alt="Riot logo"
+        /></a>
+        <a class="footer__img" href="#"><img src="./src/img/page-elements/pegi.jpg" alt="Pegi 12" /></a>
+      </div>
+      <p class="footer__credits">
+        Nie jest to prawdziwa strona. Powstała ona w celu poszerzenia mojej wiedzy oraz wzbogacenia mojego portfolio
+        dostępnego <a class="footer__link" href="https://github.com/Borub-ar" target="_blank">tutaj</a>. Link do
+        prawdziwej strony League of Legends -
+        <a class="footer__link" href="https://na.leagueoflegends.com/pl-pl/" target="_blank"
+          >https://na.leagueoflegends.com/pl-pl/</a
+        >. Dziękuję za uwagę i życzę miłego zwiedzania!
+      </p>
     </footer>
-</body>
-
+  </body>
 </html>
