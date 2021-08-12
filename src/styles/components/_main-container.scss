@@ -1,478 +1,475 @@
 @use '../abstracts' as *;
 
 .main-container {
+  @include flexCenter(column);
+
+  &__title {
+    font-family: Beaufort-for-LOL;
+    font-weight: 200;
+    color: $white-elemets;
+    font-size: 5.4rem;
+    text-align: center;
+    letter-spacing: 4px;
+    margin: 0;
+    line-height: 1.1;
+
+    @include responsive {
+      font-size: clamp(1rem, 10vw, 7rem);
+      width: 95%;
+    }
+
+    &--small {
+      max-width: 90%;
+      font-size: 2.7rem;
+      letter-spacing: 6px;
+      color: $white-elemets;
+
+      @include responsive {
+        max-width: 95%;
+        font-size: 8vw;
+      }
+    }
+  }
+
+  &__subtitle {
+    color: $main-color;
+    font-weight: 200;
+    font-size: 1rem;
+    margin: 2rem 0;
+    color: $gold-5;
+
+    @include responsive {
+      font-size: 0.8rem;
+      text-align: center;
+      margin: 1rem 0 3rem;
+      max-width: 95%;
+      line-height: 1.5;
+    }
+
+    &--margin-sm {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__divider-con {
+    &--download {
+      @include flexCenter;
+      margin: 2rem 0 3rem;
+    }
+
+    @include responsive {
+      @include flexCenter;
+      overflow: hidden;
+    }
+  }
+
+  &__divider {
+    width: clamp(60rem, 90vw, 70rem);
+
+    @include responsive {
+      width: clamp(43rem, 100%, 90rem);
+    }
+
+    &--download {
+      width: clamp(60rem, 60%, 90rem);
+
+      @include responsive {
+        width: clamp(30rem, 50%, 90rem);
+      }
+    }
+  }
+
+  &__form {
     @include flexCenter(column);
 
-    &__title {
-        font-family: Beaufort-for-LOL;
-        font-weight: 200;
-        color: $white-elemets;
-        font-size: 5.4rem;
-        text-align: center;
-        letter-spacing: 4px;
-        margin: 0;
-        line-height: 1.1;
+    &--grid {
+      width: 70%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(3, auto);
+      justify-items: center;
+      align-items: center;
+      column-gap: 1.5rem;
+      row-gap: 1rem;
 
-        @include responsive {
-            font-size: clamp(1rem, 10vw, 7rem);
-            width: 95%;
-        }
+      @include responsive {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(7, auto);
+        row-gap: 1rem;
+      }
+    }
+  }
 
-        &--small {
-            max-width: 90%;
-            font-size: 2.7rem;
-            letter-spacing: 6px;
-            color: $white-elemets;
+  &__height-normalize {
+    min-height: 8.5rem;
 
-            @include responsive {
-                max-width: 95%;
-                font-size: 8vw;
-            }
-        }
+    @include responsive {
+      min-height: 5rem;
+    }
+  }
+
+  &__input-con {
+    position: relative;
+    margin: 3.5rem 0 0.4rem;
+
+    @include responsive {
+      overflow: hidden;
+      margin-top: 0rem;
     }
 
-    &__subtitle {
-        color: $main-color;
-        font-weight: 200;
-        font-size: 1rem;
-        margin: 2rem 0;
-        color: $gold-5;
+    &--small {
+      margin: 3rem 0 0.4rem;
 
-        @include responsive {
-            font-size: .8rem;
-            text-align: center;
-            margin: 1rem 0 3rem;
-            max-width: 95%;
-            line-height: 1.5;
-        }
-
-        &--margin-sm {
-            margin-bottom: 2rem
-        }
+      @include responsive {
+        overflow: visible;
+        margin: 1.5rem 0 0.4rem;
+      }
     }
 
-    &__divider-con {
-        &--download {
-            @include flexCenter;
-            margin: 2rem 0 3rem;
-        }
-
-        @include responsive {
-            @include flexCenter;
-            overflow: hidden;
-        }
+    &--email {
+      @include responsive {
+        grid-column: 1;
+        grid-row: 1/2;
+      }
     }
 
-    &__divider {
-        width: clamp(60rem, 90vw, 70rem);
-
-        @include responsive {
-            width: clamp(43rem, 100%, 90rem);
-        }
-
-        &--download {
-            width: clamp(60rem, 60%, 90rem);
-
-            @include responsive {
-                width: clamp(30rem, 50%, 90rem);
-            }
-        }
+    &--username {
+      @include responsive {
+        grid-column: 1;
+        grid-row: 2/3;
+      }
     }
 
-    &__form {
-        @include flexCenter(column);
-
-        &--grid {
-            width: 70%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: repeat(3, auto);
-            justify-items: center;
-            align-items: center;
-            column-gap: 1.5rem;
-            row-gap: 1rem;
-
-            @include responsive {
-                grid-template-columns: 1fr;
-                grid-template-rows: repeat(7, auto);
-                row-gap: 1rem;
-            }
-        }
+    &--password {
+      @include responsive {
+        grid-column: 1;
+        grid-row: 3/4;
+      }
     }
 
-    &__height-normalize {
-        min-height: 8.5rem;
+    &--repeat {
+      @include responsive {
+        grid-column: 1;
+        grid-row: 4/5;
+      }
+    }
+  }
 
-        @include responsive {
-            min-height: 5rem;
-        }
+  &__input {
+    position: relative;
+    z-index: 1;
+    outline: none;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $gold-3;
+    color: $gold-1;
+    font-family: inherit;
+    font-size: 1.7rem;
+    min-width: 30rem;
+    line-height: 1.2;
+
+    @include responsive {
+      margin-top: 2rem;
+      min-width: 0;
+      width: clamp(8rem, 90vw, 30rem);
     }
 
-    &__input-con {
-        position: relative;
-        margin: 3.5rem 0 .4rem;
-
-        @include responsive {
-            overflow: hidden;
-            margin-top: 0rem;
-        }
-
-        &--small {
-            margin: 3rem 0 .4rem;
-
-            @include responsive {
-                overflow: visible;
-                margin: 1.5rem 0 .4rem;
-            }
-        }
-
-        &--email {
-            @include responsive {
-                grid-column: 1;
-                grid-row: 1/2;
-            }
-        }
-
-        &--username {
-            @include responsive {
-                grid-column: 1;
-                grid-row: 2/3;
-            }
-        }
-
-        &--password {
-            @include responsive {
-                grid-column: 1;
-                grid-row: 3/4;
-            }
-        }
-
-        &--repeat {
-            @include responsive {
-                grid-column: 1;
-                grid-row: 4/5;
-
-            }
-        }
+    &--error {
+      border-bottom: 2px solid $error-red;
     }
 
-    &__input {
-        position: relative;
-        z-index: 1;
-        outline: none;
-        background: transparent;
-        border: none;
-        border-bottom: 1px solid $gold-3;
-        color: $gold-1;
-        font-family: inherit;
-        font-size: 1.7rem;
-        min-width: 30rem;
-        line-height: 1.2;
+    &--summary {
+      margin-top: 0;
+    }
+  }
 
-        @include responsive {
-            margin-top: 2rem;
-            min-width: 0;
-            width: clamp(8rem, 90vw, 30rem);
-        }
+  &__placeholder {
+    position: absolute;
+    top: -45%;
+    left: 50%;
+    z-index: 5;
+    width: 100%;
+    color: $gold-1;
+    font-size: 1.7rem;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    transition: transform, 0.4s;
+    pointer-events: none;
 
-        &--error {
-            border-bottom: 2px solid $error-red;
-        }
-
-        &--summary {
-            margin-top: 0;
-        }
+    @include responsive {
+      font-size: 0.8rem;
+      top: 55%;
+      color: $bright-elements;
     }
 
-    &__placeholder {
-        position: absolute;
-        top: -45%;
+    &--focus {
+      left: 0;
+      top: -80%;
+      transform: translateX(-25%);
+      font-size: 0.8rem;
+      color: $bright-elements;
+
+      @include responsive {
+        left: 0;
+        top: 5%;
+      }
+
+      @include responsive-small {
         left: 50%;
-        z-index: 5;
-        width: 100%;
-        color: $gold-1;
-        font-size: 1.7rem;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        transition: transform, .4s;
-        pointer-events: none;
-
-        @include responsive {
-            font-size: .8rem;
-            top: 55%;
-            color: $bright-elements;
-        }
-
-        &--focus {
-            left: 0;
-            top: -80%;
-            transform: translateX(-25%);
-            font-size: .8rem;
-            color: $bright-elements;
-
-            @include responsive {
-                left: 0;
-                top: 5%;
-                ;
-            }
-
-            @include responsive-small {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-        }
-
-        &--small {
-            color: $bright-elements;
-            font-size: .8rem;
-            top: 0;
-            font-weight: 700;
-            text-align: center;
-
-            @include responsive {
-                top: 57%;
-            }
-        }
-
-        &--summary {
-            top: 20%;
-        }
-
-        &--small-focus {
-            top: -65%;
-
-            @include responsive {
-                top: 0;
-            }
-        }
-
-        &--focus-summary {
-            top: -65%;
-        }
+        transform: translateX(-50%);
+      }
     }
 
-    &__error-icon {
+    &--small {
+      color: $bright-elements;
+      font-size: 0.8rem;
+      top: 0;
+      font-weight: 700;
+      text-align: center;
+
+      @include responsive {
+        top: 57%;
+      }
+    }
+
+    &--summary {
+      top: 20%;
+    }
+
+    &--small-focus {
+      top: -65%;
+
+      @include responsive {
+        top: 0;
+      }
+    }
+
+    &--focus-summary {
+      top: -65%;
+    }
+  }
+
+  &__error-icon {
+    position: absolute;
+    z-index: 7;
+    bottom: 0.7rem;
+    right: 1rem;
+    height: 1.1rem;
+
+    &--show {
+      display: block;
+    }
+  }
+
+  &__error-list {
+    padding: 0;
+    margin: 0;
+    width: clamp(8rem, 90vw, 30rem);
+
+    &--date {
+      position: absolute;
+      top: -1.4rem;
+      margin: 0;
+      text-align: center;
+    }
+
+    &--checkbox {
+      position: absolute;
+      top: -0.4rem;
+      left: 0;
+
+      @include responsive-small {
+        top: -1.1rem;
+      }
+    }
+  }
+
+  &__error-msg {
+    padding: 0;
+    display: none;
+    color: $error-red;
+    font-family: Spiegel, sans-serif;
+    letter-spacing: 1px;
+    font-size: 0.7rem;
+    margin: 0;
+
+    @include responsive-small {
+      margin-left: 0;
+    }
+
+    &--show {
+      display: block;
+    }
+
+    &--summary {
+      @include responsive-small {
+        margin-left: 1.7rem;
+      }
+    }
+
+    &--last-step {
+      margin-left: 1rem;
+      line-height: 1.5;
+      width: clamp(8rem, 90vw, 30rem);
+
+      @include responsive {
+        margin-left: 0.4rem;
+      }
+    }
+  }
+
+  &__checkbox-con {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 70%;
+    margin-top: 0.7rem;
+
+    @include responsive {
+      width: 90%;
+    }
+
+    &--m-bottom {
+      margin-bottom: 1.7rem;
+    }
+
+    &--summary {
+      width: 100%;
+      margin-top: 0;
+
+      @include responsive {
+        grid-column: 1;
+        grid-row: 6/7;
+      }
+
+      @include responsive-small {
+        margin-left: 0.2rem;
+      }
+    }
+  }
+
+  &__checkbox {
+    position: relative;
+    margin-right: 0.6rem;
+    min-height: 18px;
+    min-width: 18px;
+    background-color: $black-elements;
+    border: 2px solid $main-color;
+    cursor: pointer;
+
+    &--marked {
+      &::after {
+        content: '';
         position: absolute;
-        z-index: 7;
-        bottom: .7rem;
-        right: 1rem;
-        height: 1.1rem;
-
-        &--show {
-            display: block;
-        }
+        left: 4px;
+        top: -1px;
+        width: 6px;
+        height: 13px;
+        border: solid #c4b998;
+        border-width: 0 3px 3px 0;
+        transform: rotate(45deg);
+        border-radius: 0;
+      }
     }
 
-    &__error-list {
-        padding: 0;
-        margin: 0;
-        width: clamp(8rem, 90vw, 30rem);
+    &:hover {
+      border-color: $gold-1;
+    }
+  }
 
-        &--date {
-            position: absolute;
-            top: -1.4rem;
-            margin: 0;
-            text-align: center;
-        }
+  &__checkbox-label {
+    color: $gold-1;
+    display: block;
+    margin: 0.5rem 0;
+    font-family: Spiegel, sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0;
+    line-height: 1.5;
+    cursor: pointer;
+  }
 
-        &--checkbox {
-            position: absolute;
-            top: -.4rem;
-            left: 0;
+  &__label-link {
+    color: $gold-1;
 
-            @include responsive-small {
-                top: -1.1rem;
-            }
-        }
+    &:hover {
+      color: $bright-elements;
+    }
+  }
+
+  &__download {
+    margin: 2rem 0;
+    font-size: 0.7rem;
+    text-align: center;
+
+    @include responsive {
+      line-height: 1.5;
+      max-width: 90vw;
+    }
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    color: $gold-1;
+
+    &--download {
+      margin-top: 3rem;
+      font-size: 0.7rem;
+      letter-spacing: 0;
     }
 
-    &__error-msg {
-        padding: 0;
-        display: none;
-        color: $error-red;
-        font-family: Spiegel, sans-serif;
-        letter-spacing: 1px;
-        font-size: .7rem;
-        margin: 0;
-
-
-        @include responsive-small {
-            margin-left: 0;
-        }
-
-        &--show {
-            display: block;
-        }
-
-        &--summary {
-            @include responsive-small {
-                margin-left: 1.7rem;
-            }
-        }
-
-        &--last-step {
-            margin-left: 1rem;
-            line-height: 1.5;
-            width: clamp(8rem, 90vw, 30rem);
-
-            @include responsive {
-                margin-left: .4rem;
-            }
-        }
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -0.3rem;
+      width: 100%;
+      height: 1px;
+      background-color: $dark-elements;
     }
 
-    &__checkbox-con {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        width: 70%;
-        margin-top: .7rem;
-
-        @include responsive {
-            width: 90%;
-        }
-
-        &--m-bottom {
-            margin-bottom: 1.7rem;
-        }
-
-        &--summary {
-            width: 100%;
-            margin-top: 0;
-
-            @include responsive {
-                grid-column: 1;
-                grid-row: 6/7;
-            }
-
-            @include responsive-small {
-                margin-left: .2rem;
-            }
-        }
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 5;
+      bottom: -0.3rem;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $bright-elements;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    &__checkbox {
-        position: relative;
-        margin-right: .6rem;
-        min-height: 18px;
-        min-width: 18px;
-        background-color: $black-elements;
-        border: 2px solid $main-color;
-        cursor: pointer;
-
-        &--marked {
-            &::after {
-                content: "";
-                position: absolute;
-                left: 4px;
-                top: -1px;
-                width: 6px;
-                height: 13px;
-                border: solid #c4b998;
-                border-width: 0 3px 3px 0;
-                transform: rotate(45deg);
-                border-radius: 0;
-            }
-        }
-
-        &:hover {
-            border-color: $gold-1;
-        }
+    &:hover {
+      color: $bright-elements;
     }
 
-    &__checkbox-label {
-        color: $gold-1;
-        display: block;
-        margin: .5rem 0;
-        font-family: Spiegel, sans-serif;
-        font-size: .8rem;
-        letter-spacing: 0;
-        line-height: 1.5;
-        cursor: pointer;
+    &:hover::after {
+      color: $bright-elements;
+      transform: scaleX(1);
+    }
+  }
+
+  &__selects-con {
+    @include flexCenter;
+    position: relative;
+    margin: 6rem 0;
+
+    @include responsive {
+      flex-direction: column;
+      margin: 2rem 0 1rem;
     }
 
-    &__label-link {
-        color: $gold-1;
+    &--summary {
+      margin: 0;
 
-        &:hover {
-            color: $bright-elements;
-        }
+      @include responsive {
+        grid-column: 1;
+        grid-row: 5/6;
+        margin-top: 2rem;
+      }
     }
-
-    &__download {
-        margin: 2rem 0;
-        font-size: .7rem;
-        text-align: center;
-
-        @include responsive {
-            line-height: 1.5;
-            max-width: 90vw;
-        }
-    }
-
-    &__link {
-        position: relative;
-        text-decoration: none;
-        color: $gold-1;
-
-        &--download {
-            margin-top: 3rem;
-            font-size: .7rem;
-            letter-spacing: 0;
-        }
-
-        &::before {
-            content: '';
-            position: absolute;
-            bottom: -.3rem;
-            width: 100%;
-            height: 1px;
-            background-color: $dark-elements;
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            z-index: 5;
-            bottom: -.3rem;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background-color: $bright-elements;
-            transform: scaleX(0);
-            transform-origin: center;
-            transition: transform .2s cubic-bezier(.4, 0, .2, 1);
-        }
-
-        &:hover {
-            color: $bright-elements;
-        }
-
-        &:hover::after {
-            color: $bright-elements;
-            transform: scaleX(1);
-        }
-    }
-
-    &__selects-con {
-        @include flexCenter;
-        position: relative;
-        margin: 6rem 0;
-
-        @include responsive {
-            flex-direction: column;
-            margin: 2rem 0 1rem;
-        }
-
-        &--summary {
-            margin: 0;
-
-            @include responsive {
-                grid-column: 1;
-                grid-row: 5/6;
-                margin-top: 2rem;
-            }
-        }
-    }
+  }
 }

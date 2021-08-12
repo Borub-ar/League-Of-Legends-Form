@@ -1,11 +1,11 @@
 @mixin responsive {
-    @media only screen and (max-width: 990px) {
-        @content
-    }
+  @media only screen and (max-width: 990px) {
+    @content;
+  }
 }
 
 @mixin responsive-small {
-    @media only screen and (max-width: 550px) {
-        @content
-    }
+  @media only screen and (max-width: 550px) {
+    @content;
+  }
 }

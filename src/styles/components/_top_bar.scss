@@ -1,40 +1,41 @@
 @use '../abstracts' as *;
 
-
 .top-bar {
-    position: relative;
-    min-height: 9rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 5;
+  position: relative;
+  min-height: 9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 5;
+
+  @include responsive {
+    justify-content: center;
+  }
+
+  &__logo {
+    height: 3.5rem;
+    cursor: pointer;
 
     @include responsive {
-        justify-content: center;
+      height: 6rem;
     }
+  }
 
-    &__logo {
-        height: 3.5rem;
-        cursor: pointer;
+  &__divider {
+    display: block;
+    background: url(https://lolstatic-a.akamaihd.net/frontpage/apps/prod/signup/pl_PL/6e82421c55921f66bb79de5bff5d2216d964650f/assets/pl_PL/assets/hangtag.svg)
+      no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 18px;
+    height: 17vh;
+    transition: opacity 0.5s;
 
-        @include responsive {
-            height: 6rem;
-        }
+    @include responsive {
+      display: none;
     }
-
-    &__divider {
-        display: block;
-        background: url(https://lolstatic-a.akamaihd.net/frontpage/apps/prod/signup/pl_PL/6e82421c55921f66bb79de5bff5d2216d964650f/assets/pl_PL/assets/hangtag.svg) no-repeat;
-        background-position: bottom;
-        background-size: cover;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 18px;
-        height: 17vh;
-
-        @include responsive {
-            display: none;
-        }
-    }
+  }
 }

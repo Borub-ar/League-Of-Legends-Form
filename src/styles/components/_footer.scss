@@ -1,55 +1,55 @@
 @use '../abstracts' as *;
 
 .footer {
+  display: flex;
+  flex-direction: column;
+
+  &__img-con {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 5;
 
-    &__img-con {
-        display: flex;
-        align-items: center;
-        position: relative;
-        z-index: 5;
+    @include responsive {
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
 
-        @include responsive {
-            justify-content: center;
-            flex-direction: column;
-        }
+  &__img {
+    margin-right: 1.5rem;
+
+    @include responsive {
+      margin-right: 0;
     }
 
-    &__img {
-        margin-right: 1.5rem;
-
-        @include responsive {
-            margin-right: 0;
-        }
-
-        &--margin-ver {
-            @include responsive {
-                margin: 1rem 0;
-            }
-        }
+    &--margin-ver {
+      @include responsive {
+        margin: 1rem 0;
+      }
     }
+  }
 
-    &__credits {
-        position: relative;
-        z-index: 5;
-        margin: 0 auto;
-        font-family: Spiegel, sans-serif;
-        letter-spacing: 1px;
-        padding: .2rem 0;
-        width: 80%;
-        text-align: center;
-        line-height: 2;
-        font-size: .9rem;
+  &__credits {
+    position: relative;
+    z-index: 5;
+    margin: 0 auto;
+    font-family: Spiegel, sans-serif;
+    letter-spacing: 1px;
+    padding: 0.2rem 0;
+    width: 80%;
+    text-align: center;
+    line-height: 2;
+    font-size: 0.9rem;
 
-        @include responsive {
-            width: 95%;
-            line-height: 1.4;
-            padding: .8rem 0 .5rem;
-        }
+    @include responsive {
+      width: 95%;
+      line-height: 1.4;
+      padding: 0.8rem 0 0.5rem;
     }
+  }
 
-    &__link {
-        color: $main-color;
-    }
+  &__link {
+    color: $main-color;
+  }
 }

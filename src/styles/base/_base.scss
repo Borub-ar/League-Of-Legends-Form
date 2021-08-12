@@ -3,26 +3,25 @@
 *,
 *::after,
 *::before {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: rgb(19, 19, 19);
-    display: grid;
-    grid-template-rows: auto auto 8rem;
-    min-height: 100vh;
-    margin: 0;
-    font-family: Friz-Quadrata-Regular; 
-    letter-spacing: 2px;
-    color: $main-color;
-    padding: 0 2rem;
+  background-color: rgb(19, 19, 19);
+  display: grid;
+  grid-template-rows: auto auto 8rem;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Friz-Quadrata-Regular;
+  letter-spacing: 2px;
+  color: $main-color;
+  padding: 0 2rem;
 
-    @include responsive {
-        padding: 0;
-    }
+  @include responsive {
+    padding: 0;
+  }
 }
 
 label:not(.custom-select__label) {
-    display: none;
+  display: none;
 }
-
