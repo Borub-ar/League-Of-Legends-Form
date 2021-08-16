@@ -19,9 +19,12 @@
 
 @mixin fixedBackground {
   position: fixed;
-  inset: 0;
-  max-height: 100%;
-  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  z-index: -100;
 }
 
 @mixin selectStyleReset {

@@ -3,6 +3,36 @@
 .main-container {
   @include flexCenter(column);
 
+  &__bg {
+    @include fixedBackground;
+
+    &--home {
+      background: linear-gradient(#000000bf, #000000bf), url('../img/background/index-bg.jpg') top;
+      filter: blur(8px);
+    }
+
+    &--birth-date {
+      background: url('../img/background/birth-date-bg.jpg') top;
+    }
+
+    &--last-step {
+      background: url('../img/background/last-step-bg.jpg') top;
+    }
+
+    &--summary {
+      background: url('../img/background/summary-bg.jpg') top;
+    }
+  }
+
+&__bg-video {
+  @include flexCenter;
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  filter: blur(4px);
+  opacity: 0.2;
+}
+
   &__title {
     font-family: Beaufort-for-LOL;
     font-weight: 200;
@@ -47,7 +77,9 @@
     }
 
     &--margin-sm {
-      margin-bottom: 2rem;
+      @include responsive {
+        margin-bottom: 1rem;
+      }
     }
   }
 
@@ -205,7 +237,7 @@
     &--focus {
       left: 0;
       top: -80%;
-      transform: translateX(-25%);
+      transform: translateX(-27.5%);
       font-size: 0.8rem;
       color: $bright-elements;
 

@@ -106,7 +106,7 @@ export default class Common {
             </svg>
         `;
 
-    inpContainer.insertAdjacentHTML('beforeend', HTML);
+    if (!inpContainer.querySelector('.main-container__error-icon')) inpContainer.insertAdjacentHTML('beforeend', HTML);
     inp.classList.add('main-container__input--error');
     err.classList.add('main-container__error-msg--show');
   }
@@ -179,8 +179,10 @@ export default class Common {
     const checkMinLength = () => {
       if (this._passwordInput.value.length < 8) {
         this._renderInputErr('password', 'passwordFirstError', 'passwordCon');
+        this._repeatPassValidation();
         return false;
       } else {
+        this._repeatPassValidation();
         this._hideInputErr('password', 'passwordFirstError', 'passwordCon');
         return true;
       }
@@ -276,8 +278,9 @@ export default class Common {
     this._usernameInput.addEventListener('focusout', this._usernameValidation.bind(this));
     this._passwordInput.addEventListener('focusout', this._passwordValidation.bind(this));
     this._repeatPassInput.addEventListener('focusout', this._repeatPassValidation.bind(this));
-    if (document.querySelector('#summary'))
+    if (document.querySelector('#summary')) {
       this._emailInput.addEventListener('focusout', this._pageValidation.bind(this));
+    }
     this._form.addEventListener('submit', this._pageValidation.bind(this));
   }
 }
