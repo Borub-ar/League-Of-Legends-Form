@@ -7,7 +7,7 @@ export default class App extends Common {
   }
 
   _birthFormValidation(e) {
-    if ([...this._formSelects].some((sel) => sel.value === '0')) {
+    if ([...this._formSelects].some(sel => sel.value === '0')) {
       e.preventDefault();
       this._removeSwupAttribute();
       this._showError();
@@ -19,7 +19,7 @@ export default class App extends Common {
   }
 
   _checkIfCorrect() {
-    if (![...this._formSelects].some((sel) => sel.value === '0')) {
+    if (![...this._formSelects].some(sel => sel.value === '0')) {
       this._hideError();
     }
   }
@@ -33,7 +33,7 @@ export default class App extends Common {
   }
 
   _handleEvents() {
-    this._formSelects.forEach((sel) => sel.addEventListener('change', this._checkIfCorrect.bind(this)));
+    this._formSelects.forEach(sel => sel.addEventListener('change', this._checkIfCorrect.bind(this)));
     this._form.addEventListener('submit', this._birthFormValidation.bind(this));
   }
 }
