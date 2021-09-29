@@ -272,8 +272,8 @@ export default class Common {
   }
 
   _handleValidationEvents() {
-    [...this._checkboxes].forEach((checkbox) => checkbox.addEventListener('click', this._markCheckbox.bind(this)));
-    [...this._checkboxLabels].forEach((checkbox) => checkbox.addEventListener('click', this._markCheckbox.bind(this)));
+    [...this._checkboxes].forEach(checkbox => checkbox.addEventListener('click', this._markCheckbox.bind(this)));
+    [...this._checkboxLabels].forEach(checkbox => checkbox.addEventListener('click', this._markCheckbox.bind(this)));
     this._requiredCheckbox.addEventListener('click', this._checkboxValidation.bind(this));
     this._usernameInput.addEventListener('focusout', this._usernameValidation.bind(this));
     this._passwordInput.addEventListener('focusout', this._passwordValidation.bind(this));

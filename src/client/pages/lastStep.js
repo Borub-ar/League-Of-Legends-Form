@@ -13,7 +13,7 @@ export default class App extends Common {
   }
 
   _placeholderNormalize() {
-    [...this._inputs].forEach((input) => {
+    [...this._inputs].forEach(input => {
       if (input.value) return;
       if (!input.value) {
         input.parentElement
@@ -47,7 +47,7 @@ export default class App extends Common {
   }
 
   _handleEvents() {
-    [...this._inputs].forEach((input) => input.addEventListener('focus', this._placeholderFocus.bind(this)));
-    [...this._inputs].forEach((input) => input.addEventListener('focusout', this._placeholderNormalize.bind(this)));
+    [...this._inputs].forEach(input => input.addEventListener('focus', this._placeholderFocus.bind(this)));
+    [...this._inputs].forEach(input => input.addEventListener('focusout', this._placeholderNormalize.bind(this)));
   }
 }
