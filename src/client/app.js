@@ -21,6 +21,7 @@ class App {
     if (document.querySelector('#index-page')) {
       import('./pages/index').then(({ default: IndexJS }) => {
         const index = new IndexJS();
+        ``;
       });
     }
 
